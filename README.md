@@ -23,7 +23,7 @@ wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/ee4-setup.sh"
 Make it executeble
 
 ```
-chmod u+x enterprise-setup.sh
+chmod u+x ee4-setup.sh
 
 ```
 
@@ -32,7 +32,7 @@ chmod u+x enterprise-setup.sh
 Use below command to configure any wordpress site with Awesome Enterprise
 
 ```
-./enterprise-setup.sh example.com
+./ee4-setup.sh example.com
 
 ```
 After running this command this script will ask the redis database no.
