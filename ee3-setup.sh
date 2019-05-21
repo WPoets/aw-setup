@@ -29,7 +29,7 @@ function installAw2(){
     printf "${CYANBG}Please enter REDIS_DATABASE_SESSION_CACHE number.${NC}\n"
     read redis_db_no
     wp config set REDIS_DATABASE_SESSION_CACHE $redis_db_no --add=true --type=constant --allow-root
-    wp config set REDIS_HOST localhost --add=true --type=constant --allow-root
+    wp config set REDIS_HOST 127.0.0.1 --add=true --type=constant --allow-root
     wp config set REDIS_PORT 6379 --add=true --type=constant --allow-root
     wp plugin install advanced-custom-fields --activate --allow-root
     wp plugin install custom-post-type-ui --activate --allow-root

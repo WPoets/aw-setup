@@ -10,9 +10,16 @@ EasyEngine v3 or above
 ### Installing
 
 Create the wordpress site by using EasyEngine
+
+for EE3
+```
+ee site create example.com --wp
+```
+for EE4
 ```
 ee site create example.com --type=wp --cache
 ```
+
 Download this script
 
 for EE3
