@@ -13,7 +13,7 @@ Create the wordpress site by using EasyEngine
 
 for EE3
 ```
-ee site create example.com --wp
+ee site create example.com --wpfc --php7 --letsencrypt=on
 ```
 for EE4
 ```
