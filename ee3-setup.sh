@@ -39,6 +39,13 @@ function installAw2(){
     wp plugin install google-apps-login --allow-root
     
     wp rewrite structure '/%postname%/' --allow-root
+    
+    wget -O /tmp/all-posts.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/all-posts.xml /tmp
+    wp import /tmp/all-posts.xml --authors=skip --allow-root
+    #import all data again to import the posts whose post type is registered by the above command
+    wp import /tmp/all-posts.xml --authors=skip --allow-root
+    
+    printf "\n\n\n\n\n"
 }
 
 function createWpUser(){
