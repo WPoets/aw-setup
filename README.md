@@ -24,25 +24,12 @@ Download this script
 
 for EE3
 ```
-wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/ee3-setup.sh"
+wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/ee3-setup.sh" && chmod u+x ee3-setup.sh
 ```
 
 for EE4
 ```
-wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/ee4-setup.sh"
-```
-
-Make it executeble
-
-for EE3
-```
-chmod u+x ee3-setup.sh
-
-```
-for EE4
-```
-chmod u+x ee4-setup.sh
-
+wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/ee4-setup.sh" && chmod u+x ee3-setup.sh
 ```
 
 ## Running the Script
