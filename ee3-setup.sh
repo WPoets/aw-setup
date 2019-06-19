@@ -45,6 +45,9 @@ function installAw2(){
     #import all data again to import the posts whose post type is registered by the above command
     wp import /tmp/all-posts.xml --authors=skip --allow-root
     
+    #to change the file permission of all new installed plugins to www-data user
+    chown -R www-data:www-data wp-content/*
+    
     printf "\n\n\n\n\n"
 }
 
