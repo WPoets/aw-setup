@@ -1,3 +1,4 @@
+Curent Version: 2.0
 Setup instructions
 -------------------
 1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
@@ -17,3 +18,4 @@ Setup instructions
 4. Also create taxonomy 'task_tag' and assign it to taxonomy holder post type, for this keep public = false, and hierarchical = false
 5. Now import plot.xml via wordpress importer.
 6. You may have to do it twice, due to limitation of WordPress.
+7. run <site.url>/plot/modules/setup to setup the database tables.
