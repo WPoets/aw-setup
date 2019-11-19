@@ -1,0 +1,19 @@
+Setup instructions
+-------------------
+1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
+
+[services.add db service_label='DB Services' post_type='db_service' desc='database services' /]
+[services.add form_control service_label='Form Control Service' post_type='form_control' desc='Form Control Service' /]
+[services.add form_control2 service_label='Form Control 2 Service' post_type='form_control2' desc='Form Control 2 Service' /]
+[services.add ui service_label='UI Services' post_type='ui_service' desc='UI Services' /]
+[services.add notification_service service_label='Notification Services' post_type='notification_service' desc='Notification Services' /]
+[services.add plot service_label='Plot Service' post_type='plot_service' desc='Plot Service' /]
+
+2. If post type 'taxonomy_holder' does not exists create it, keep public = false.
+3. Create following taxonomies, and assign it to taxonomy holder post type, for each of these taxonomies make sure public=false, and hierarchical = true
+	a. task_status
+	b. story_status
+	c. note_type
+4. Also create taxonomy 'task_tag' and assign it to taxonomy holder post type, for this keep public = false, and hierarchical = false
+5. Now import plot.xml via wordpress importer.
+6. You may have to do it twice, due to limitation of WordPress.
