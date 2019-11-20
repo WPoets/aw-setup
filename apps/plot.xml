@@ -9296,9 +9296,9 @@ and
                     <span class="br br-5 pad-x-2 pad-y-1 gray mar-b-1 mar-t-1 is-inline-block add-tag pointer ">+</span>
                   </div>
                   <div class="align-items-center is-flex is-relative">                      
-                      <span class="editor-text-formatting active-toolbar mar-x-2">[aw2.module slug="icons" post_type="c_plot" template="icon-text-formatting" color="gray" /]</span>
+                      <span class="editor-text-formatting active-toolbar mar-x-2">[plot.icon.text-formatting color="gray" /]</span>
                
-                      <span class="editor-save mar-x-2" title='save'>[aw2.module slug="icons" post_type="c_plot" template="icon-save" color="gray" /]</span>
+                      <span class="editor-save mar-x-2" title='save'>[plot.icon.save color="gray" /]</span>
                       <div class="loader-save" style="display:none;"></div> 
                   </div>
                 </div>
@@ -9759,10 +9759,10 @@ and
                 [/loop.@activity]
               </div>
               <div class="swiper-button-next"> 
-                <div class="gray-light-bg">[aw2.module slug="icons" post_type="c_plot" template="icon-arrow-right" color="brand-white" /]</div>
+                <div class="gray-light-bg">[plot.icon.arrow-right color="brand-white" /]</div>
               </div>
               <div class="swiper-button-prev"> 
-                <div class="gray-light-bg">[aw2.module slug="icons" post_type="c_plot" template="icon-arrow-left" color="brand-white" /]</div>
+                <div class="gray-light-bg">[plot.icon.arrow-left color="brand-white" /]</div>
               </div>
             </div>
           </div>
