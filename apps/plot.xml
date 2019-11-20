@@ -5673,11 +5673,11 @@ class="btn [module.get class default=' btn-primary btn-md'/]">[if.not_empty modu
           <div class="col-1 no-padding is-flex align-items-center">
           	[if.equal lhs="{aw2.get @eachUrl.index}" rhs="1"]
             	<span class="add-more-url">
-              	[aw2.module slug="icons" post_type="c_plot" template="icon-add-new" color="gray" /]
+              	[plot.icon.add-new color="gray" /]
               </span>
             [/if.equal]
             [if.else]
-            	<span class="remove-url">[aw2.module slug="icons" post_type="c_plot" template="icon-remove" color="gray" /]</span>
+            	<span class="remove-url">[plot.icon.remove color="gray" /]</span>
             [/if.else]
 					</div>
         </div>
@@ -12308,7 +12308,6 @@ body{
   </form>
 
   [session_ticket.create nonce=yes set=module.ticket_id /]
-  [arr.create post_type="m_plot" set="module.collection" /]
   [session_ticket.set_activity {module.ticket_id} collection='{module.collection}' module='{module.slug}.save_references' /]
 
   <script type=spa/axn

@@ -1,4 +1,4 @@
-Curent Version: 2.0
+Curent Version: 2.1
 Setup instructions
 -------------------
 1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
@@ -19,3 +19,9 @@ Setup instructions
 5. Now import plot.xml via wordpress importer.
 6. You may have to do it twice, due to limitation of WordPress.
 7. run <site.url>/plot/modules/setup to setup the database tables.
+7. run <site.url>/plot/modules/migration if you need to migrate old plot tasks.
+
+
+Some Issues
+----------------
+DB service might not have  meta.select_meta_key_value_pair template, please add it.
