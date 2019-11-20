@@ -1902,7 +1902,7 @@
       [message]
        
        I just updated <em>[template.get data.activity_title /]</em> on plot. <br />
-       For details please check the <a href="[template.get activity_url /]">[template.get data.activity_url /]</a>
+       For details please check the <a href="[template.get data.activity_url /]">[template.get data.activity_url /]</a>
   		 <br /> <br />
        thanks, <br />
        [template.get data.display_name /]
@@ -1921,7 +1921,7 @@
       [message]
        
        I just assigned task <em>[template.get data.activity_title /]</em> to you. <br />
-       For details please check the <a href="[template.get activity_url /]">[template.get data.activity_url /]</a>
+       For details please check the <a href="[template.get data.activity_url /]">[template.get data.activity_url /]</a>
   		 <br /> <br />
        thanks, <br />
        [template.get data.display_name /]
@@ -1940,7 +1940,7 @@
       [message]
        
        I just assigned user story <em>[template.get data.activity_title /]</em> to you. <br />
-       For details please check the <a href="[template.get activity_url /]">[template.get data.activity_url /]</a>
+       For details please check the <a href="[template.get data.activity_url /]">[template.get data.activity_url /]</a>
   		 <br /> <br />
        thanks, <br />
        [template.get data.display_name /]
