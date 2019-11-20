@@ -10680,7 +10680,7 @@ and
                     [form_control.text label="Due Date" name="task_due_date" value="" id="task_due_date" class="task_due_date" required="yes" /] 
                   </div>  
                   <div class="col-6">
-                    [form_control.text label="Estimated Time" name="estimated_time" placeholder="HH:MM" value="" id="estimated_time" class="estimated_time" required="yes" /] 
+                    [form_control.time label="Estimated Time" name="estimated_time" placeholder="HH:MM" value="" id="estimated_time" class="estimated_time" required="yes" /] 
                   </div>
                </div>
               	<button type="submit" id="add-user-story" value="" class="btn btn-primary add-user-story width-100">Save</button>
