@@ -40,11 +40,11 @@
 				
 			
 
-		<item>
+			<item>
 		<title>task</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=858293</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860530</link>
 		<pubDate>Sat, 26 Oct 2019 15:14:03 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858293</guid>
 		<description></description>
 		<content:encoded><![CDATA[[env.set_array task]
@@ -153,7 +153,8 @@
                 ON [module.previous_query_no /].data_id = plot.coll_id and coll_type="task" 
                 AND meta_key="task_status" 
                 [if.not_empty env.task_status]
-                and meta_value = "[env.get task_status /]"
+                	[if.not_arr task_status] [env.get task_status.comma o.set='task_status'/] [/if.not_arr]
+                and meta_value in ([env.get task_status.quote_comma /])
                 [/if.not_empty]
             [/sql]
           [/filter]          
@@ -346,7 +347,7 @@
   }
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858293</wp:post_id>
+		<wp:post_id>860530</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 15:14:03]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 15:14:03]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -360,7 +361,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -369,9 +370,9 @@
 							</item>
 					<item>
 		<title>user_story</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=858297</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860531</link>
 		<pubDate>Mon, 28 Oct 2019 06:05:48 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858297</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add list]
@@ -673,7 +674,7 @@
   }
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858297</wp:post_id>
+		<wp:post_id>860531</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 06:05:48]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 06:05:48]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -687,7 +688,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -704,9 +705,9 @@
 							</item>
 					<item>
 		<title>icon</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=858313</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860532</link>
 		<pubDate>Mon, 28 Oct 2019 06:45:19 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858313</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -1039,7 +1040,7 @@
   </svg>
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858313</wp:post_id>
+		<wp:post_id>860532</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 06:45:19]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 06:45:19]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -1053,7 +1054,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1062,9 +1063,9 @@
 							</item>
 					<item>
 		<title>card</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=858320</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860533</link>
 		<pubDate>Mon, 28 Oct 2019 07:24:27 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858320</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add story_card]
@@ -1398,17 +1399,10 @@
       [if.empty request.status]
       	$("li.li-all").addClass('active-status');
       [/if.empty]
-      
 
-      [if.not_empty request.assigned_to]
-        $(".status-bar a").attr('assigned_to','[aw2.get request.assigned_to /]');
-      [/if.not_empty]
-      [if.not_empty request.task_due]
-        $(".status-bar a").attr('priority','[aw2.get request.priority /]');
-      [/if.not_empty]
-      [if.not_empty request.task_tag]
+        $(".status-bar a").attr('assigned_to','[aw2.get request.assigned_to /]');  
+        $(".status-bar a").attr('priority','[aw2.get request.priority /]');    
         $(".status-bar a").attr('task_tag','[aw2.get request.task_tag /]');
-      [/if.not_empty]
 
     </script>
 [/templates.add]
@@ -1440,7 +1434,7 @@
   </div>
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858320</wp:post_id>
+		<wp:post_id>860533</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 07:24:27]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 07:24:27]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -1454,7 +1448,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1463,9 +1457,9 @@
 							</item>
 					<item>
 		<title>note</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=858363</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860534</link>
 		<pubDate>Mon, 28 Oct 2019 15:24:50 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858363</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add add]
@@ -1600,7 +1594,7 @@
 [/templates.add]
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858363</wp:post_id>
+		<wp:post_id>860534</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 15:24:50]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 15:24:50]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -1614,7 +1608,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1623,9 +1617,9 @@
 							</item>
 					<item>
 		<title>heartbeat</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=858379</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860535</link>
 		<pubDate>Mon, 28 Oct 2019 16:27:59 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858379</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add create_heartbeat]
@@ -1678,7 +1672,7 @@
   [template.return template.ack.json_encode /]
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858379</wp:post_id>
+		<wp:post_id>860535</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 16:27:59]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 16:27:59]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -1692,14 +1686,14 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>filter</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=858535</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860536</link>
 		<pubDate>Sat, 02 Nov 2019 07:25:08 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858535</guid>
 		<description></description>
 		<content:encoded><![CDATA[//**
@@ -1714,28 +1708,43 @@
 //** Element **//
 [templates.add get_assigned_to]
   [query.get_users set='template.users' /]
-  	[module.set_array users_array.new label="All" value="all" /]
     [loop.@user template.users]
       [module.set_array users_array.new label="{@user.item.display_name}" value="{@user.item.data.user_email}" /] 
     [/loop.@user]
-  [form_control.select  label="Assign To" name="assigned_to" id="assigned_to" options_array="{module.users_array}"  value="{template.email}" required="yes" /]
+  [form_control.select  label="Assign To" name="assigned_to" id="assigned_to" options_array="{module.users_array}"  value="{template.email}" required="yes"  /]
 [/templates.add]
 
 [templates.add get_assigned_to_filter]
   [query.get_users set='template.users' /]
+   [module.set_array users_array.new label="Anyone" value="" /]
     [loop.@user template.users]
       [module.set_array users_array.new label="{@user.item.display_name}" value="{@user.item.data.user_email}" /] 
     [/loop.@user]
-  [form_control.select  label="Assign To" name="assigned_to" id="assigned_to" options_array="{module.users_array}"  value="{template.email}" /]
+  [form_control.select  label="Assign To" name="assigned_to" id="assigned_to" options_array="{module.users_array}"  value="{template.email}"  default_option='no'/]
 [/templates.add]
 
 //** Element **//
 [templates.add get_task_status]
-	[form_control.select label="Task Status" id="task_status" taxonomy = "task_status" value="{template.task_status}" required="{template.is_required}" /]
+  [query.get_terms taxonomies="task_status" set="template.cat" hide_empty=0 /]
+
+  [module.set_array task_status_array.new label="All" value="" /]
+  [loop.@ctr template.cat]
+    [module.set_array task_status_array.new label='{@ctr.item.name}' value='{@ctr.item.slug}' /] 
+  [/loop.@ctr]
+
+  [form_control.select  label="Task Status" id="task_status" options_array="{module.task_status_array}" value="{template.task_status}" default_option='no' required="{template.is_required}"/]
 [/templates.add]
 
 [templates.add get_story_status]
-	[form_control.select label="Story Status" id="story_status" taxonomy = "story_status" value="{template.story_status}" required="{template.is_required}" /]
+  [query.get_terms taxonomies="story_status" set="template.cat" hide_empty=0 /]
+
+  [module.set_array story_status_array.new label="All" value="" /]
+  [loop.@ctr template.cat]
+    [module.set_array story_status_array.new label='{@ctr.item.name}' value='{@ctr.item.slug}' /] 
+  [/loop.@ctr]
+
+  [form_control.select label="Story Status" id="story_status"  options_array="{module.story_status_array}" value="{template.story_status}" 
+  										 default_option='no' required="{template.is_required}"/]
 [/templates.add]
 
 //** Element **//
@@ -1769,7 +1778,14 @@
 
 //** Element **//
 [templates.add get_tags]
-  [form_control.select label="Tags" id="task_tag" taxonomy= "task_tag" value="{template.story_task_tags}" /]
+  [query.get_terms taxonomies="task_tag" set="template.cat" hide_empty=0 /]
+
+  [module.set_array task_tags_array.new label="Any Tag" value="" /]
+  [loop.@ctr template.cat]
+    [module.set_array task_tags_array.new label='{@ctr.item.name}' value='{@ctr.item.slug}' /] 
+  [/loop.@ctr]
+
+  [form_control.select  label="Tags" id="task_tag" options_array="{module.task_tags_array}" value="{template.story_task_tags}" default_option='no'/]
 [/templates.add]
 
 [templates.add select_tags]
@@ -1781,7 +1797,7 @@
 [/templates.add]
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858535</wp:post_id>
+		<wp:post_id>860536</wp:post_id>
 		<wp:post_date><![CDATA[2019-11-02 07:25:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-11-02 07:25:08]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -1795,7 +1811,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1804,9 +1820,9 @@
 							</item>
 					<item>
 		<title>activity</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=858621</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860537</link>
 		<pubDate>Sun, 03 Nov 2019 13:17:22 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858621</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add list]
@@ -1865,7 +1881,7 @@
 	[template.return template.ack /]
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858621</wp:post_id>
+		<wp:post_id>860537</wp:post_id>
 		<wp:post_date><![CDATA[2019-11-03 13:17:22]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-11-03 13:17:22]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -1879,7 +1895,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1888,9 +1904,9 @@
 							</item>
 					<item>
 		<title>send-mail</title>
-		<link>http://nxt.wpoets.com/?post_type=plot_service&#038;p=859107</link>
+		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860538</link>
 		<pubDate>Tue, 19 Nov 2019 15:41:04 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=859107</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add new_feedback]
@@ -1950,7 +1966,7 @@
 
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>859107</wp:post_id>
+		<wp:post_id>860538</wp:post_id>
 		<wp:post_date><![CDATA[2019-11-19 15:41:04]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-11-19 15:41:04]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -1964,10 +1980,10 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-		
+				
 		<item>
 		<title>Send</title>
 		<link>http://nxt.wpoets.com/?post_type=notification_service&#038;p=558662</link>
@@ -6160,6 +6176,128 @@ class="btn [module.get class default=' btn-primary btn-md'/]">[if.not_empty modu
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
+					<item>
+		<title>hhmm_duration</title>
+		<link>https://www.wpoets.com/?post_type=form_control&#038;p=860587</link>
+		<pubDate>Sat, 23 Nov 2019 07:12:22 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://www.wpoets.com/?post_type=form_control&#038;p=860587</guid>
+		<description></description>
+		<content:encoded><![CDATA[//************ Build the Args *************************//
+
+[module.set attr]
+	[loop.@ctr module.attr][aw2.get @ctr.key/]="[aw2.get @ctr.item/]" $spacer [/loop.@ctr]
+[/module.set]
+[php.str_replace p1="$spacer" p2=" " p3="{module.attr}" set="module.attr_string"/]
+
+[module.set label_classes.bs3='input-group' cond='{module.args.form_type}' not_equal='default' /]
+[module.set label_classes.bs3='col-md-3' cond='{module.args.form_type}' equal='horizontal' /]
+[module.set label_classes.bs3='{module.label_class}' not_empty='{module.label_class}' /]
+[module.set label_classes.bs3='{module.args.bs3_label_class}' not_empty='{module.args.bs3_label_class}' /]  
+
+[module.set label_classes.new='control-label' cond='{module.args.form_type}' equal='horizontal' /]
+
+[module.set col.bs3='col-md-9' cond='{module.args.form_type}' equal='horizontal' /]
+[module.set col.bs3='{module.control_class}' not_empty='{module.control_class}' /]
+[module.set col.bs3='{module.args.bs3_control_class}' not_empty='{module.args.bs3_control_class}' /]  
+
+[module.set control_classes.new='input-icon left' not_empty='{module.prepend_inline_icon}' /]
+[module.set control_classes.new='input-icon right' not_empty='{module.append_inline_icon}' /]
+[module.set control_classes.new='input-group' not_empty='{module.prepend_icon}' /]
+[module.set control_classes.new='input-group' not_empty='{module.append_icon}' /]
+[module.set control_classes.new='input-group' not_empty='{module.button_text}' /]
+[module.set control_classes.new='input-group' not_empty='{module.addon_text}' /]
+  
+<div class="form-group row [module.get form-control-class /]">
+	[if.not_empty module.label]
+	<div class='[module.get label_classes.space /] col-12 no-padding'>
+		<label for="[module.get id /]">[module.get label /][if.equal lhs="{module.required}" rhs="yes"]<span class='text-danger'>*</span>[/if.equal]</label>
+	</div>			
+	[/if.not_empty]
+	
+	[if.equal lhs='{module.args.form_type}' rhs='horizontal']<div class="[module.get col.space/]"> [/if.equal] 
+	<div class="[module.get control_classes.space /] col-12 no-padding">
+	  [if.not_empty module.addon_text]
+			<span class="input-group-addon">
+			 [module.get addon_text /]
+			</span>
+		[/if.not_empty]
+		[if.not_empty module.prepend_icon]
+			<span class="input-group-addon">
+				<i class="fa [module.get prepend_icon /]"></i>
+			</span>
+		[/if.not_empty]
+		[if.not_empty module.prepend_inline_icon]
+			<i class="fa [module.get prepend_inline_icon /]"></i>
+		[/if.not_empty]
+		[if.not_empty module.append_inline_icon]
+			<i class="fa [module.get append_inline_icon /]"></i>
+		[/if.not_empty]
+		
+		<input 
+			id="[module.get id /]" 
+			name="[module.get id /]" 
+			type="text" 
+			placeholder="[module.get placeholder default='{module.label}'/]" 
+			class="form-control input-md [module.get class /]" 
+			value='[module.get value /]'  
+			[if.equal lhs="{module.required}" rhs="yes"]required[/if.equal]
+			[if.equal lhs="{module.readonly}" rhs="yes"]readonly[/if.equal]				
+			[module.get attr_string/] 
+			msg-required="<i class='icon icon-warning'></i> [module.get label /] is required!"
+		/>
+		
+		[if.not_empty module.append_icon]
+			<span class="input-group-addon">
+				<i class="fa [module.get append_icon /]"></i>
+			</span>
+		[/if.not_empty]
+	</div>
+	<i class="info-block">[module.get help-block /]</i>
+	<div class="help-block"></div>
+		
+	[if.equal lhs='{module.args.form_type}' rhs='horizontal']
+	   </div>
+	  <div class="col-md-12"></div>
+	[/if.equal]
+	
+  <script type="spa/axn" axn="core.run_script" cdn_js_files='bootstrap-duration-picker/bootstrap-duration-picker.js' cdn_css_files='bootstrap-duration-picker/bootstrap-duration-picker.css'>
+  	   $('#[module.get id /]').durationPicker({
+          showSeconds: false,
+          showDays: false,
+          onChanged: function (newVal) {
+            console.log(newVal);
+          }
+        });
+  </script>
+  
+</div>				]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>860587</wp:post_id>
+		<wp:post_date><![CDATA[2019-11-23 07:12:22]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-11-23 07:12:22]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hhmm_duration]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[form_control]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2019-11-22]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[duration]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 		
 
 		<item>
@@ -8099,12 +8237,12 @@ and
 		</wp:postmeta>
 							</item>
 						
-
+		
 		<item>
 		<title>home</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858273</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860495</link>
 		<pubDate>Sat, 26 Oct 2019 08:08:14 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858273</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -8193,9 +8331,10 @@ and
         </div>
         <div class="col-md-6">
         		<h3 class="font-bold">Assigned to You</h3>
-            [plot.user_story.list records="4" assigned_to="{{aw2.get current_user.user_email}}" set="template.user_stories" /] 
-            [plot.task.list records="4" assigned_to="{{aw2.get current_user.user_email}}"  set="template.tasks" /]
-            
+            [plot.user_story.list records="4" assigned_to="{{aw2.get current_user.user_email}}" set="template.user_stories" /]
+            [template.set statuses='new,work-in-progress,feedback' /]
+          
+            [plot.task.list records="4" assigned_to="{{aw2.get current_user.user_email}}" task_status='{template.statuses.comma}'  set="template.tasks" /]
             <div class="no-gutters row mobile-section mar-b-4 gray text-uppercase font-size-small">
                 <div class="col-6">
                     <div class="font-bold gray-lighter-bg pad-2 text-center story-tab active pointer" id="story-tab">User Stories</div>
@@ -8254,7 +8393,7 @@ and
 </script>
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858273</wp:post_id>
+		<wp:post_id>860495</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 08:08:14]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 08:08:14]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -8268,14 +8407,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>tasks</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858277</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860496</link>
 		<pubDate>Sat, 26 Oct 2019 11:25:37 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858277</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -8368,8 +8511,6 @@ and
 
 			[plot.task.list page="{template.page}" search="{template.search}" assigned_to="{template.assigned_to}" task_status="{template.task_status}" task_due="{template.task_due}" task_sprint="{template.task_sprint}" priority="{template.priority}" task_tag="{template.task_tag}" table="{template.table}" task_sprint_query_part="{module.task_sprint_query_part}" task_due_query_part="{module.task_due_query_part}" set="template.rs" /]
       
-				//** [template.get rs.query /] **//
-		       
 				<div class="row">
           [loop.@task template.rs.rows]
            	<div class="col-md-6">[plot.card.task_card task_data="{@task.item}" /]</div>
@@ -8404,7 +8545,7 @@ and
 [/templates.add]
 //** GET TASKS: END **//]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858277</wp:post_id>
+		<wp:post_id>860496</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 11:25:37]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 11:25:37]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -8418,14 +8559,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>notes</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858279</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860497</link>
 		<pubDate>Sat, 26 Oct 2019 11:25:50 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858279</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -8495,7 +8640,7 @@ and
    </template>
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858279</wp:post_id>
+		<wp:post_id>860497</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 11:25:50]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 11:25:50]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -8509,24 +8654,25 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>user-stories</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858281</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860498</link>
 		<pubDate>Sat, 26 Oct 2019 11:26:59 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858281</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
   <div class="br-bottom brand-white-bg filters-wrapper pad-4">
     <form action="" class="filter">
       <div class="row">
-          
-          <div class="col-lg-3 col-md-6">
-              [plot.filter.get_story_status /]
-          </div>
+
           <div class="col-lg-3 col-md-6">
               [plot.filter.get_assigned_to_filter /]
           </div>
@@ -8599,6 +8745,15 @@ and
           	[plot.card.story_card story_data="{@story.item}"/]
          	</div>
         [/loop.@story] 
+        
+        [if.empty template.rs.rows]
+        	<div class="col-md-6 mar-b-7">
+           <p>
+           	No story [if.not_empty template.assigned_to] assigned to <em>[template.get assigned_to/]</em> [/if.not_empty]
+            [if.not_empty template.story_status] for <em>[template.get story_status/]</em>[/if.not_empty]
+           </p>	
+         	</div>
+        [/if.empty]
         <div class="gap-6"></div>      
     </div>
 
@@ -8634,7 +8789,7 @@ and
 
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858281</wp:post_id>
+		<wp:post_id>860498</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 11:26:59]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 11:26:59]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -8648,14 +8803,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>search-results</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858283</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860499</link>
 		<pubDate>Sat, 26 Oct 2019 11:32:28 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858283</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -8741,7 +8900,7 @@ and
   
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858283</wp:post_id>
+		<wp:post_id>860499</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 11:32:28]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 11:32:28]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -8755,14 +8914,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>task</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858285</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860500</link>
 		<pubDate>Sat, 26 Oct 2019 11:37:34 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858285</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -8771,8 +8934,8 @@ and
     .filter-icon {
         display: none !important;
     }
-[/css.style]
-    [plot.task.single task_id='{qs.0}' set="template.task_data" not_empty="{qs.0}" /]
+	[/css.style]
+  [plot.task.single task_id='{qs.0}' set="template.task_data" not_empty="{qs.0}" /]
     
 		//** check is valied tast id **//
     [template.set task_id="{template.task_data.task_id}" /]
@@ -8876,31 +9039,35 @@ and
                   });
                 </script>
                 
-                [aw2.get template.task_data.task_reference_label_url.json_decode
+                <div class="references pad-y-6 br-bottom">
+                  [aw2.get template.task_data.task_reference_label_url.json_decode
                      					set="module.reference_label_url" /] 
                      
-               [if.not_empty module.reference_label_url.0.label]
-                <div class="references pad-y-6 br-bottom">
-                  <h5 class="font-bold">Useful and Reference Links</h5>
-                  <ul class="reference-links">
-                    [loop.@ref module.reference_label_url]
-                      <li>
-                      	<span class="align-items-center br-50 font-bold font-size-smaller gray-lighter-bg is-inline-flex justify-content-center text-center">
-                        [aw2.get @ref.index /]</span>
-                        <a href="[aw2.get @ref.item.url /]" target="_blank" 
-                        	 class="pad-x-2"  rel="noopener noreferrer">[aw2.get @ref.item.label /]</a></li>
-                    [/loop.@ref]
-                  </ul>                 
+                  [if.not_empty module.reference_label_url]
+                    <h5 class="font-bold">Reference Links</h5>
+                    <ul class="reference-links">
+                      [loop.@ref module.reference_label_url]
+                        [do.@label not_empty='{@ref.item.url}']
+                        <li>
+                          <span class="align-items-center br-50 font-bold font-size-smaller gray-lighter-bg is-inline-flex justify-content-center text-center">
+                          [aw2.get @ref.index /]</span>
+                          <a href="[aw2.get @ref.item.url /]" target="_blank" 
+                             class="pad-x-2"  rel="noopener noreferrer">[aw2.get @ref.item.label /]</a></li>
+                         [/do.@label]    
+                      [/loop.@ref]
+                    </ul>
+                  [/if.not_empty]
                   [aw2.module slug="references" task_id="{template.task_id}" 
                   						story_id="{template.story_id}" type="task" is_required="required" /]
-                              
                 </div>
-               [/if.not_empty] 
+                
                 [aw2.get template.task_data.task_attachments.json_decode set="module.attachments" /]
                 <div class="attachments pad-y-6 br-bottom">
                   <h5 class="font-bold">Attachments</h5>
                   <ul class="attachment-links mar-b-6">
                   	[loop.@att module.attachments]
+                     [do.@label not_empty='{@att.item.url}']
+
                     <li>
                       <span class="align-items-center br-50 font-bold font-size-smaller gray-lighter-bg is-inline-flex justify-content-center text-center">[aw2.get @att.index /]</span>
                       [php.pathinfo p1="{@att.item.url}" set="module.urlinfo" /]
@@ -8908,6 +9075,7 @@ and
                       <a href="[aw2.get @att.item.url /]" target="_blank" 
                       	 class="pad-x-2" rel="noopener noreferrer">[aw2.get module.urlinfo.basename /]</a>
                     </li>
+                    [/do.@label]
                     [/loop.@att]                   
                   </ul>
                   
@@ -8971,8 +9139,8 @@ and
                      [aw2.get @feed.item.task_feedback_reference_label_url.json_decode
                      					set="module.reference_label_url" /] 
                      
-                     [if.not_empty module.reference_label_url.0.label]
-                      <h6>Useful and Reference Links</h6>
+                     [if.not_empty module.reference_label_url]
+                      <h6>Reference Links</h6>
                       <ul class="reference-links">
                       	[loop.@ref module.reference_label_url]
                           <li>
@@ -8985,7 +9153,7 @@ and
                     [/if.not_empty]
                     [aw2.get @feed.item.task_feedback_attachments.json_decode set="module.attachments" /]
                    
-                    [if.not_empty module.attachments.0.url]
+                    [if.not_empty module.attachments]
                       <h6>Attachments</h6>
                       <ul class="attachment-links">
                       	[loop.@att module.attachments]
@@ -9029,7 +9197,12 @@ and
                   <img src="[plot.avatar email='{template.story_data.story_assigned_to}' /]" class="br-50" alt="[template.get story_assigned_to.display_name /]" title="[template.get story_assigned_to.display_name /]" /> 
                 </div>
                 <div class="story-content pad-x-4 no-padding-right">
-                  <h5 class="no-padding-bottom pad-y-1">[template.get story_data.story_title /]</h5>
+                  <h5 class="no-padding-bottom pad-y-1">
+                  	<a href='[app.path]/user-story/[template.get story_data.story_id /]' 
+                    	 story_id="[template.get story_data.story_id /]" bind="click" 
+                       route_ajax='user-story/[template.get story_data.story_id /]' 
+                       control='main' axn='page.update'>[template.get story_data.story_title /]</a>
+         					</h5>
                   
                   //** Read More functionality **//
                   [aw2.get template.story_data.story_description set='module.content_more' /]
@@ -9199,7 +9372,7 @@ and
   <script type="spa/axn" axn=page.update route_ajax='task/[request.get task_id /]'></script> 
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858285</wp:post_id>
+		<wp:post_id>860500</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 11:37:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 11:37:34]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -9213,14 +9386,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>note</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858287</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860501</link>
 		<pubDate>Sat, 26 Oct 2019 11:37:44 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858287</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -9232,7 +9409,7 @@ and
  
   [template.set note_id = {qs.0} /]
   [plot.note.single note_id="{template.note_id}" o.set="template.note_meta" not_empty='{qs.0}' /]
-  
+
   [if.empty template.note_meta]
   	[template.set error]
     	<h1 class='mar-t-10 text-center brand-warning'>Note does not exists.</h1>
@@ -9258,10 +9435,10 @@ and
                 <div class="col-6 is-flex align-items-center pad-4">                  
                     <div class="pad-x-2">
                         <p class="mar-b-1 font-bold font-size-smaller">
-                        	User Story: <span class="font-light brand-fourth is-inline-block">[template.note_meta.user_story_title /]</span>
+                        	User Story: <a href='[env.get app.path /]/user-story/[template.note_meta.user_story_id /]' class="font-light brand-fourth is-inline-block" target='_blank' rel="noopener noreferrer">[template.note_meta.user_story_title /]</a>
                         </p>
                         <p class="no-margin font-bold font-size-smaller">
-                        	Task: <span class="font-light brand-fourth is-inline-block">[template.note_meta.task_title /]</span>
+                        	Task: <a href='[env.get app.path /]/task/[template.note_meta.task_id /]' class="font-light brand-fourth is-inline-block" target='_blank' rel="noopener noreferrer">[template.note_meta.task_title /]</a>
                         </p>
                     </div>
                 </div>
@@ -9488,7 +9665,7 @@ and
     [module.get heartbeatRes /]
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858287</wp:post_id>
+		<wp:post_id>860501</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 11:37:44]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 11:37:44]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -9502,14 +9679,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>user-story</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858289</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860502</link>
 		<pubDate>Sat, 26 Oct 2019 11:38:14 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858289</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -9588,12 +9769,14 @@ and
                 <div class="references pad-y-6 br-bottom">
                   <h5 class="font-bold">Reference Links</h5>
                    [aw2.get template.story_data.story_reference_label_url.json_decode
-                     					set="module.reference_label_url" /] 
-                  [if.not_empty module.reference_label_url.0.label]
+                     					set="module.reference_label_url" /]
+                            
+                  [if.not_empty module.reference_label_url]
                     <ul class="reference-links">
-
                       [loop.@ref module.reference_label_url]
-                        <li><span class="align-items-center br-50 font-bold font-size-smaller gray-lighter-bg is-inline-flex justify-content-center text-center">[aw2.get @ref.index /]</span><a href="[aw2.get @ref.item.url /]" target="_blank" class="pad-x-2"  rel="noopener noreferrer">[aw2.get @ref.item.label /]</a></li>
+                        [do.@label not_empty='{{aw2.get @ref.item.url}}']
+                        	<li><span class="align-items-center br-50 font-bold font-size-smaller gray-lighter-bg is-inline-flex justify-content-center text-center">[aw2.get @ref.index /]</span><a href="[aw2.get @ref.item.url /]" target="_blank" class="pad-x-2"  rel="noopener noreferrer">[aw2.get @ref.item.label /]</a></li>
+                        [/do.@label]
                       [/loop.@ref]
                     </ul>
                   [/if.not_empty]
@@ -9605,10 +9788,12 @@ and
                     [aw2.get  template.story_data.story_attachments.json_decode set="module.attachments" /]
                   <ul class="attachment-links mar-b-6">
                   	[loop.@attach module.attachments]
+                     [do.@label not_empty='@attach.item.url']
                       <li>
                         <span class="align-items-center br-50 font-bold font-size-smaller gray-lighter-bg is-inline-flex justify-content-center text-center">[aw2.get @attach.index /]</span>
                         <a href="[aw2.get @attach.item.url /]" target="_blank" class="pad-x-2" rel="noopener noreferrer">[php.basename p1="{@attach.item.url}" /]</a>
                       </li>
+                      [/do.@label]
                     [/loop.@attach]
                   </ul>
                   [aw2.module slug="attachments" story_id="{template.story_id}" type="story" is_required="required" /]									
@@ -9880,7 +10065,7 @@ and
     </template>
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858289</wp:post_id>
+		<wp:post_id>860502</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-26 11:38:14]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-26 11:38:14]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -9894,14 +10079,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>add-user-story</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858317</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860503</link>
 		<pubDate>Mon, 28 Oct 2019 07:18:43 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858317</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -10088,17 +10277,24 @@ and
 
 
     //** Multiple file upload**//
-    [loop.@i start=1 stop="{request.attachment_count}" step=1 ]
-      [aw2.upload post_id="1" upload_element_id='attachment{@i.item}' set="template.image_id" /]
-      [if.greater_than_zero template.image_id]
-        [php.wp_get_attachment_url p1="{template.image_id}" set="template.attachment_url" /]  
-        [template.set_array attachment_ids.new id="{template.image_id}" url="{template.attachment_url}" /] 
+   [aw2.upload upload_multiple_to_path
+       upload_element_id="attachment"
+       dir_name="plot-docs/{template.story_id}"
+       overwrite_file='no'
+       set=template.file_res /]
+  	[if.empty  template.file_res.0.error]   
+      [if.greater_than_zero template.file_res.count]
+        [loop.@att template.file_res]
+          [template.set_array attachment_ids.new id="{@att.item.filename}" url="{@att.item.url}" /] 
+        [/loop.@att]
       [/if.greater_than_zero]
-    [/loop.@i]
+    [/if.empty] 
+    
     [template.get story_data.story_attachments.json_decode set="template.arr_story_attachment" /]
 		[loop.@eachAttachment template.arr_story_attachment]
       [template.set_array attachment_ids.new id="{aw2.get @eachAttachment.item.id}" url="{aw2.get @eachAttachment.item.url}" /] 
     [/loop.@eachAttachment]
+    
     [template.get attachment_ids.json_encode set="template.attachments" /]
 
     //** multiple reference lable and url **//
@@ -10181,7 +10377,7 @@ and
   	</template>
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858317</wp:post_id>
+		<wp:post_id>860503</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 07:18:43]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 07:18:43]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -10195,14 +10391,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>feedback</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858346</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860504</link>
 		<pubDate>Mon, 28 Oct 2019 14:40:57 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858346</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -10235,7 +10435,7 @@ and
         </div>
         <div class="col-md-6">
         	[if.equal lhs="{module.type}" rhs="task"]
-           [form_control.time label="Time Spent" name="time_spent" placeholder="HH:MM" id="time_spent" required="yes" /]
+           [form_control.hhmm_duration label="Time Spent" name="time_spent" placeholder="HH:MM" id="time_spent" required="yes" /]
         	[/if.equal]
         </div>
         <div class="col-12">
@@ -10308,13 +10508,15 @@ and
     //** Multiple file upload
     [aw2.upload post_id="1" attach_to_post upload_element_id='{template.type}_feedback_attachment' 
     												set="template.image_id" /]**//
-      
+   [if.empty  template.file_res.0.error]   
     [if.greater_than_zero template.file_res.count]
       [loop.@att template.file_res]
         [template.set_array attachment_ids.new id="{@att.item.filename}" url="{@att.item.url}" /] 
       [/loop.@att]
     [/if.greater_than_zero]
+    [/if.empty]
     
+   
     [template.get attachment_ids.json_encode set="template.attachments" /]
 	
     //** multiple reference lable and url **//
@@ -10325,7 +10527,7 @@ and
       [/loop.@each_ref]
     [/if.not_empty]
 	
-	
+
   	[if.equal lhs="{template.type}" rhs="task"]
 
       //** set meta array **//
@@ -10333,8 +10535,8 @@ and
       [template.set meta_arr.task_feedback_reference_label_url="{template.reference_arr.json_encode}" /]
       [template.set meta_arr.task_feedback_attachments="{template.attachments}" not_empty="{template.attachments}" /]
       
-      [php.strtotime p1='1970-01-01 {request.time_spent} UTC' o.set='template.time_spent'/]
-      [template.set meta_arr.time_spent="{template.time_spent}" /]
+     
+      [template.set meta_arr.time_spent="{request.time_spent}" /]
       [template.set meta_arr.task_feedback_id="{template.feedback_id}" /]
       [template.set meta_arr.task_id="{template.task_id}" /]
       [template.set meta_arr.story_id="{template.story_id}" /]    
@@ -10432,7 +10634,7 @@ and
    	//** set response message **//
     [if.empty template.res]
       [template.set alert_class="alert-success" /]
-      [template.set alert_msg="<strong>Success!</strong> Your record updated successfully!" /]
+      [template.set alert_msg="<strong>Success!</strong> Your feedback has been noted!" /]
     [/if.empty]
     [if.not_empty template.res]
       [template.set alert_class="alert-danger" /]
@@ -10461,11 +10663,12 @@ and
      [/template.set_array] 
 
   [plot.send-mail.new_feedback data='{template.for_email}' /]
-  
+
+
 [/templates.add]
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858346</wp:post_id>
+		<wp:post_id>860504</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 14:40:57]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 14:40:57]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -10479,14 +10682,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>add-note</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858356</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860505</link>
 		<pubDate>Mon, 28 Oct 2019 15:15:45 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858356</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -10563,7 +10770,7 @@ and
   </script>
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858356</wp:post_id>
+		<wp:post_id>860505</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 15:15:45]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 15:15:45]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -10577,14 +10784,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>add-task</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858359</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860506</link>
 		<pubDate>Mon, 28 Oct 2019 15:22:25 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858359</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -10643,6 +10854,9 @@ and
         <div class="modal-body">
           <form action="" class="add-task-form" novalidate>
             <div class="row">
+              <div class="col-12">
+                  <div class="feedback-res"></div>
+              </div>
               <div class="col-md-7">
                  <div class="row">
                   <div class="col-12">
@@ -10680,7 +10894,7 @@ and
                     [form_control.text label="Due Date" name="task_due_date" value="" id="task_due_date" class="task_due_date" required="yes" /] 
                   </div>  
                   <div class="col-6">
-                    [form_control.time label="Estimated Time" name="estimated_time" placeholder="HH:MM" value="" id="estimated_time" class="estimated_time" required="yes" /] 
+                    [form_control.hhmm_duration label="Estimated Time" name="estimated_time" placeholder="HH:MM" value="" id="estimated_time" class="estimated_time" required="yes" /] 
                   </div>
                </div>
               	<button type="submit" id="add-user-story" value="" class="btn btn-primary add-user-story width-100">Save</button>
@@ -10753,18 +10967,14 @@ and
        dir_name="plot-docs/{template.task_id}"
        overwrite_file='no'
        set=template.file_res /]
-    
-    [if.greater_than_zero template.file_res.count]
-      [loop.@att template.file_res]
-        [template.set_array attachment_ids.new id="{@att.item.filename}" url="{@att.item.url}" /] 
-      [/loop.@att]
-    [/if.greater_than_zero]
-     
-    
-    [template.get story_data.story_attachments.json_decode set="template.arr_story_attachment" /]
-		[loop.@eachAttachment template.arr_story_attachment]
-      [template.set_array attachment_ids.new id="{aw2.get @eachAttachment.item.id}" url="{aw2.get @eachAttachment.item.url}" /] 
-    [/loop.@eachAttachment]
+  	[if.empty  template.file_res.0.error]   
+      [if.greater_than_zero template.file_res.count]
+        [loop.@att template.file_res]
+          [template.set_array attachment_ids.new id="{@att.item.filename}" url="{@att.item.url}" /] 
+        [/loop.@att]
+      [/if.greater_than_zero]
+    [/if.empty] 
+        
     [template.get attachment_ids.json_encode set="template.attachments" /]
 
     //** multiple reference lable and url **//
@@ -10798,18 +11008,26 @@ and
 		
     	
     [template.set activity_url='{app.path}/task/{template.task_id}' /]
-     [template.set_array for_email]
+    [template.set_array for_email]
       [from_name][app.get settings.from_name/][/from_name]
       [from_email][app.get settings.from_email/][/from_email]
       [assigned_to][request.get assigned_to/][/assigned_to] 
       [display_name][env.get current_user.display_name /][/display_name]
       [activity_title][request.get task_title /][/activity_title]
       [activity_url][env.get template.activity_url  /][/activity_url]
-     [/template.set_array] 
+    [/template.set_array] 
 
- 		 [plot.send-mail.new_task data='{template.for_email}' /]
+ 		[plot.send-mail.new_task data='{template.for_email}' /]
   
+    [if.empty template.res]
+      [template.set alert_class="alert-success" /]
+      [template.set alert_msg="Task ({request.task_title}) was created." /]
+    [/if.empty]
+   
     
+    <template axn=selector.update selector='div.feedback-res' get='me.html'>
+    	[form_control.alert alert_class="{template.alert_class}" alert_msg="{template.alert_msg}" /]
+    </template>
     <script type="spa/axn" axn="core.run_script">
     	window.open('[app.path]/user-story/[aw2.get request.story_id /]', "_self");
       $(".add-task-form").trigger("reset");
@@ -10817,7 +11035,7 @@ and
   
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858359</wp:post_id>
+		<wp:post_id>860506</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 15:22:25]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 15:22:25]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -10831,14 +11049,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>api</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858383</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860507</link>
 		<pubDate>Mon, 28 Oct 2019 16:33:54 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858383</guid>
 		<description></description>
 		<content:encoded><![CDATA[//**
@@ -10892,7 +11114,7 @@ and
 
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858383</wp:post_id>
+		<wp:post_id>860507</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 16:33:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 16:33:54]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -10906,14 +11128,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>migration</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858385</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860508</link>
 		<pubDate>Mon, 28 Oct 2019 16:34:11 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858385</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -11312,7 +11538,7 @@ and
 
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858385</wp:post_id>
+		<wp:post_id>860508</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 16:34:11]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 16:34:11]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -11326,14 +11552,18 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>setup</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858387</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860509</link>
 		<pubDate>Mon, 28 Oct 2019 16:34:42 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858387</guid>
 		<description></description>
 		<content:encoded><![CDATA[[multi.select]
@@ -11375,7 +11605,7 @@ COMMIT;
 
 [/multi.select]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858387</wp:post_id>
+		<wp:post_id>860509</wp:post_id>
 		<wp:post_date><![CDATA[2019-10-28 16:34:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-10-28 16:34:42]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -11389,14 +11619,18 @@ COMMIT;
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>common-css</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858471</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860510</link>
 		<pubDate>Fri, 01 Nov 2019 01:38:00 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858471</guid>
 		<description></description>
 		<content:encoded><![CDATA[[css.minify]
@@ -12126,7 +12360,7 @@ body{
   [/css.less]
 [/css.minify]  ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858471</wp:post_id>
+		<wp:post_id>860510</wp:post_id>
 		<wp:post_date><![CDATA[2019-11-01 01:38:00]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-11-01 01:38:00]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -12138,16 +12372,12 @@ body{
 		<wp:post_type><![CDATA[m_plot]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[23]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
+														</item>
 					<item>
 		<title>attachments</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858614</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860511</link>
 		<pubDate>Sun, 03 Nov 2019 12:53:50 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858614</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -12226,18 +12456,20 @@ body{
                    overwrite_file='no'
                    set=template.file_res /]
                    
-    [if.greater_than_zero template.file_res.count]
-      [loop.@att template.file_res]
-        [template.set_array attachments.new id="{@att.item.filename}" url="{@att.item.url}" /] 
-      [/loop.@att]
-    [/if.greater_than_zero]
-    
+    [if.empty  template.file_res.0.error]           
+      [if.greater_than_zero template.file_res.count]
+        [loop.@att template.file_res]
+          [template.set_array attachments.new id="{@att.item.filename}" url="{@att.item.url}" /] 
+        [/loop.@att]
+      [/if.greater_than_zero]
+    [/if.empty]   
+
 			[php.array_merge p1="{template.old_attachments}" p2="{template.attachments}" 
       								 set="template.attachments" not_empty="{template.old_attachments}" /]
 		
     //** Activity log note set **//
     [template.set act_metas.activity_note="New attachment added." /]
-    
+
     //** set meta array **//
     [if.equal lhs="{template.type}" rhs="task"]
     		[template.set meta_arr.task_attachments="{template.attachments.json_encode}" not_empty="{template.attachments}" /]
@@ -12249,11 +12481,11 @@ body{
         [plot.user_story.update metas='{template.meta_arr}' object_id="{request.story_id}" set="template.res" /]
 				[plot.activity.log object_id="{template.story_id}"  metas="{template.act_metas}" coll_type="story_attachment" set="template.activity" /]  //** Activity log **//
     [/if.equal]
-    
+
    //** set response message **//
    [if.empty template.res]
    	[template.set alert_class="alert-success" /]
-    [template.set alert_msg="<strong>Success!</strong> Your record updated successfully!" /]
+    [template.set alert_msg="<strong>Success!</strong> Files uploaded successfully!" /]
    [/if.empty]
    [if.not_empty template.res]
     [template.set alert_class="alert-danger" /]
@@ -12271,7 +12503,7 @@ body{
 [/templates.add]
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858614</wp:post_id>
+		<wp:post_id>860511</wp:post_id>
 		<wp:post_date><![CDATA[2019-11-03 12:53:50]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-11-03 12:53:50]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -12285,14 +12517,18 @@ body{
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>references</title>
-		<link>http://nxt.wpoets.com/?post_type=m_plot&#038;p=858617</link>
+		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860512</link>
 		<pubDate>Sun, 03 Nov 2019 12:58:37 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858617</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
@@ -12377,7 +12613,7 @@ body{
    //** set response message	**//
      [if.empty template.res]
       [template.set alert_class="alert-success" /]
-      [template.set alert_msg="<strong>Success!</strong> Your record updated successfully! {{aw2.get template.story_id }}" /]
+      [template.set alert_msg="<strong>Success!</strong> Reference links added." /]
      [/if.empty]
      [if.not_empty template.res]
       [template.set alert_class="alert-danger" /]
@@ -12395,13 +12631,13 @@ body{
    	[/if.equal] 
     
      [if.equal lhs="{template.type}" rhs="story"]
-      <script type="spa/axn" axn=page.update route_ajax='story/[request.get story_id /]'></script> 
+      <script type="spa/axn" axn=page.update route_ajax='user-story/[request.get story_id /]'></script> 
    	[/if.equal] 
     
 [/templates.add]
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858617</wp:post_id>
+		<wp:post_id>860512</wp:post_id>
 		<wp:post_date><![CDATA[2019-11-03 12:58:37]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-11-03 12:58:37]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -12415,10 +12651,15 @@ body{
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-				</channel>
+							
+		</channel>
 </rss>
 	
 <!--
