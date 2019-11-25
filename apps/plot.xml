@@ -457,7 +457,7 @@
                 sum(case when plot.meta_value= 'hold' then 1 else 0 end) AS hold
               FROM  [module.previous_query_no /] left join plot
               ON  [module.previous_query_no /].data_id = plot.object_id
-              and plot.coll_type='task' and plot.meta_key ='task_status' group by [module.previous_query_no /].object_id
+              and plot.coll_type='task' and plot.meta_key ='task_status' group by [module.previous_query_no /].data_id
             [/sql]
           [/filter]
 
