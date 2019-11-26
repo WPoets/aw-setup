@@ -11102,8 +11102,6 @@ and
 	[/module.set_array]
 	[db.meta_query query="{module.query}" set="template.rs"/]
   
-  [env.echo template.rs /]
-  
   [loop.@i template.rs.rows]  
     [template.set task_url='{app.path}/task/{@i.item.task_id}' /]
     [template.get task_url set="template.rs.rows.{@i.item.task_id}.task_url"/] 
