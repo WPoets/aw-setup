@@ -11090,7 +11090,7 @@ and
     [transform ref_id=data_id /]
     [meta new]
        [table]plot[/table]
-     [meta_keys]story_id,task_id,task_title,task_due_date,task_status,task_assigned_to,task_priority,task_tags,task_created_by,created_datetime,task_projected_time[/meta_keys] 
+     [meta_keys]story_id,task_id,task_title,task_due_date,task_status,task_assigned_to,task_priority,task_tags,task_created_by,created_datetime,estimated_time[/meta_keys] 
        [id_field]coll_id[/id_field]
     [/meta]
     [meta new]
