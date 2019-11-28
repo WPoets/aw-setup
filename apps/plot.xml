@@ -10038,12 +10038,23 @@ and
 
    [template.set task_status_count]  
         $(".status-bar span.status-all").html("([template.get status_counts.total /])");  
-        $(".status-bar span.status-signed-off").html("([template.get status_counts.signed-off /])");
-        $(".status-bar span.status-new").html("([template.get status_counts.new_status /])");
-        $(".status-bar span.status-work-in-progress").html("([template.get status_counts.work-in-progress /])");
-        $(".status-bar span.status-feedback").html("([template.get status_counts.feedback /])");
-        $(".status-bar span.status-hold").html("([template.get status_counts.hold /])");   
+        [if.not_empty template.status_counts.signed-off]
+            $(".status-bar span.status-signed-off").html("([template.get status_counts.signed-off /])");
+        [/if.not_empty] 
+        [if.not_empty template.status_counts.new_status]
+           $(".status-bar span.status-new").html("([template.get status_counts.new_status /])");
+        [/if.not_empty]
+        [if.not_empty template.status_counts.work-in-progress]
+          $(".status-bar span.status-work-in-progress").html("([template.get status_counts.work-in-progress/])");
+        [/if.not_empty] 
+        [if.not_empty template.status_counts.feedback]
+         $(".status-bar span.status-feedback").html("([template.get status_counts.feedback /])");
+        [/if.not_empty] 
+        [if.not_empty template.status_counts.hold]
+          $(".status-bar span.status-hold").html("([template.get status_counts.hold  /])"); 
+        [/if.not_empty]
    [/template.set] 
+   
    [plot.card.status_script status_count="{template.task_status_count}" /]
 </template>
 [/templates.add]
