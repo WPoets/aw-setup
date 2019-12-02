@@ -1121,6 +1121,7 @@
     	<a href="[app.path /]/user-story/[template.get story_data.story_id /]" 
       	 story_id="[template.get story_data.story_id /]" bind="click" 
          route_ajax='user-story/[template.get story_data.story_id /]' 
+         document_title="[template.get story_data.story_title /] - Plot"
          control='main' axn='page.update' class="anchor-absolute"></a>
   </div>
 [/templates.add]
@@ -1162,6 +1163,7 @@
     	<a href="[app.path /]/user-story/[template.get story_data.story_id /]" 
       	 story_id="[template.get story_data.story_id /]" bind="click" 
          route_ajax='user-story/[template.get story_data.story_id /]' 
+         document_title="[template.get story_data.story_title /] - Plot"
          control='main' axn='page.update' class="anchor-absolute"></a>
   </div>
 [/templates.add]
@@ -1243,6 +1245,7 @@
     <a href="[app.path /]/task/[template.get task_data.task_id /]" 
     	 task_id="[template.get task_data.task_id /]" bind="click" 
        route_ajax='task/[template.get task_data.task_id /]' control='main' 
+       document_title="[template.get task_data.task_title /] - Plot"
        axn='page.update' class="anchor-absolute"></a>
   </div>
 [/templates.add]
@@ -1274,6 +1277,7 @@
     <a href="[app.path /]/task/[template.get task_data.task_id /]" 
     	 task_id="[template.get task_data.task_id /]" bind="click" 
        route_ajax='task/[template.get task_data.task_id /]' control='main' 
+       document_title="[template.get task_data.task_title /] - Plot"
        axn='page.update' class="anchor-absolute"></a>
   </div>
 [/templates.add]
@@ -1319,7 +1323,10 @@
           </div>
         </div>
          //** created on bottom strip code end here **//
-        <a href="[app.path /]/note/[aw2.get template.note_data.note_id /]" bind="click" route_ajax='note/[aw2.get template.note_data.note_id /]' axn='page.update' class="anchor-absolute">    
+        <a href="[app.path /]/note/[aw2.get template.note_data.note_id /]" bind="click" 
+        route_ajax='note/[aw2.get template.note_data.note_id /]' 
+        document_title="[template.get note_data.note_title/] - Plot"
+        axn='page.update' class="anchor-absolute">    
         </a>
     </div>
 [/templates.add]
@@ -1357,7 +1364,10 @@
           [/if.not_empty]
         </div>
          //** created on bottom strip code end here **//
-        <a href="[app.path /]/note/[aw2.get template.note_data.note_id /]" bind="click" route_ajax='note/[aw2.get template.note_data.note_id /]' axn='page.update' class="anchor-absolute">    
+        <a href="[app.path /]/note/[aw2.get template.note_data.note_id /]" bind="click"
+        route_ajax='note/[aw2.get template.note_data.note_id /]'
+         document_title="[template.get note_data.note_title/] - Plot"
+        axn='page.update' class="anchor-absolute">    
         </a>
     </div>
 [/templates.add]
