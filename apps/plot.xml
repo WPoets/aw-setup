@@ -7821,7 +7821,9 @@ and
           </div>
       </div> 
     </div>
-
+	[if.not_empty app.page_title]
+    	<script>document.title = "[env.get app.page_title /]"; </script>
+    [/if.not_empty]
   </body>
 </html>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -8246,11 +8248,10 @@ and
 		<wp:meta_value><![CDATA[search]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-						
 		
 		<item>
 		<title>home</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860495</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860495</link>
 		<pubDate>Sat, 26 Oct 2019 08:08:14 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858273</guid>
@@ -8426,7 +8427,7 @@ and
 							</item>
 					<item>
 		<title>tasks</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860496</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860496</link>
 		<pubDate>Sat, 26 Oct 2019 11:25:37 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858277</guid>
@@ -8436,7 +8437,7 @@ and
   * Get All Tasks
   * Query is set with/without filters to fetch tasks from DB 
   **//
-   
+    [env.set app.page_title="Tasks - Plot" /]
       <div class="br-bottom brand-white-bg filters-wrapper pad-4">
     		
         <form action="" class="tasks_filter">
@@ -8578,13 +8579,13 @@ and
 							</item>
 					<item>
 		<title>notes</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860497</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860497</link>
 		<pubDate>Sat, 26 Oct 2019 11:25:50 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858279</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
-  
+  [env.set app.page_title="Notes - Plot" /]
   //** Notes Card Start Here **//
   <div class="body-content-wrapper">
   	 <div>
@@ -8673,12 +8674,13 @@ and
 							</item>
 					<item>
 		<title>user-stories</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860498</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860498</link>
 		<pubDate>Sat, 26 Oct 2019 11:26:59 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858281</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
+[env.set app.page_title="User Stories - Plot" /]
   <div class="br-bottom brand-white-bg filters-wrapper pad-4">
     <form action="" class="filter">
       <div class="row">
@@ -8822,7 +8824,7 @@ and
 							</item>
 					<item>
 		<title>search-results</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860499</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860499</link>
 		<pubDate>Sat, 26 Oct 2019 11:32:28 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858283</guid>
@@ -8835,12 +8837,13 @@ and
   [/css.style]
 
   [template.set search="{request.search}" /]
-  
+  [env.set app.page_title="Search result for {template.searche} - Plot" /]
   <div class="body-content-wrapper">
   	<div class="justify-content-between">
   		<h3 class="font-regular font-size-largest text-center">
       	Search result for "[template.get search /]"</h3>
     </div>  
+    
   [plot.user_story.list page="{template.page}" 
   										 records="24"	
   										 search="{template.search}" 
@@ -8933,12 +8936,13 @@ and
 							</item>
 					<item>
 		<title>task</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860500</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860500</link>
 		<pubDate>Sat, 26 Oct 2019 11:37:34 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858285</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
+
 	<main>
   [css.style]
     .filter-icon {
@@ -8956,6 +8960,7 @@ and
     [template.set story_id="{template.task_data.story_id}" /]
     [plot.user_story.single story_id="{template.task_data.story_id}" set="template.story_data"  /]
     
+    [env.set app.page_title="{template.task_data.task_title} - Plot" /]
     <div class="body-content-wrapper task-body">
      	<div class="row">
           <div class="col-md-7 response"></div>
@@ -9405,7 +9410,7 @@ and
 							</item>
 					<item>
 		<title>note</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860501</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860501</link>
 		<pubDate>Sat, 26 Oct 2019 11:37:44 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858287</guid>
@@ -9429,7 +9434,7 @@ and
   
   //** initialize heartbeat **//
   [plot.heartbeat.create_heartbeat token='note_{template.note_id}' set='module.heartbeatRes' /]
-  
+   [env.set app.page_title="{template.note_meta.note_title} - Plot" /]
   
   <div class="body-content-wrapper" id='note_[template.note_id /]'>
       [template.set_array crumbs.new title='Dashboard' url="{app.path /}/" route_ajax='home'/]
@@ -9635,7 +9640,6 @@ and
       file_name='file_{template.current_dt}'
       dir_name='{app.slug}-docs/notes/{request.note_id}/'
       overwrite_file='no'
-	  allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
       set='template.file_response'
     /]
     [if.not_empty template.file_response.filename]
@@ -9699,7 +9703,7 @@ and
 							</item>
 					<item>
 		<title>user-story</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860502</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860502</link>
 		<pubDate>Sat, 26 Oct 2019 11:38:14 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858289</guid>
@@ -9728,7 +9732,7 @@ and
           <div class="col-md-7 response">
           </div>
       </div> 
-      
+      [env.set app.page_title="{template.story_data.story_title} - Plot" /]
       [template.set_array crumbs.new title='Dashboard' url="{app.path /}/" route_ajax='home'  /]
       [template.set_array crumbs.new title='User Stories' url='{app.path}/user-stories' route_ajax='user-stories' /]
       [template.set_array crumbs.new title='{template.story_data.story_title}' url='' /]
@@ -10065,7 +10069,6 @@ and
           $(".status-bar span.status-hold").html("([template.get status_counts.hold  /])"); 
         [/if.not_empty]
    [/template.set] 
-   
    [plot.card.status_script status_count="{template.task_status_count}" /]
 </template>
 [/templates.add]
@@ -10110,7 +10113,7 @@ and
 							</item>
 					<item>
 		<title>add-user-story</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860503</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860503</link>
 		<pubDate>Mon, 28 Oct 2019 07:18:43 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858317</guid>
@@ -10303,7 +10306,6 @@ and
        upload_element_id="attachment"
        dir_name="plot-docs/{template.story_id}"
        overwrite_file='no'
-	   allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
        set=template.file_res /]
   	[if.empty  template.file_res.0.error]   
       [if.greater_than_zero template.file_res.count]
@@ -10423,7 +10425,7 @@ and
 							</item>
 					<item>
 		<title>feedback</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860504</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860504</link>
 		<pubDate>Mon, 28 Oct 2019 14:40:57 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858346</guid>
@@ -10529,7 +10531,7 @@ and
        overwrite_file='no'
        allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
        set=template.file_res /]       
-    
+
    [if.empty  template.file_res.0.error]   
     [if.greater_than_zero template.file_res.count]
       [loop.@att template.file_res]
@@ -10688,7 +10690,6 @@ and
 
 
 [/templates.add]
-
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>860504</wp:post_id>
@@ -10714,7 +10715,7 @@ and
 							</item>
 					<item>
 		<title>add-note</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860505</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860505</link>
 		<pubDate>Mon, 28 Oct 2019 15:15:45 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858356</guid>
@@ -10816,7 +10817,7 @@ and
 							</item>
 					<item>
 		<title>add-task</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860506</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860506</link>
 		<pubDate>Mon, 28 Oct 2019 15:22:25 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858359</guid>
@@ -11027,7 +11028,7 @@ and
 
     //** Activity log **//
     [template.set metas_act.activity_note="Task ({request.task_title}) was created." /]
-  	[plot.activity.log object_id="{template.story_id}" coll_type="plot" metas="{template.metas_act}" set="template.activity" /]
+  	[plot.activity.log object_id="{request.story_id}" coll_type="plot" metas="{template.metas_act}" set="template.activity" /]
 		
     	
     [template.set activity_url='{app.path}/task/{template.task_id}' /]
@@ -11081,14 +11082,14 @@ and
 							</item>
 					<item>
 		<title>api</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860507</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860507</link>
 		<pubDate>Mon, 28 Oct 2019 16:33:54 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858383</guid>
 		<description></description>
 		<content:encoded><![CDATA[//**
 *
-* url:https://plot.getawesomestudio.com/plot/ajax/api?username=plot-api&password=plot@1234&force_single_access=yes
+* url:https://plot.getawesomestudio.com/plot/module/api/?username=plot-api&password=plot@1234&force_single_access=yes
 **//
 [templates.add main]
   [module.set_array query]
@@ -11124,13 +11125,13 @@ and
     [order]task_due_date DESC[/order]
 	[/module.set_array]
 	[db.meta_query query="{module.query}" set="template.rs"/]
-  
+    
   [loop.@i template.rs.rows]  
     [template.set task_url='{app.path}/task/{@i.item.task_id}' /]
     [template.get task_url set="template.rs.rows.{@i.item.task_id}.task_url"/] 
   [/loop.@i]
   
-  [php.json_encode p1="{template.rs.rows}"  set="template.res" /]
+  [php.json_encode p1="{template.rs.rows}" set="template.res" /]
   [template.return template.res /]
 
 [/templates.add]]]></content:encoded>
@@ -11158,7 +11159,7 @@ and
 							</item>
 					<item>
 		<title>migration</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860508</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860508</link>
 		<pubDate>Mon, 28 Oct 2019 16:34:11 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858385</guid>
@@ -11582,7 +11583,7 @@ and
 							</item>
 					<item>
 		<title>setup</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860509</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860509</link>
 		<pubDate>Mon, 28 Oct 2019 16:34:42 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858387</guid>
@@ -11649,7 +11650,7 @@ COMMIT;
 							</item>
 					<item>
 		<title>common-css</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860510</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860510</link>
 		<pubDate>Fri, 01 Nov 2019 01:38:00 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858471</guid>
@@ -12396,7 +12397,7 @@ body{
 														</item>
 					<item>
 		<title>attachments</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860511</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860511</link>
 		<pubDate>Sun, 03 Nov 2019 12:53:50 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858614</guid>
@@ -12475,6 +12476,7 @@ body{
                    upload_element_id="{template.type}_attachments"
                    dir_name="plot-docs/{template.attachfolder}"
                    overwrite_file='no'
+                   allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
                    set=template.file_res /]
                    
     [if.empty  template.file_res.0.error]           
@@ -12547,7 +12549,7 @@ body{
 							</item>
 					<item>
 		<title>references</title>
-		<link>https://www.wpoets.com/?post_type=m_plot&#038;p=860512</link>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=860512</link>
 		<pubDate>Sun, 03 Nov 2019 12:58:37 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_plot&#038;p=858617</guid>
@@ -12680,6 +12682,7 @@ body{
 		</wp:postmeta>
 							</item>
 							
+						
 		</channel>
 </rss>
 	
