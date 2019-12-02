@@ -9625,6 +9625,7 @@ and
       file_name='file_{template.current_dt}'
       dir_name='{app.slug}-docs/notes/{request.note_id}/'
       overwrite_file='no'
+	  allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
       set='template.file_response'
     /]
     [if.not_empty template.file_response.filename]
@@ -10292,6 +10293,7 @@ and
        upload_element_id="attachment"
        dir_name="plot-docs/{template.story_id}"
        overwrite_file='no'
+	   allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
        set=template.file_res /]
   	[if.empty  template.file_res.0.error]   
       [if.greater_than_zero template.file_res.count]
@@ -10499,7 +10501,7 @@ and
     //** Check valied type **//
     [if.empty template.type]
       [template.set alert_class="alert-danger" /]
-    	[template.set alert_msg="<strong>Fail!</strong> Invalid data pass!" /]
+    	[template.set alert_msg="<strong>Fail!</strong> Invalid data passed!" /]
 			[form_control.alert alert_class="{template.alert_class}" alert_msg="{template.alert_msg}" /] 
     	[template.return /]
     [/if.empty]   
@@ -10515,10 +10517,9 @@ and
        upload_element_id="{template.type}_feedback_attachment"
        dir_name="plot-docs/{template.attachfolder}"
        overwrite_file='no'
+       allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
        set=template.file_res /]       
-    //** Multiple file upload
-    [aw2.upload post_id="1" attach_to_post upload_element_id='{template.type}_feedback_attachment' 
-    												set="template.image_id" /]**//
+    
    [if.empty  template.file_res.0.error]   
     [if.greater_than_zero template.file_res.count]
       [loop.@att template.file_res]
@@ -10677,6 +10678,7 @@ and
 
 
 [/templates.add]
+
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>860504</wp:post_id>
