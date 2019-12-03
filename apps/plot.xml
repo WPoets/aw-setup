@@ -9518,7 +9518,7 @@ and
     </section>
   </div>
   
-  [session_ticket.create {token} nonce="yes" set=module.save_form /]
+  [session_ticket.create {token} nonce="yes" set=module.save_form time=300/]
   [session_ticket.set_activity {module.save_form} app='{app.slug}' module='{module.slug}.update_note_content' /]
   [session_ticket.set {module.save_form} field='update_note_id' value='{template.note_meta.note_id}' /]
   <script type="spa/axn" axn="core.run_script">
