@@ -10887,7 +10887,7 @@ and
                     [form_control.text label="Title" id="task_title" placeholder="Title" required="yes" /] 
                   </div>
                   <div class="col-12">
-                    [form_control.trumbowyg_editor label="Task Description" placeholder="Task Description"
+                    [form_control.trumbowyg_editor label="Task Deliverables" placeholder="Task Deliverables"
                     															 textarea_name="task_description" 
                                                    editor_name="editor1" required="yes" /]
                   
@@ -11092,22 +11092,34 @@ and
 * url:https://plot.getawesomestudio.com/plot/module/api/?username=plot-api&password=plot@1234&force_single_access=yes
 **//
 [templates.add main]
+  [env.set api_datetime={qs.0} c.not_empty=qs.0 /]
+  
   [module.set_array query]
     [pagesize]1000[/pagesize]
     [pageno][template.get page /][/pageno]
     [query_count]yes[/query_count]
     [with]
        [sql]
-        SELECT coll_id as data_id FROM plot WHERE coll_type="task" AND meta_key="task_id"
+        SELECT coll_id as data_id FROM plot WHERE coll_type="task" AND meta_key='task_id' and stamp >= "[env.get api_datetime /]"
        [/sql]
+        [add_field new ]
+          [sql raw]
+           SELECT object_id as data_id FROM plot WHERE coll_type="task_feedback" AND meta_key ='task_feedback_id'  and stamp >= "[env.get api_datetime /]"
+          [/sql]
+      [/add_field] 
+      [add_field new ]
+          [sql raw]
+            SELECT q0.*  from q0 Union select q1.* from q1
+          [/sql]
+      [/add_field]
       [filter new]
         [sql raw]
-           select q0.*, meta_value as task_due_date from q0 join plot pa on q0.data_id = pa.coll_id where coll_type='task' and meta_key='task_due_date'
+           select q2.*, meta_value as task_due_date from q2 join plot pa on q2.data_id = pa.coll_id where coll_type='task' and meta_key='task_due_date'
         [/sql]
       [/filter] 
       [filter new]
         [sql raw]
-            select q1.*, sum(meta_value) as task_spent from q1 left join plot pa on q1.data_id = pa.object_id and coll_type='task_feedback' and meta_key='time_spent' group by q1.data_id
+            select q3.*, sum(meta_value) as task_spent from q3 left join plot pa on q3.data_id = pa.object_id and coll_type='task_feedback' and meta_key='time_spent' group by q3.data_id
         [/sql]
       [/filter]
     [/with]
@@ -11125,6 +11137,7 @@ and
     [order]task_due_date DESC[/order]
 	[/module.set_array]
 	[db.meta_query query="{module.query}" set="template.rs"/]
+
     
   [loop.@i template.rs.rows]  
     [template.set task_url='{app.path}/task/{@i.item.task_id}' /]
