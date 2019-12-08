@@ -40,9 +40,9 @@
 				
 			
 
-			<item>
+		<item>
 		<title>task</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860530</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860530</link>
 		<pubDate>Sat, 26 Oct 2019 15:14:03 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858293</guid>
@@ -136,7 +136,7 @@
            Abstract archive post **//
           [filter new]
           	[sql raw]
-                select [module.previous_query_no /].*, meta_value as task_due_date 
+                select [module.previous_query_no /].*, STR_TO_DATE(meta_value,'%d-%m-%Y') as task_due_date 
                 from [module.previous_query_no /] join plot 
                 ON [module.previous_query_no /].data_id = plot.coll_id and coll_type="task" 
                 AND meta_key="task_due_date" 
@@ -265,7 +265,7 @@
        [/sql]
       [filter new]
         [sql raw]
-           select [module.previous_query_no /].*, meta_value as created_datetime from [module.previous_query_no /] join plot pa on [module.previous_query_no /].data_id = pa.coll_id where  meta_key='task_feedback_created_datetime'
+           select [module.previous_query_no /].*, STR_TO_DATE(meta_value,'%d-%m-%Y') as created_datetime from [module.previous_query_no /] join plot pa on [module.previous_query_no /].data_id = pa.coll_id where  meta_key='task_feedback_created_datetime'
         [/sql]
       [/filter]
     [/with]
@@ -370,7 +370,7 @@
 							</item>
 					<item>
 		<title>user_story</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860531</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860531</link>
 		<pubDate>Mon, 28 Oct 2019 06:05:48 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858297</guid>
@@ -646,15 +646,17 @@
   [template.set offset='0' empty='{request.page}' /]
   
   [query.get_results set='template.datas']
-    SELECT meta_value,object_id,coll_type from plot where meta_key in ("task_title","story_title") AND meta_value Like ("%[get.request q /]%")  GROUP BY object_id
-    limit 10 offset [template.offset /]
+    SELECT meta_value,object_id,coll_id,coll_type from plot where meta_key in ("task_title","story_title") AND meta_value Like ("%[get.request q /]%") limit 10 offset [template.offset /]
   [/query.get_results]
   [template.set type_lable.user_stories="Story" /]
   [template.set type_lable.task="Task" /]
   
   [loop.@comp template.datas]
   		[aw2.get template.type_lable.{@comp.item.coll_type} set="template.temp" /]
-    [template.set_array data.new text='{template.temp}::{@comp.item.meta_value}' id='{@comp.item.object_id}' /]
+  		[template.set item_id="{@comp.item.coll_id}" /]
+      [template.set item_id="{@comp.item.object_id}" cond='{@comp.item.coll_type}' equal='user_stories'  /]
+      
+    [template.set_array data.new text='{template.temp}::{@comp.item.meta_value}' id='{template.item_id}' /]
   [/loop.@comp]
   {
     "results": 
@@ -705,7 +707,7 @@
 							</item>
 					<item>
 		<title>icon</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860532</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860532</link>
 		<pubDate>Mon, 28 Oct 2019 06:45:19 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858313</guid>
@@ -1063,7 +1065,7 @@
 							</item>
 					<item>
 		<title>card</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860533</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860533</link>
 		<pubDate>Mon, 28 Oct 2019 07:24:27 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858320</guid>
@@ -1092,7 +1094,7 @@
 
           </div>
           <div class="story-brief">
-              <h6 class="no-margin font-size-base">[template.get story_data.story_title /]</h6>
+              <h6 class="no-margin font-size-base">[template.get story_data.story_title m.stripslashes_deep=yes/]</h6>
               <p class="font-size-small gray no-margin">
                [php.preg_replace p1="/\\\\/" p2=""  p3="{template.story_data.story_description words='20'}" /]
               </p>
@@ -1141,7 +1143,7 @@
         </div>
       </div>
       <div class="pad-y-4 pad-x-4 ">     	
-          <h6 class="font-size-base no-margin">[template.get story_data.story_title /]</h6>
+          <h6 class="font-size-base no-margin">[template.get story_data.story_title  m.stripslashes_deep=yes /]</h6>
           <p class="font-size-small gray">    
           [php.preg_replace p1="/\\\\/" p2=""  p3="{template.story_data.story_description words='20'}" /]
           </p>
@@ -1223,9 +1225,9 @@
         </section>           
  		 </div>
      <div class="task-brief">
-        <h6 class="font-size-base mar-b-1">[template.get task_data.task_title /]</h6>
+        <h6 class="font-size-base mar-b-1">[template.get task_data.task_title  m.stripslashes_deep=yes /]</h6>
         <p class="font-size-small no-margin">
-          <span class="font-bold">User Story:</span> [template.get task_data.story_title /]
+          <span class="font-bold">User Story:</span> [template.get task_data.story_title  m.stripslashes_deep=yes /]
         </p>
         
 				[if.not_empty template.task_data.task_tags]
@@ -1266,11 +1268,11 @@
         </div>
     </div>
     <div class="pad-y-4 pad-x-4">        	
-      <h6 class="font-size-base mar-b-1">[template.get task_data.task_title /]</h6>
+      <h6 class="font-size-base mar-b-1">[template.get task_data.task_title  m.stripslashes_deep=yes /]</h6>
      
       [db.meta.select_meta_key_value_pair meta_table="plot" object_id="{template.task_data.story_id}" set="template.story_data" /]
       <p class="font-size-small notes-label no-margin">
-        <span class="font-bold">User Story:</span> [template.get story_data.story_title /]
+        <span class="font-bold">User Story:</span> [template.get story_data.story_title  m.stripslashes_deep=yes /]
        
       </p>
     </div>
@@ -1305,12 +1307,12 @@
           //** notes image code end here **//
           //** notes title code start here **//
           <div class="note-brief">
-            	<h6 class="font-size-base mar-b-1">[aw2.get template.note_data.note_title /]</h6>
+            	<h6 class="font-size-base mar-b-1">[aw2.get template.note_data.note_title  m.stripslashes_deep=yes /]</h6>
              	<p class="font-size-small notes-label no-margin">
-                	<span class="font-bold">User Story:</span> [aw2.get template.note_data.user_story_title /]
+                	<span class="font-bold">User Story:</span> [aw2.get template.note_data.user_story_title  m.stripslashes_deep=yes /]
              	</p>
              	<p class="font-size-small notes-label no-margin">
-                	<span class="font-bold">Task:</span> [aw2.get template.note_data.task_title /]
+                	<span class="font-bold">Task:</span> [aw2.get template.note_data.task_title  m.stripslashes_deep=yes /]
              	</p>
          	</div>
           //** notes title code end here **//
@@ -1351,7 +1353,7 @@
               <img src="[ui.avatar email='{template.note_data.note_created_by}' /]" height="40" width="40" class="br-50" alt="[template.get note_data.note_created_by /]" title="[template.get note_data.note_created_by /]" /> 
           </div>
             <div>
-            	<h6>[aw2.get template.note_data.note_title /]</h6>
+            	<h6>[aw2.get template.note_data.note_title  m.stripslashes_deep=yes /]</h6>
          	</div>
          </div>
         //** created on bottom strip code start here **//
@@ -1384,7 +1386,7 @@
 
         [loop.@status template.status_results]
           <li class="li-[aw2.get @status.item.slug /]">
-          <a href="#" axn='selector.update' bind="click" selector='[template.get update_selector /]' route_ajax='[template.get ajax_template /]' status_tab="yes" story_id='[template.get story_id /]' status="[aw2.get @status.item.slug /]">[aw2.get @status.item.name /] <span class="brand-info font-bold no-margin status-[aw2.get @status.item.slug /]">(0)</span></a>
+          <a href="#" axn='selector.update' bind="click" selector='[template.get update_selector /]' route_ajax='[template.get ajax_template /]' status_tab="yes" story_id='[template.get story_id /]' status="[aw2.get @status.item.slug /]">[aw2.get @status.item.name  m.stripslashes_deep=yes/] <span class="brand-info font-bold no-margin status-[aw2.get @status.item.slug /]">(0)</span></a>
           </li>
         [/loop.@status]       
 
@@ -1432,7 +1434,7 @@
         </div> 
         [/if.not_empty]
         [if.empty @crumb.item.url]
-     	    <div class="gray-light mar-x-1 [if.true @crumb.first] no-margin-left [/if.true]">[aw2.get @crumb.item.title /]</div>
+     	    <div class="gray-light mar-x-1 [if.true @crumb.first] no-margin-left [/if.true]">[aw2.get @crumb.item.title  m.stripslashes_deep=yes/]</div>
         [/if.empty]
         
         [if.true @crumb.between]
@@ -1467,7 +1469,7 @@
 							</item>
 					<item>
 		<title>note</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860534</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860534</link>
 		<pubDate>Mon, 28 Oct 2019 15:24:50 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858363</guid>
@@ -1627,7 +1629,7 @@
 							</item>
 					<item>
 		<title>heartbeat</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860535</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860535</link>
 		<pubDate>Mon, 28 Oct 2019 16:27:59 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858379</guid>
@@ -1701,7 +1703,7 @@
 							</item>
 					<item>
 		<title>filter</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860536</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860536</link>
 		<pubDate>Sat, 02 Nov 2019 07:25:08 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858535</guid>
@@ -1792,7 +1794,7 @@
 
   [module.set_array task_tags_array.new label="Any Tag" value="" /]
   [loop.@ctr template.cat]
-    [module.set_array task_tags_array.new label='{@ctr.item.name}' value='{@ctr.item.slug}' /] 
+    [module.set_array task_tags_array.new label='{@ctr.item.name}' value='{@ctr.item.name}' /] 
   [/loop.@ctr]
 
   [form_control.select  label="Tags" id="task_tag" options_array="{module.task_tags_array}" value="{template.story_task_tags}" default_option='no'/]
@@ -1830,7 +1832,7 @@
 							</item>
 					<item>
 		<title>activity</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860537</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860537</link>
 		<pubDate>Sun, 03 Nov 2019 13:17:22 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=858621</guid>
@@ -1914,7 +1916,7 @@
 							</item>
 					<item>
 		<title>send-mail</title>
-		<link>https://www.wpoets.com/?post_type=plot_service&#038;p=860538</link>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=860538</link>
 		<pubDate>Tue, 19 Nov 2019 15:41:04 +0000</pubDate>
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=plot_service&#038;p=859107</guid>
@@ -1924,10 +1926,10 @@
    [template.set_array mail]
       [from name='{template.data.from_name}' email_id='{template.data.from_email}' /]
       [to email_id='{template.data.assigned_to}' /] 
-      [subject](plot) - [php.get_bloginfo p1='name' /] - Activity on [template.get data.activity_title /] [/subject]
+      [subject](plot) - [php.get_bloginfo p1='name' /] - Activity on [template.get data.activity_title  m.stripslashes_deep=yes/] [/subject]
       [message]
        
-       I just updated <em>[template.get data.activity_title /]</em> on plot. <br />
+       I just updated <em>[template.get data.activity_title  m.stripslashes_deep=yes/]</em> on plot. <br />
        For details please check the <a href="[template.get data.activity_url /]">[template.get data.activity_url /]</a>
   		 <br /> <br />
        thanks, <br />
@@ -1943,10 +1945,10 @@
    [template.set_array mail]
       [from name='{template.data.from_name}' email_id='{template.data.from_email}' /]
       [to email_id='{template.data.assigned_to}' /] 
-      [subject](Plot) - [php.get_bloginfo p1='name' /] - New Task -[template.get data.activity_title /][/subject]
+      [subject](Plot) - [php.get_bloginfo p1='name' /] - New Task -[template.get data.activity_title  m.stripslashes_deep=yes/][/subject]
       [message]
        
-       I just assigned task <em>[template.get data.activity_title /]</em> to you. <br />
+       I just assigned task <em>[template.get data.activity_title  m.stripslashes_deep=yes/]</em> to you. <br />
        For details please check the <a href="[template.get data.activity_url /]">[template.get data.activity_url /]</a>
   		 <br /> <br />
        thanks, <br />
@@ -1962,10 +1964,10 @@
    [template.set_array mail]
       [from name='{template.data.from_name}' email_id='{template.data.from_email}' /]
       [to email_id='{template.data.assigned_to}' /] 
-      [subject](Plot) - [php.get_bloginfo p1='name' /] - New User Story -[template.get data.activity_title /][/subject]
+      [subject](Plot) - [php.get_bloginfo p1='name' /] - New User Story -[template.get data.activity_title  m.stripslashes_deep=yes/][/subject]
       [message]
        
-       I just assigned user story <em>[template.get data.activity_title /]</em> to you. <br />
+       I just assigned user story <em>[template.get data.activity_title  m.stripslashes_deep=yes/]</em> to you. <br />
        For details please check the <a href="[template.get data.activity_url /]">[template.get data.activity_url /]</a>
   		 <br /> <br />
        thanks, <br />
@@ -1993,7 +1995,237 @@
 		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-				
+					<item>
+		<title>search-filter</title>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=861273</link>
+		<pubDate>Sat, 07 Dec 2019 12:46:48 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://wpoets.com/?post_type=plot_service&#038;p=861273</guid>
+		<description></description>
+		<content:encoded><![CDATA[[query.get_users set="module.all_users"]
+{}
+[/query.get_users]
+[loop.@user module.all_users]   
+	[module.set_array users.new label='{@user.item.display_name}' value='{@user.item.user_email}'/]
+[/loop.@user]
+
+[module.set_array fields]
+	  
+  [users type='select' label = "Users" options="{module.users}" /]
+  
+  [select_period type = "select_period" label = "Select Period" /]
+  [to_date type = "date" label = "To Date"/]
+  [from_date type = "date" label = "From Date"/]
+ 
+[/module.set_array]
+
+[module.set column_type = "col-md-4" divider_after="3"/]
+
+[templates.add main]
+  
+  [template.get args.meta_value set=module.values /]
+  [template.get args.filters.section set=template.section/]
+  [search_service.new_ticket args='{template.args}' set='module.ticket' /] 
+  
+  
+  <h2 class="text-center">[template.get title/]</h2>
+  <div class="row brand-white-bg mar-x-5 pad-5">
+    <div class="gap-3"></div>
+      <article role="search" id="search" class="col-md-12">
+      <section role=form>
+        <form id="search_form" class="search_form">
+           [loop.@section template.section]
+               [template.set html=""/]
+               [module.set required_keys="{@section.item.required}" /]
+               [templates.field_type keys ="{@section.item.keys}" settings="{@section.item}"  list="filter,search,period,series" contains="{@section.key}" set=template.html/]
+              
+                [templates.orderby keys = "{@section.item.keys}" settings="{@section.item}" cond="{@section.key}" equal="order" set=template.html/]  
+
+                [templates.column keys = "{@section.item.keys}" settings="{@section.item}" cond="{@section.key}" equal="column" set=template.html/]
+
+                [form_control.section id="{@section.key}" html="{template.html}" title="{@section.key}" open={@section.item.open} /] 
+           [/loop.@section]
+           <script type="spa/axn" axn="core.run_script">
+            $('#search_form').on('submit',function(e){
+            	spa.loader.show();
+              spa.form.ajax({
+                route_ajax: 't/[module.ticket /]',
+                disable_selector: '.js-submit-job',
+                block:{
+                	event: e,
+                  trigger: $(this)
+                }
+              }).then(function(){spa.loader.hide()});
+            });
+           </script>
+           <div class="btns">
+          		[search_service.handler-scripts handlers="{template.args.handlers}" auto_handler="{template.auto_handler}"/]  
+          		[if.equal lhs={template.search_button} rhs="true" ]
+          		  [templates.search_btn slug={template.slug}/]
+          		[/if.equal]
+           </div>
+     
+      	</form>
+      </section>
+      <script type="spa/axn" axn="core.run_script">        
+        $('#search_form').on("click", ".btn-reset", function(){
+	        document.getElementById("search_form").reset();
+          $('#search_form select').each(function(){
+            if($(this)[0].sumo){
+              $(this)[0].sumo.unSelectAll();
+            }else{
+            	$(this).val(null).trigger("change");
+            }
+          });
+          $('.flatpickr-input').val('');
+          $('.form-btns-Search').click();
+        });
+      </script>
+
+    	<section role=results></section>
+    </article>
+    <div class="gap-3"></div>
+  </div>
+[/templates.add]
+
+ 
+//**Get the field type**//
+[templates.add field_type]
+ 
+  [template.get keys explode="," set=template.key_part/]  
+  <div class="row">
+  [template.set cnt=1/]
+  [loop.@key_parts template.key_part]
+    [aw2.get @key_parts.item.trim set = template.key /]
+    [template.get settings.{template.key} set=template.param /] 
+    [module.get fields.{template.key} set = template.dataset/] 
+    
+    <div class="[module.get column_type /]">
+      [templates.field_render dataset = "{template.dataset}" key = "{template.key}" param="{template.param}"/]
+    </div>
+    
+    [math.solve main="{template.cnt}+1" set=template.cnt/]
+    
+    [if.equal lhs="{template.cnt}" rhs="4"]
+    	[template.set cnt=1/]
+    	<div class="col-md-12"></div>
+    [/if.equal]
+    
+  [/loop.@key_parts]
+  </div>
+[/templates.add]  
+
+//**Render Field**//
+[templates.add field_render]
+  
+  [module.set temp_required=""/]
+   [module.set temp_required="yes" list="{module.required_keys}" contains="{template.key}"/]
+  
+  [module.get values.{template.key} set=template.val /]
+  [template.set label = "" /]
+  [template.return template.label empty = "{template.dataset.type}" /]
+    
+  [module.get fields.{template.key}.label set = template.label /]
+   
+   [aw2.switch]
+    [aw2.case cond='{template.dataset.type}' equal='select']
+      //**********When taxonomy is prsent***********//
+      [if.not_empty template.dataset.taxonomy]
+        [form_control.select id="{template.key}" label='{template.dataset.label}' taxonomy="{template.dataset.taxonomy}" multiple='{template.dataset.multiple}' search='{template.dataset.search}' term="{template.param}" value="{template.val}" required="{module.temp_required}" /]
+      [/if.not_empty]
+  		  
+        
+  	  //*************When options array is present****************//
+	  [if.not_empty template.dataset.options]
+        [form_control.select id="{template.key}" label='{template.dataset.label}' options_array='{template.dataset.options}' multiple='{template.dataset.multiple}' value="{template.val}" required="{module.temp_required}"/]
+      [/if.not_empty]
+      
+    [/aw2.case]
+   [aw2.case_else]
+   
+   [form_control.run {template.dataset.type} id="{template.key}" placeholder="{template.label}" label='{template.label}' options_array='{template.dataset.options}' option_type='{template.dataset.option_type}' required="{module.temp_required}" multiple='{template.dataset.multiple}' taxonomy='{template.dataset.taxonomy}' /] 
+
+    [/aw2.case_else]
+  [/aw2.switch]
+  
+[/templates.add]
+
+
+
+//** order by fields  **//
+[templates.add orderby]
+  [template.get keys explode="," set=template.key_part/]  
+  
+  [loop.@key_part template.key_part]
+    [aw2.get @key_part.item.trim set = template.key /]
+    [template.set_array options.new label="{template.key}" value="{template.key}" /]
+  [/loop.@key_part]
+  
+  <div class="row">  
+    [loop.@ctr start=1 step=1 stop=3]
+      [template.set default_val = ''/]
+      <div class="[module.get column_type /]">
+        [form_control.select id="order_{@ctr.index}"  label='Order {@ctr.index}' options_array='{template.options}' value="{template.default_val}" required="{module.temp_required}"/]
+      </div>
+    [/loop.@ctr]
+  </div>
+[/templates.add]  
+
+[templates.add column]
+  [template.get keys explode="," set=template.key_part/]  
+  <div class="row"> 
+  [loop.@key_part template.key_part]
+    [aw2.get @key_part.item.trim set = template.key /]
+    [module.get fields.{template.key}.label set=template.label /] 
+    [module.get values.{template.key} set=template.val /]
+    [templates.get_col coll_type = {@key_part.item} meta_table={template.settings.meta_table} set=template.query /]
+      [if.not_empty template.query]
+         <div class="[module.get column_type /]">
+          [form_control.select id="{@key_part.item}" label='{template.label}' value="{template.val}" options_array="{template.query}" multiple='yes' value="{template.val}" required="{module.temp_required}"/]
+        </div> 
+      [/if.not_empty]
+  [/loop.@key_part]
+  </div>
+[/templates.add] 
+
+[templates.add get_col]
+  [template.set arr=""/]
+  
+  //*****get column data from meta table, if empty, default is lapp_meta****//
+  [template.set meta_table = 'plot' empty={template.meta_table}/]
+  
+  [query.get_results set=template.meta_keys]
+  	SELECT DISTINCT(meta_key) as meta_key FROM [template.meta_table/] WHERE coll_type = '[template.coll_type/]'
+  [/query.get_results]
+
+  [loop.@meta template.meta_keys]
+  	[module.get default_columns.meta.{@meta.item.meta_key}.label set=template.label/]
+  	[module.get default_columns.meta.{@meta.item.meta_key}.coll_type set=template.this_coll_type/]
+    [template.set_array arr.new label={template.label} value={@meta.item.meta_key} cond={template.this_coll_type} equal={template.coll_type} /]
+  [/loop.@meta]
+
+  
+  [template.return template.arr/]
+[/templates.add]  ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>861273</wp:post_id>
+		<wp:post_date><![CDATA[2019-12-07 12:46:48]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-12-07 12:46:48]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[search-filter]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[plot_service]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+			
 		<item>
 		<title>Send</title>
 		<link>http://nxt.wpoets.com/?post_type=notification_service&#038;p=558662</link>
@@ -7703,181 +7935,68 @@ and
 							</item>
 		
 		<item>
-		<title>Settings</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858263</link>
-		<pubDate>Wed, 03 Jul 2019 06:44:50 +0000</pubDate>
-		<dc:creator><![CDATA[dev]]></dc:creator>
-		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663287</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858263</wp:post_id>
-		<wp:post_date><![CDATA[2019-07-03 06:44:50]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-07-03 06:44:50]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[settings]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[site_logo]]></wp:meta_key>
-		<wp:meta_value><![CDATA[https://www.wpoets.com/wp-content/uploads/2018/05/WPoets-logo-1.svg]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[from_name]]></wp:meta_key>
-		<wp:meta_value><![CDATA[Amit]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[from_email]]></wp:meta_key>
-		<wp:meta_value><![CDATA[amit@wpoets.com]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>Init</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858264</link>
-		<pubDate>Wed, 03 Jul 2019 06:45:19 +0000</pubDate>
-		<dc:creator><![CDATA[dev]]></dc:creator>
-		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663289</guid>
-		<description></description>
-		<content:encoded><![CDATA[ [query.get_terms taxonomies=story_status hide_empty=0 o.set=template.story_status /]   
-  [loop.@status template.story_status]
-    [env.set main="story_status.{@status.item.slug}" cond='{@status.item.slug}' not_equal='new'][env.get @status.item.name /][/env.set]
-    [env.set main="story_status.new_new" cond='{@status.item.slug}' equal='new'][env.get @status.item.name /][/env.set]
-  [/loop.@status]     
-  
-  [query.get_terms taxonomies=task_status hide_empty=0 o.set=template.task_status /]
-  [loop.@status template.task_status]
-    [env.set main="task_status.{@status.item.slug}" cond='{@status.item.slug}' not_equal='new'][env.get @status.item.name /][/env.set]
-    [env.set main="task_status.new_new" cond='{@status.item.slug}' equal='new'][env.get @status.item.name /][/env.set]
-  [/loop.@status]  
-  
-  [query.get_terms taxonomies=note_type hide_empty=0 o.set=template.note_type /]
-  [loop.@status template.note_type]
-    [env.set main="note_type.{@status.item.slug}" cond='{@status.item.slug}' not_equal='new'][env.get @status.item.name /][/env.set]
-    [env.set main="note_type.new_new" cond='{@status.item.slug}' equal='new'][env.get @status.item.name /][/env.set]
-  [/loop.@status]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858264</wp:post_id>
-		<wp:post_date><![CDATA[2019-07-03 06:45:19]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-07-03 06:45:19]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[init]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[27]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>Layout</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858265</link>
-		<pubDate>Wed, 03 Jul 2019 06:46:44 +0000</pubDate>
-		<dc:creator><![CDATA[dev]]></dc:creator>
-		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663292</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!DOCTYPE html>
-<html>
-	<head>
-    <meta charset="utf-8" />
-  	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-    <meta name="mobile-web-app-capable" content="yes">
-    <title>[aw2.get app.name /]</title>
-    [plot.icon /]
-    [this_collection.scripts /]
-	</head>
-	<body>
-  	<template get='[app.path /]/' axn=core.set set='settings.path'></template>
-        
-    <header>
-        [this_collection.header /]
-    </header>
-    
-    <div class="container-fluid">
-    	<div class="row">
-      		<div class="col-lg-2 sidebar no-padding">
-          	<div class="sidebar-wrapper gray-darker-bg">
-              [this_collection.menu /]
-              [this_collection.footer /]
-            </div>
-          </div>
-          <div class="col-lg-10 no-padding">
-          	<main>
-              [app.run active_module /]
-            </main>   
-          </div>
-      </div> 
-    </div>
-	[if.not_empty app.page_title]
-    	<script>document.title = "[env.get app.page_title /]"; </script>
-    [/if.not_empty]
-  </body>
-</html>]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858265</wp:post_id>
-		<wp:post_date><![CDATA[2019-07-03 06:46:44]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-07-03 06:46:44]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[layout]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
-		<title>Rights</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858266</link>
-		<pubDate>Wed, 03 Jul 2019 06:47:14 +0000</pubDate>
-		<dc:creator><![CDATA[dev]]></dc:creator>
-		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663294</guid>
-		<description></description>
-		<content:encoded><![CDATA[[arr.create set='app.rights'] 
-
-[access mode='logged'  title='Login To Plot App'/]
-
-[auth a1 method=twofactor_login_authenticator all_roles='administrator,develop_for_awesomeui' /]
-[auth a2 method=single_access all_roles='administrator,develop_for_awesomeui' /]
-[auth a3 method=vsession]
-  [code raw]
-    [env.set app.auth.status='success' /]
-  [/code]
-[/auth]
-[/arr.create]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858266</wp:post_id>
-		<wp:post_date><![CDATA[2019-07-03 06:47:14]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-07-03 06:47:14]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[rights]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
+			<title>Layout</title>
+			<link>https://wpoets.com/?post_type=c_plot&#038;p=858265</link>
+			<pubDate>Wed, 03 Jul 2019 06:46:44 +0000</pubDate>
+			<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+			<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663292</guid>
+			<description></description>
+			<content:encoded><![CDATA[<!DOCTYPE html>
+	<html>
+		<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+		<meta name="mobile-web-app-capable" content="yes">
+		<title>[aw2.get app.name /]</title>
+		[plot.icon /]
+		[this_collection.scripts /]
+		</head>
+		<body>
+		<template get='[app.path /]/' axn=core.set set='settings.path'></template>
+			
+		<header>
+			[this_collection.header /]
+		</header>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-2 sidebar no-padding">
+				<div class="sidebar-wrapper gray-darker-bg">
+				  [this_collection.menu /]
+				  [this_collection.footer /]
+				</div>
+			  </div>
+			  <div class="col-lg-10 no-padding">
+				<main>
+				  [app.run active_module /]
+				</main>   
+			  </div>
+		  </div> 
+		</div>
+			[if.not_empty app.page_title]
+			<script>document.title = "[env.get app.page_title /]"; </script>
+		[/if.not_empty]
+	  </body>
+	</html>]]></content:encoded>
+			<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+			<wp:post_id>858265</wp:post_id>
+			<wp:post_date><![CDATA[2019-07-03 06:46:44]]></wp:post_date>
+			<wp:post_date_gmt><![CDATA[2019-07-03 06:46:44]]></wp:post_date_gmt>
+			<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+			<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+			<wp:post_name><![CDATA[layout]]></wp:post_name>
+			<wp:status><![CDATA[publish]]></wp:status>
+			<wp:post_parent>0</wp:post_parent>
+			<wp:menu_order>0</wp:menu_order>
+			<wp:post_type><![CDATA[c_plot]]></wp:post_type>
+			<wp:post_password><![CDATA[]]></wp:post_password>
+			<wp:is_sticky>0</wp:is_sticky>
+		</item>
 					<item>
 		<title>Scripts</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858267</link>
+		<link>https://wpoets.com/?post_type=c_plot&#038;p=858267</link>
 		<pubDate>Wed, 03 Jul 2019 06:47:48 +0000</pubDate>
-		<dc:creator><![CDATA[dev]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663296</guid>
 		<description></description>
 		<content:encoded><![CDATA[<link rel="stylesheet" href="[aw2.get url.home /]site-skin/css/awesome-css"> //** Add moodboad css***//
@@ -8002,9 +8121,9 @@ and
 														</item>
 					<item>
 		<title>Header</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858268</link>
+		<link>https://wpoets.com/?post_type=c_plot&#038;p=858268</link>
 		<pubDate>Wed, 03 Jul 2019 06:49:37 +0000</pubDate>
-		<dc:creator><![CDATA[dev]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663298</guid>
 		<description></description>
 		<content:encoded><![CDATA[<div class="header brand-white-bg">
@@ -8087,10 +8206,117 @@ and
 		<wp:is_sticky>0</wp:is_sticky>
 														</item>
 					<item>
+		<title>Settings</title>
+		<link>https://wpoets.com/?post_type=c_plot&#038;p=860488</link>
+		<pubDate>Wed, 03 Jul 2019 06:44:50 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663287</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>860488</wp:post_id>
+		<wp:post_date><![CDATA[2019-07-03 06:44:50]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-07-03 06:44:50]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[settings]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[site_logo]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://www.wpoets.com/wp-content/uploads/2018/05/WPoets-logo-1.svg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[from_name]]></wp:meta_key>
+		<wp:meta_value><![CDATA[Amit]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[from_email]]></wp:meta_key>
+		<wp:meta_value><![CDATA[amit@wpoets.com]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>Init</title>
+		<link>https://wpoets.com/?post_type=c_plot&#038;p=860489</link>
+		<pubDate>Wed, 03 Jul 2019 06:45:19 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663289</guid>
+		<description></description>
+		<content:encoded><![CDATA[ [query.get_terms taxonomies=story_status hide_empty=0 o.set=template.story_status /]   
+  [loop.@status template.story_status]
+    [env.set main="story_status.{@status.item.slug}" cond='{@status.item.slug}' not_equal='new'][env.get @status.item.name /][/env.set]
+    [env.set main="story_status.new_new" cond='{@status.item.slug}' equal='new'][env.get @status.item.name /][/env.set]
+  [/loop.@status]     
+  
+  [query.get_terms taxonomies=task_status hide_empty=0 o.set=template.task_status /]
+  [loop.@status template.task_status]
+    [env.set main="task_status.{@status.item.slug}" cond='{@status.item.slug}' not_equal='new'][env.get @status.item.name /][/env.set]
+    [env.set main="task_status.new_new" cond='{@status.item.slug}' equal='new'][env.get @status.item.name /][/env.set]
+  [/loop.@status]  
+  
+  [query.get_terms taxonomies=note_type hide_empty=0 o.set=template.note_type /]
+  [loop.@status template.note_type]
+    [env.set main="note_type.{@status.item.slug}" cond='{@status.item.slug}' not_equal='new'][env.get @status.item.name /][/env.set]
+    [env.set main="note_type.new_new" cond='{@status.item.slug}' equal='new'][env.get @status.item.name /][/env.set]
+  [/loop.@status]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>860489</wp:post_id>
+		<wp:post_date><![CDATA[2019-07-03 06:45:19]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-07-03 06:45:19]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[init]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title>Rights</title>
+		<link>https://wpoets.com/?post_type=c_plot&#038;p=860490</link>
+		<pubDate>Wed, 03 Jul 2019 06:47:14 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663294</guid>
+		<description></description>
+		<content:encoded><![CDATA[[arr.create set='app.rights'] 
+  [access mode='logged'  title='Login To Plot'/]
+
+  [auth a1 method=twofactor_login_authenticator /]
+  [auth a2 method=single_access  /]
+[/arr.create]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>860490</wp:post_id>
+		<wp:post_date><![CDATA[2019-07-03 06:47:14]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-07-03 06:47:14]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[rights]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
 		<title>Footer</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858269</link>
+		<link>https://wpoets.com/?post_type=c_plot&#038;p=860491</link>
 		<pubDate>Wed, 03 Jul 2019 06:50:54 +0000</pubDate>
-		<dc:creator><![CDATA[dev]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663300</guid>
 		<description></description>
 		<content:encoded><![CDATA[[css.style]
@@ -8107,7 +8333,7 @@ and
 	<span class="font-size-smallest">© 2019 <a href="https://www.wpoets.com" class="brand-primary" target="_blank" rel="noopener noreferrer">WPoets - Your WordPress Experts</a>. All Rights Reserved.</span>
 </div>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858269</wp:post_id>
+		<wp:post_id>860491</wp:post_id>
 		<wp:post_date><![CDATA[2019-07-03 06:50:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-07-03 06:50:54]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -8122,15 +8348,20 @@ and
 														</item>
 					<item>
 		<title>Menu</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858270</link>
+		<link>https://wpoets.com/?post_type=c_plot&#038;p=860492</link>
 		<pubDate>Wed, 03 Jul 2019 10:02:32 +0000</pubDate>
-		<dc:creator><![CDATA[dev]]></dc:creator>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=663313</guid>
 		<description></description>
 		<content:encoded><![CDATA[[env.set_array menus.home title='Dashboard' class='' icon='dashboard' icon-color='gray-white' /]
 [env.set_array menus.user-stories title='User Stories' class='' icon='user-stories' icon-color='gray-white' /]
 [env.set_array menus.tasks title='Tasks' class='' icon='tasks' icon-color='gray-white' /]
 [env.set_array menus.notes title='Notes' class='' icon='notes' icon-color='gray-white' /]
+[env.set_array menus.reports title='Reports' class='' icon='user-stories' icon-color='gray-white' /]
+[env.set_array menus.reports.children.new link='/plot/task-worked-upon' title='Task Worked Upon' class='' target='' /]
+[env.set_array menus.reports.children.new link='/plot/all-activity' title='All Activity List' class='' target='' /]
+[env.set_array menus.reports.children.new link='/plot/task-timeline' title='Tasks Timeline View' class='' target='' /]
+
 [env.set_array menus.add-user-story title='Add User Story' class='' icon='add-new' icon-color='gray-white' /]
 
 <div class="menubar pad-y-4">
@@ -8147,17 +8378,31 @@ and
             [plot.icon template="{@menu.item.icon}" color="{@menu.item.icon-color}"/]
             <span>[aw2.get @menu.item.title /]</span>
           </a>
+          [if.not_empty @menu.item.children]
+              <i class="icon-arrow-drop-down brand-white submenu-icon [if.equal lhs='{@menu.item.class}' rhs='{app.slug}'] icon-arrow-drop-up[/if.equal]"></i>
+              <ul class="sub-menu">
+                [loop.@submenu @menu.item.children]
+                  <li class="[if.equal lhs='{{php.site_url}}{server_variables.REQUEST_URI}' rhs='{@submenu.item.link}'] active[/if.equal]">
+                      <a href="[aw2.get @submenu.item.link /]">[aw2.get @submenu.item.title /]</a>
+                  </li>
+                [/loop.@submenu]
+              </ul>
+          [/if.not_empty]
         </li>
     [/loop.@menu]
   </ul>
 </div>
 <script type="spa/axn" axn="core.run_script">
+ $(".submenu-icon").click(function(){
+    $(this).toggleClass("icon-arrow-drop-up").siblings(".sub-menu").slideToggle();
+    $(this).parents("li").toggleClass("active");
+  });
   $(".menubar a").click(function(){
       $(".sidebar-wrapper").removeClass("active");
   });
 </script>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858270</wp:post_id>
+		<wp:post_id>860492</wp:post_id>
 		<wp:post_date><![CDATA[2019-07-03 10:02:32]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-07-03 10:02:32]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -8169,86 +8414,8 @@ and
 		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[23]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>Icons</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858271</link>
-		<pubDate>Thu, 29 Aug 2019 09:05:38 +0000</pubDate>
-		<dc:creator><![CDATA[Dhirajakumar]]></dc:creator>
-		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=763526</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858271</wp:post_id>
-		<wp:post_date><![CDATA[2019-08-29 14:35:38]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-08-29 09:05:38]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[icons__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1572245391]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[icons]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>search</title>
-		<link>http://nxt.wpoets.com/?post_type=c_plot&#038;p=858272</link>
-		<pubDate>Sun, 13 Oct 2019 16:17:19 +0000</pubDate>
-		<dc:creator><![CDATA[pravin]]></dc:creator>
-		<guid isPermaLink="false">http://plot.getawesomestudio.com/?post_type=c_plot&#038;p=766919</guid>
-		<description></description>
-		<content:encoded><![CDATA[<p>
-	Hello
-</p>]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>858272</wp:post_id>
-		<wp:post_date><![CDATA[2019-10-13 21:47:19]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-10-13 16:17:19]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[search__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[c_plot]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[19]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1570983698]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[search]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-		
+														</item>
+				
 		<item>
 		<title>home</title>
 		<link>https://wpoets.com/?post_type=m_plot&#038;p=860495</link>
@@ -8258,9 +8425,11 @@ and
 		<description></description>
 		<content:encoded><![CDATA[[templates.add main]
 [css.style]
-	.active {
-    background: @gray;
-    color: #fff;
+  .mobile-section{
+    .active {
+      background: @gray;
+      color: #fff;
+    }
   }
   .div-center{
   	margin:0 auto;
@@ -9267,7 +9436,8 @@ and
           <div class="notes mar-t-6">
           	<div class="is-flex justify-content-between align-items-center">
             	<h4 class="font-bold">Notes</h4>
-            	<a href='' class="align-items-center font-size-smallest is-flex user-add pointer mar-b-4 pull-right" task_id="[template.task_id /]" bind="click" route_ajax='add-note' control='body' axn='control.append'>
+            	<a href='' bind="click" axn='control.append' control='body' route_ajax='add-note' 
+              			class="align-items-center font-size-smallest is-flex user-add pointer mar-b-4 pull-right" task_id="[template.task_id /]">
               [plot.icon.add-new color="brand-primary" /]
               <span class="gray font-bold pad-x-1 no-padding-right">
                Add Note
@@ -9473,7 +9643,7 @@ and
                   <div class="document-editor__toolbar"></div>
                   <div class="document-editor__editable-container invisible">
                       <div class="document-editor__editable">
-                      	[template.note_meta.note_content /]
+                      	[template.note_meta.note_content  /]
                       </div>
                   </div>
                 </div>
@@ -9518,7 +9688,7 @@ and
     </section>
   </div>
   
-  [session_ticket.create {token} nonce="yes" set=module.save_form time=300/]
+  [session_ticket.create {token} nonce="yes" set=module.save_form time=300 /]
   [session_ticket.set_activity {module.save_form} app='{app.slug}' module='{module.slug}.update_note_content' /]
   [session_ticket.set {module.save_form} field='update_note_id' value='{template.note_meta.note_id}' /]
   <script type="spa/axn" axn="core.run_script">
@@ -9627,9 +9797,13 @@ and
 [/templates.add]
 
 [templates.add update_note_content]
-	[php.stripslashes p1={request.content} set=template.content /]
+	[php.stripslashes p1={request.content} o.set=template.content /]
   [template.set_array meta.new meta_key='note_content' meta_value='{template.content}' coll_type='note' /]
   [plot.note.update meta='{template.meta}' note_id='{template.update_note_id}' /]
+   //** Activity log **//
+  [template.set metas_act.activity_note="Note (<a href='{app.path}/note/{template.update_note_id}'>{template.update_note_id}</a>) was updated." /]
+  [plot.activity.log object_id="{template.update_note_id}" coll_type="note" metas="{template.metas_act}" set="template.activity" /]
+	
 [/templates.add]
 
 [templates.add upload-images]
@@ -10047,6 +10221,7 @@ and
      slug="[module.slug /].[template.name /]?page="
      total_pages="[template.get rs.found_pages /]"
      status="[request.get status /]"
+     story_id="[request.get story_id/]"
      current_page="[request.get page /]">
    </script>
   [plot.task.status_count  story_id='{request.story_id}' set="template.status_counts"  /]  
@@ -10081,7 +10256,7 @@ and
     [plot.user_story.update metas='{template.meta_arr}' object_id="{request.story_id}" set="template.res" /]
     
     //** Activity log **//
-    [template.set metas_act.activity_note="Story status changed." /]
+    [template.set metas_act.activity_note="<a href='{app.path}/user-story/{request.story_id}'> Story </a> status changed to Approved." /]
     [plot.activity.log object_id="{request.story_id}"  coll_type="story_status_change" metas="{template.metas_act}" set="template.activity" /]
     
     //** response **//
@@ -10315,6 +10490,7 @@ and
       [/if.greater_than_zero]
     [/if.empty] 
     
+    
     [template.get story_data.story_attachments.json_decode set="template.arr_story_attachment" /]
 		[loop.@eachAttachment template.arr_story_attachment]
       [template.set_array attachment_ids.new id="{aw2.get @eachAttachment.item.id}" url="{aw2.get @eachAttachment.item.url}" /] 
@@ -10326,10 +10502,31 @@ and
     [if.not_empty request.story_reference_label]
       [loop.@each_ref request.story_reference_label]
         [aw2.get request.story_reference_url.{@each_ref.key} set="template.url" /]
-        [template.set_array reference_arr.new label="{@each_ref.item}" url="{template.url}" /] 
+        [template.set_array reference_arr.new label="{{aw2.get @each_ref.item m.stripslashes_deep=yes}}" url="{template.url}" /] 
       [/loop.@each_ref]
     [/if.not_empty]
+    
+    //**reference task & story selected **//
+        
+    [if.not_empty request.story_references]
+      [loop.@each_ref request.story_references]
+      [aw2.get @each_ref.item /]
+       [php.strpos p1='{@each_ref.item}' p2='tsk' o.set='template.task_pos' /]
+       [if.not_bool template.task_pos]		
+	       	[db.meta.select_meta_key_value_pair meta_table="plot" coll_id="{@each_ref.item}" set="template.task_data" /]
+          [template.set_array reference_arr.new label="{template.task_data.task_title}" url="{app.path}/task/{@each_ref.item}" /]   
+       [/if.not_bool]
+       
+       [php.strpos p1='{@each_ref.item}' p2='us' o.set='template.us_pos' /]
+       [if.not_bool template.us_pos]
+         	[db.meta.select_meta_key_value_pair meta_table="plot" object_id="{@each_ref.item}" set="template.story_data" /]    
+          [template.set_array reference_arr.new label="{template.story_data.story_title}" url="{app.path}/user-story/{@each_ref.item}" /] 
+       [/if.not_bool]
 
+      [/loop.@each_ref]
+    [/if.not_empty]
+	
+    
     //** Tags **//
     [loop.@tags request.story_tags]
         [aw2.get @tags.item set="template.tag" /]
@@ -10345,8 +10542,8 @@ and
     
     [date.create now date_format='Y-m-d H:i:s' set=template.current_dt /]
     //** set meta array **//
-    [template.set meta_arr.story_title="{request.story_title}" /]
-    [template.set meta_arr.story_description="{request.story_description}" /]
+    [template.set meta_arr.story_title="{{request.get story_title m.stripslashes_deep=yes}}" /]
+    [template.set meta_arr.story_description="{{request.get story_description m.stripslashes_deep=yes}}" /]
     [template.set meta_arr.story_reference_label_url="{template.reference_arr.json_encode}" /]
     [template.set meta_arr.story_attachments="{template.attachments}" not_empty="{template.attachments}" /]
     [template.set meta_arr.story_assigned_to="{request.assigned_to}" /]
@@ -10361,13 +10558,12 @@ and
     [/if.else]
     [template.set meta_arr.story_tags="{template.story_tags.comma}" /]
     [template.set meta_arr.story_due_date="{request.story_due_date}" /]
-    [template.set meta_arr.story_references="{request.story_references.comma}" /]
     [template.set meta_arr.story_id="{template.story_id}" /]
 
     //**Call add story service **//
     [plot.user_story.add metas='{template.meta_arr}' object_id="{template.story_id}" set="template.res" /]
 		
-    [template.set metas.activity_note="New story '<em>{template.meta_arr.story_title}</em>' added." /]
+    [template.set metas.activity_note="New story '<em><a href='{app.path}/user-story/{template.story_id}'>{template.meta_arr.story_title}</a></em>' added." /]
 		[plot.activity.log object_id="{template.story_id}"  metas="{template.metas}"  coll_type="story" set="template.activity" /]
 		
     		
@@ -10480,7 +10676,7 @@ and
       <div class="feedback-res"></div>
     </form>
 	
-  	[session_ticket.create nonce=yes set=module.ticket_id /]
+  	[session_ticket.create nonce=yes set=module.ticket_id time=180 /]
     [session_ticket.set_activity {module.ticket_id} collection='{module.collection}' module='{module.slug}.save_feedback' /]
 
     <script type=spa/axn
@@ -10547,7 +10743,7 @@ and
     [if.not_empty request.{template.type}_feedback_reference_label]
       [loop.@each_ref request.{template.type}_feedback_reference_label]
         [aw2.get request.{template.type}_feedback_reference_url.{@each_ref.key} set="template.url" /]
-        [template.set_array reference_arr.new label="{@each_ref.item}" url="{template.url}" not_empty="{template.url}" /] 
+        [template.set_array reference_arr.new label="{{aw2.get @each_ref.item m.stripslashes_deep=yes}}" url="{template.url}" not_empty="{template.url}" /] 
       [/loop.@each_ref]
     [/if.not_empty]
 	
@@ -10555,7 +10751,7 @@ and
   	[if.equal lhs="{template.type}" rhs="task"]
 
       //** set meta array **//
-      [template.set meta_arr.task_feedback_description="{request.task_feedback}" /]
+      [template.set meta_arr.task_feedback_description="{{request.get task_feedback m.stripslashes_deep=yes}}" /]
       [template.set meta_arr.task_feedback_reference_label_url="{template.reference_arr.json_encode}" /]
       [template.set meta_arr.task_feedback_attachments="{template.attachments}" not_empty="{template.attachments}" /]
       
@@ -10586,22 +10782,22 @@ and
       [plot.task.update metas='{template.meta_arr}' object_id="{template.story_id}" coll_id="{template.task_id}" set="template.res" /]
       
         [template.set metas_act="" /]
-        [template.set metas_act.activity_note="Status changed to {request.task_status}" /]
-        [plot.activity.log object_id="{template.task_id}" metas="{template.metas_act}" coll_type="plot"  
+        [template.set metas_act.activity_note="Status changed to <em>{request.task_status}</em> for task <a href='{template.activity_url}'>{template.taskmeta.task_title}</a>" /]
+        [plot.activity.log object_id="{template.task_id}" metas="{template.metas_act}" coll_type="task"  
         									 set="template.activity" c.cond='template.taskmeta.task_status' c.neq="request.task_status" /] 
 
         [template.set metas_act="" /]
-        [template.set metas_act.activity_note="Task Assigned to {request.assigned_to}" /]
-        [plot.activity.log object_id="{template.task_id}" metas="{template.metas_act}" coll_type="plot"  
+        [template.set metas_act.activity_note="Task (<em><a href='{template.activity_url}'>{template.taskmeta.task_title}</a></em>) assigned to <em>{request.assigned_to}</em>" /]
+        [plot.activity.log object_id="{template.task_id}" metas="{template.metas_act}" coll_type="task"  
         									 set="template.activity"  c.cond='template.taskmeta.task_assigned_to' c.neq="request.assigned_to" /]
         
         [template.set metas_act="" /]
-        [template.set metas_act.activity_note="Due date changed to {request.due_date}" /]
-        [plot.activity.log object_id="{template.task_id}" metas="{template.metas_act}" coll_type="plot" 
+        [template.set metas_act.activity_note="Due date changed to <em>{request.due_date} </em> for task <a href='{template.activity_url}'>{template.taskmeta.task_title}</a>" /]
+        [plot.activity.log object_id="{template.task_id}" metas="{template.metas_act}" coll_type="task" 
         									set="template.activity"  c.cond='template.taskmeta.task_due_date' c.neq="request.due_date" /] 
       
-      [template.set metas_act.activity_note="New feedback added." /]
-      [plot.activity.log object_id="{template.task_id}"  metas="{template.metas_act}" coll_type="plot" set="template.activity" /] //** Activity log **//
+      [template.set metas_act.activity_note="New feedback was added to task <a href='{template.activity_url}'>{template.taskmeta.task_title}</a>." /]
+      [plot.activity.log object_id="{template.task_id}"  metas="{template.metas_act}" coll_type="task" set="template.activity" /] //** Activity log **//
     [/if.equal]
   
     [if.equal lhs="{template.type}" rhs="story"]
@@ -10636,22 +10832,22 @@ and
       
         //** TODO detect the individual activity and give actual change**//
         [template.set meta_arr="" /]
-        [template.set metas_act.activity_note="Status changed to {request.story_status}" /]
-        [plot.activity.log object_id="{template.story_id}" metas="{template.metas_act}" coll_type="plot"  
+        [template.set metas_act.activity_note="Status changed to <em>{request.story_status}</em> for user story <a href='{template.activity_url}'>{template.activity_title}</a>" /]
+        [plot.activity.log object_id="{template.story_id}" metas="{template.metas_act}" coll_type="story"  
         					set="template.activity" cond='{template.storymeta.story_status}' not_equal="{request.story_status}"/] 
 
         [template.set meta_arr="" /]
-        [template.set metas_act.activity_note="Story Assigned to {request.assigned_to}" /]
-        [plot.activity.log object_id="{template.story_id}" metas="{template.metas_act}" coll_type="plot"  
+        [template.set metas_act.activity_note="Story (<a href='{template.activity_url}'>{template.activity_title}</a>) assigned to <em>{request.assigned_to}</em>" /]
+        [plot.activity.log object_id="{template.story_id}" metas="{template.metas_act}" coll_type="story"  
         						set="template.activity" cond='{template.storymeta.story_assigned_to}' not_equal="{request.assigned_to}" /] 
       
         [template.set meta_arr="" /]
-        [template.set metas_act.activity_note="Due date changed to {request.due_date}" /]
-        [plot.activity.log object_id="{template.story_id}" metas="{template.metas_act}" coll_type="plot" 
+        [template.set metas_act.activity_note="Due date changed to <em>{request.due_date}</em> for user story <a href='{template.activity_url}'>{template.activity_title}</a>" /]
+        [plot.activity.log object_id="{template.story_id}" metas="{template.metas_act}" coll_type="story" 
         									set="template.activity" cond='{template.storymeta.story_due_date}' not_equal="{request.due_date}"/] 
       
-      [template.set metas_act.activity_note="New feedback added." /]
-    	[plot.activity.log object_id="{template.story_id}" coll_type="plot" metas="{template.metas_act}" set="template.activity" /]
+      [template.set metas_act.activity_note="New feedback added to user story <a href='{template.activity_url}'>{template.activity_title}</a>." /]
+    	[plot.activity.log object_id="{template.story_id}" coll_type="story" metas="{template.metas_act}" set="template.activity" /]
       
       //** Activity log **//
     [/if.equal]
@@ -10777,10 +10973,10 @@ and
   </section>
 [/templates.add]
 [templates.add add_note]
-	[plot.note.add task_id='{request.task_id}' note_title='{request.note_title}' note_type='{request.note_type}' set=template.res /]
+	[plot.note.add task_id='{request.task_id}' note_title='{{request.get note_title m.stripslashes_deep=yes}}' note_type='{request.note_type}' set=template.res /]
    //** Activity log **//
-  [template.set metas_act.activity_note="Note <em>({request.note_title})</em> was created." /]
-  [plot.activity.log object_id="{request.task_id}" coll_type="plot" metas="{template.metas_act}" set="template.activity" /]
+  [template.set metas_act.activity_note="Note <em>(<a href='{app.path}/note/{template.res.note_id}'>{request.note_title}</a>)</em> was created." /]
+  [plot.activity.log object_id="{request.task_id}" coll_type="note" metas="{template.metas_act}" set="template.activity" /]
 
   <script type="spa/axn" axn="core.run_script">
   	spa.loader.show();
@@ -11012,8 +11208,8 @@ and
     [date.create now date_format='Y-m-d H:i:s' set=template.current_dt /]
     [template.set meta_arr.story_id="{request.story_id}" /]
     [template.set meta_arr.task_id="{template.task_id}" /]
-    [template.set meta_arr.task_title="{request.task_title}" /]
-    [template.set meta_arr.task_description="{request.task_description}" /]
+    [template.set meta_arr.task_title="{{request.get task_title m.stripslashes_deep=yes}}" /]
+    [template.set meta_arr.task_description="{{request.get task_description m.stripslashes_deep=yes}}" /]
     [template.set meta_arr.task_reference_label_url="{template.reference_arr.json_encode}" /]
     [template.set meta_arr.task_attachments="{template.attachments}" not_empty="{template.attachments}" /]
     [template.set meta_arr.task_assigned_to="{request.assigned_to}" /]
@@ -11027,8 +11223,8 @@ and
     [plot.task.add metas='{template.meta_arr}' object_id="{request.story_id}" coll_id="{template.task_id}" set="template.res" /]
 
     //** Activity log **//
-    [template.set metas_act.activity_note="Task ({request.task_title}) was created." /]
-  	[plot.activity.log object_id="{request.story_id}" coll_type="plot" metas="{template.metas_act}" set="template.activity" /]
+    [template.set metas_act.activity_note="Task (<a href='{app.path}/task/{template.task_id}'>{{request.get task_title m.stripslashes_deep=yes}}</a>) was created." /]
+  	[plot.activity.log object_id="{request.story_id}" coll_type="story" metas="{template.metas_act}" set="template.activity" /]
 		
     	
     [template.set activity_url='{app.path}/task/{template.task_id}' /]
@@ -11045,7 +11241,7 @@ and
   
     [if.empty template.res]
       [template.set alert_class="alert-success" /]
-      [template.set alert_msg="Task ({request.task_title}) was created." /]
+      [template.set alert_msg="Task ({{request.get task_title m.stripslashes_deep=yes}}) was created." /]
     [/if.empty]
    
     
@@ -11636,6 +11832,12 @@ CREATE TABLE IF NOT EXISTS `plot_activities` (
   `meta_value` longtext NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `plot_activities`
+ADD INDEX `object_id` (`object_id`),
+ADD INDEX `coll_id` (`coll_id`),
+ADD INDEX `coll_id_meta_key_meta_value` (`coll_id`, `meta_key`, `meta_value`(100));
+
 COMMIT;
 
 [/multi.select]]]></content:encoded>
@@ -11673,7 +11875,8 @@ COMMIT;
 body{
 	overflow-x:hidden;
  	background-color: #f5f5f5;
-  
+   table.dataTable tbody tr.even { background-color: #f2f2f2; }
+  table.dataTable tbody tr.odd { background-color: #fff; }
   .header{
     height: 70px;
     z-index: 9999;
@@ -11898,6 +12101,7 @@ body{
       color: #8ec53e;
       background-color: transparent;
   }
+ 
 }
 
 .SumoSelect{
@@ -11943,6 +12147,18 @@ body{
       width: 100%;
       z-index: 9999;
       transition: all 0.5s ease-in-out;
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #eee; 
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #bbb; 
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+      }
       
       &.active{
       	bottom: 0;
@@ -11954,6 +12170,7 @@ body{
         list-style-type: none;
         
         li{
+        	position: relative;
         	a{
               display: block;
               padding: 12px 15px 12px 20px;
@@ -11983,16 +12200,42 @@ body{
                   bottom: 0px;
                   transition: all 0.4s ease-in-out;
               }
-
-              &:hover, &.active {
+              
+          }
+          &:hover, &.active{
+          		>.submenu-icon{
+                background: rgba(0,0,0,.3);
+              }
+              >a{
                   background-color: rgba(0,0,0,0.4);
                  	&:before {
                    	background: @brand-primary;
                   }
               }
-              
           }
         }
+      }
+      .sub-menu li:hover a{
+          color: #ffffff;
+      }
+      .submenu-icon{
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 14px 10px;
+          font-size: 22px;
+          transition: all 0.5s ease-in-out;
+           @media only screen and (max-width: 768px) {
+           		padding: 13px 10px;
+           }
+      }
+      .sub-menu{
+          display:none;
+          background: #747474;
+
+          li a{
+              padding-left: 20px;
+          }
       }
       @media only screen and (min-width: 992px) {
       	width: 16.6666666667%;
@@ -12504,17 +12747,21 @@ body{
       								 set="template.attachments" not_empty="{template.old_attachments}" /]
 		
     //** Activity log note set **//
-    [template.set act_metas.activity_note="New attachment added." /]
+   
 
     //** set meta array **//
     [if.equal lhs="{template.type}" rhs="task"]
     		[template.set meta_arr.task_attachments="{template.attachments.json_encode}" not_empty="{template.attachments}" /]
   			[plot.task.update metas='{template.meta_arr}' object_id="{request.story_id}" coll_id="{request.task_id}" set="template.res" /]
-				[plot.activity.log object_id="{template.task_id}"  metas="{template.act_metas}" coll_type="task_attachment" set="template.activity" /] //** Activity log **//
+				
+        [template.set act_metas.activity_note="New attachment added to task <a href='{app.path}/task/{template.task_id}'>{template.task_id}</a>." /]
+        [plot.activity.log object_id="{template.task_id}"  metas="{template.act_metas}" coll_type="task_attachment" set="template.activity" /] //** Activity log **//
+        
     [/if.equal]
     [if.equal lhs="{template.type}" rhs="story"]
     		[template.set meta_arr.story_attachments="{template.attachments.json_encode}" not_empty="{template.attachments}" /]
         [plot.user_story.update metas='{template.meta_arr}' object_id="{request.story_id}" set="template.res" /]
+         [template.set act_metas.activity_note="New attachment added to user story <a href='{app.path}/user-story/{template.story_id}'>{template.story_id}</a>." /]
 				[plot.activity.log object_id="{template.story_id}"  metas="{template.act_metas}" coll_type="story_attachment" set="template.activity" /]  //** Activity log **//
     [/if.equal]
 
@@ -12625,24 +12872,28 @@ body{
     [if.not_empty request.{template.type}_reference_label]
       [loop.@each_ref request.{template.type}_reference_label]
         [aw2.get request.{template.type}_reference_url.{@each_ref.key} set="template.url" /]
-        [template.set_array reference_arr.new label="{@each_ref.item}" url="{template.url}" /] 
+        [template.set_array reference_arr.new label="{{aw2.get @each_ref.item m.stripslashes_deep=yes}}" url="{template.url}" /] 
       [/loop.@each_ref]
     [/if.not_empty]
     
 
     [php.array_merge p1="{template.old_references}" p2="{template.reference_arr}" set="template.reference_arr" not_empty="{template.old_references}" /]
 	
-    [template.set metas_act.activity_note="New reference url added." /]
+    
     //** set meta array **//
     [if.equal lhs="{template.type}" rhs="task"]    
     	[template.set meta_arr.task_reference_label_url="{template.reference_arr.json_encode}" not_empty="{template.reference_arr}" /]
       [plot.task.update metas='{template.meta_arr}' object_id="{request.story_id}" coll_id="{request.task_id}" set="template.res" /]      
+      
+      [template.set metas_act.activity_note="New reference url added to task <a href='{app.path}/task/{request.task_id}'>{request.task_id}</a> ." /]
       [plot.activity.log object_id="{request.task_id}"  metas="{template.metas_act}" coll_type="task_reference" set="template.activity" /] //** Activity log **//
     [/if.equal]
     
     [if.equal lhs="{template.type}" rhs="story"]
     	[template.set meta_arr.story_reference_label_url="{template.reference_arr.json_encode}" not_empty="{template.reference_arr}" /]
   		[plot.user_story.update metas='{template.meta_arr}' object_id="{request.story_id}" set="template.res" /]
+      
+      [template.set metas_act.activity_note="New reference url added to user story <a href='{app.path}/user-story/{request.story_id}'>{request.story_id}</a> ." /]
       [plot.activity.log object_id="{request.story_id}"  metas="{template.metas_act}"  coll_type="story_reference"  set="template.activity" /] //** Activity log **//
     [/if.equal]
 		
@@ -12690,6 +12941,552 @@ body{
 		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>reports</title>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=861108</link>
+		<pubDate>Fri, 06 Dec 2019 02:38:43 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://wpoets.com/?post_type=m_plot&#038;p=861108</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+[env.set app.page_title="Overview Report - Plot" /]
+  <div class="body-content-wrapper">
+  	<div class="justify-content-between">
+  		<h1 class="font-regular text-center font-size-largest mar-b-4">Overview</h1>
+    </div> 
+ 		   <section role="charts" class="">
+    <div class="row">
+    		<div class="col-md-6">
+          <div class="mar-b-6" >
+                <!-- preparing a DOM with width and height for ECharts -->
+         <div id="task-chart-summary" style="width:100%; height:400px;"></div>
+           [plot.task.status_count o.set='template.task_statuses' /]
+          
+           [env.set_array module.task_chart.option title.text='Status of Tasks' /]
+           [env.set_array module.task_chart.option title.subtext='Count' /]
+           [env.set_array module.task_chart.option title.x='center' /]
+           
+           [env.set_array module.task_chart.option tooltip.trigger='item' /]
+           [env.set module.task_chart.option tooltip.formatter]{a} <br/>{b}: {c} ({d}%)[/env.set]
+      
+      		 [loop.@inner template.task_statuses]
+           
+             [env.set_array module.task_data.new 
+                        value='{@inner.item}' name='{@inner.key}' cond="{@inner.key}" not_equal="total"/]
+           [/loop.@inner]
+      		 
+            [env.set module.center.new]50%[/env.set]  
+     				[env.set module.center.new]60%[/env.set]  
+           
+      		 [env.set_array module.task_chart.option.series.new name='Task Status' type='pie' radius='55%' center='{module.center}'  data='{module.task_data}'/]
+          
+          <script type="spa/axn" axn='core.run_script' cdn_js_files='echarts/4.4.0/echarts.min.js'>
+            var chart_obj = echarts.init(document.getElementById('task-chart-summary'));
+            var options= $.parseJSON('[env.get module.task_chart.option json_encode=true /]');
+            chart_obj.setOption(options);
+          </script>    
+         </div>
+         </div>
+         <div class="col-md-6">
+          <div class="mar-b-6" >
+                <!-- preparing a DOM with width and height for ECharts -->
+         <div id="story-chart-summary" style="width:100%; height:400px;"></div>
+          [plot.user_story.status_count o.set='template.user_story_statuses' /]
+           [env.set_array module.story_chart.option title.text='Status of User Stories' /]
+           [env.set_array module.story_chart.option title.subtext='Count' /]
+           [env.set_array module.story_chart.option title.x='center' /]
+           
+           [env.set_array module.story_chart.option tooltip.trigger='item' /]
+           [env.set module.story_chart.option tooltip.formatter]{a} <br/>{b}: {c} ({d}%)[/env.set]
+      
+      		 [loop.@inner template.user_story_statuses]
+           
+             [env.set_array module.story_data.new 
+                        value='{@inner.item}' name='{@inner.key}' cond="{@inner.key}" not_equal="total"/]
+           [/loop.@inner]
+      		 
+            [env.set module.center.new]50%[/env.set]  
+     				[env.set module.center.new]60%[/env.set]  
+           
+      		 [env.set_array module.story_chart.option.series.new name='Task Status' type='pie' radius='55%' center='{module.center}'  data='{module.story_data}'/]
+           <script type="spa/axn" axn='core.run_script' cdn_js_files='echarts/4.4.0/echarts.min.js'>
+              var chart_obj = echarts.init(document.getElementById('story-chart-summary'));
+              var options= $.parseJSON('[env.get module.story_chart.option json_encode=true /]');
+              chart_obj.setOption(options);
+            </script>        
+         </div>
+         </div>
+    </div>
+    </section>
+    
+    <section role="tasks" class="tasks">
+    	<h3 class="font-bold"></h3>
+      	[module.set_array args]
+          [after_submit raw]
+            [query]
+              [atts debug_dataset=yes    ignore=true /]
+                [pagesize]100[/pagesize]
+                [with]
+                  [sql]
+                  select coll_id as data_id, meta_value as user_email from plot where coll_type='task' and meta_key ='task_assigned_to'
+                  [/sql]
+                  [add_field new]
+                    [sql raw]          
+                    select [module.previous_query_no /].*, meta_value as status from [module.previous_query_no /] JOIN plot ON [module.previous_query_no /].data_id=plot.coll_id where coll_type='task' and meta_key ='task_status'
+                   [/sql]
+                  [/add_field]
+                  [add_field new]
+                    [sql raw]          
+                    select [module.previous_query_no /].*, display_name from [module.previous_query_no /] JOIN wp_users ON [module.previous_query_no /].user_email=wp_users.user_email
+                   [/sql]
+                  [/add_field]
+                  [add_field new]
+                    [sql raw]          
+                    select [module.previous_query_no /].display_name,  count(1) AS total,
+                    sum(case when status= 'signed-off' then 1 else 0 end) AS `signed-off`,
+                    sum(case when status= 'new' then 1 else 0 end) AS new_status,
+                    sum(case when status= 'work-in-progress' then 1 else 0 end) AS `work-in-progress`,
+                    sum(case when status= 'feedback' then 1 else 0 end) AS feedback,
+                    sum(case when status= 'hold' then 1 else 0 end) AS hold 
+                    from [module.previous_query_no /] group by [module.previous_query_no /].user_email
+                   [/sql]
+                  [/add_field]  
+                [/with]
+            [/query]
+            [table]
+                  [column new label='User' meta_key='display_name' /]
+
+                  [column new label='Total Tasks' meta_key='total'/]
+                  [column new label='New' meta_key='new_status'/]
+                  [column new label='Work In Progress' meta_key='work-in-progress'/]
+                  [column new label='Feedback' meta_key='feedback'/]
+                  [column new label='Signed Off' meta_key='signed-off'/]
+                  [column new label='Hold' meta_key='hold'/]
+
+            [/table]
+            [/after_submit]
+            [handlers]
+            	[summarytable label='Refresh Report'][/summarytable]
+            [/handlers]
+      [/module.set_array]
+      [plot.search-filter.main args="{module.args}" title='Status of Tasks Assigned to Users' auto_handler="summarytable" /]
+    </section>
+  </div>
+
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>861108</wp:post_id>
+		<wp:post_date><![CDATA[2019-12-06 02:38:43]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-12-06 02:38:43]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[reports]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>task-worked-upon</title>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=861110</link>
+		<pubDate>Fri, 06 Dec 2019 02:39:10 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://wpoets.com/?post_type=m_plot&#038;p=861110</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+[module.set_array tasks_timeline]
+  [after_submit raw]
+    [query]              
+        [pagesize]100[/pagesize]
+        [with]
+          [sql]
+            SELECT coll_id as data_id, object_id  FROM `plot` where coll_type = 'task' and meta_key='task_status' 
+             [if.not_whitespace form_data.to_date]
+                       and date(stamp) <= date('[env.get form_data.to_date /]')	
+             [/if.not_whitespace] 
+				     [if.not_whitespace form_data.from_date]
+                       and date(stamp) >= date('[env.get form_data.from_date /]')	
+             [/if.not_whitespace] 
+          [/sql] 
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , STR_TO_DATE(meta_value,'%d-%m-%Y') AS task_due_date   
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].data_id = plot.coll_id and coll_type='task' AND meta_key='task_due_date'
+              [/sql]
+          [/add_field] 
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , stamp AS signed_off_date   
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].data_id = plot.coll_id and coll_type='task' AND meta_key='task_status' AND meta_value='signed-off'
+              [/sql]
+          [/add_field]
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , meta_value as story_title 
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].object_id = plot.object_id and coll_type="user_stories" 
+                 AND meta_key="story_title"
+              [/sql]
+           [/add_field]       
+        [/with]   
+        [transform ref_id=data_id /]
+          [meta new]
+           [table]plot[/table]
+						[meta_keys]story_id, task_id, task_title, task_due_date, task_status,task_created_datetime,task_assigned_to[/meta_keys] 
+           [id_field]coll_id[/id_field]
+          [/meta]
+          [meta new]
+           [sql raw]
+              SELECT 'meta' AS type,data_id AS data_id,'story_title' AS meta_key,story_title AS meta_value FROM bounded_data
+           [/sql]
+          [/meta] 
+          [meta new]
+            [sql raw]
+              SELECT 'meta' AS type,data_id AS data_id,'signed_off_date' AS meta_key,signed_off_date AS meta_value FROM bounded_data
+            [/sql]
+          [/meta] 
+        [order]
+             task_due_date DESC
+        [/order]
+        [atts query_count=yes /]
+    [/query]
+    [table]     
+            [column new label='Task']
+              [calc raw] 
+              	[if.equal lhs='{form_data.submit_handler}' rhs='datatable']
+                <a target="_blank" href='[app.path /]/task/[aw2.get row.task_id /]' rel="noopener noreferrer" class="brand-primary">
+                  [aw2.get row.task_title /]
+                </a>
+                 [/if.equal]
+                [if.else]
+                		 [aw2.get row.task_title /]
+                [/if.else]
+               [/calc]
+            [/column]    		  
+            [column new label='User story' ]
+              [calc raw]
+              	[if.equal lhs='{form_data.submit_handler}' rhs='datatable']
+                 <a target="_blank" href='[app.path /]/user-story/[aw2.get row.story_id /]' rel="noopener noreferrer" class="brand-primary">
+                  [aw2.get row.story_title /]
+                </a>
+                [/if.equal]
+                [if.else]
+                		[aw2.get row.story_title /]
+                [/if.else]
+                
+              [/calc]
+            [/column]            
+						[column new label='Assigned To']
+                [calc raw]
+                	 [query.get_user_by field='email' value='{row.task_assigned_to}' o.set='template.user' /]
+                   [template.get user.display_name /]
+                [/calc]
+            [/column]  
+            [column new label='Created On']
+                [calc raw]
+                   [aw2.get row.task_created_datetime m.date_format='d-m-Y' /]
+                [/calc]
+            [/column]   
+            [column new label='Due Date']
+                [calc raw]
+                   [aw2.get row.task_due_date m.date_format='d-m-Y' /]
+                [/calc]
+            [/column]            
+            [column new label='Status']
+               [calc raw]
+                   [aw2.get row.task_status /]
+                [/calc]
+            [/column]                      
+            [column new label='Signed-Off Date']
+                [calc raw]
+                [if.not_empty  row.signed_off_date]
+                   [aw2.get row.signed_off_date m.date_format='d-m-Y' /]
+                 [/if.not_empty]  
+                [/calc]
+            [/column]                   
+    [/table]
+	[/after_submit]
+  [handlers]
+      [datatable label='Show Tasks'][/datatable]    
+      [csv filename='task-worked-upon.csv' label='Download Report' pagesize='1000' ][/csv]
+  [/handlers]
+  [filters]
+     [section period keys="from_date,to_date" /]
+  [/filters]
+[/module.set_array]   
+	[env.set app.page_title="Task Timeline Report - Plot" /]
+  <div class="body-content-wrapper">
+    <section role="tasks" class="tasks">
+       [plot.search-filter.main args="{module.tasks_timeline}" title='Tasks Worked Upon'  /]
+    </section>
+  </div>
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>861110</wp:post_id>
+		<wp:post_date><![CDATA[2019-12-06 02:39:10]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-12-06 02:39:10]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[task-worked-upon]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>all-activity</title>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=861112</link>
+		<pubDate>Fri, 06 Dec 2019 02:39:36 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://wpoets.com/?post_type=m_plot&#038;p=861112</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+[module.set_array args]
+  [after_submit raw]
+    [query]              
+        [pagesize]100[/pagesize]
+        [atts debug_dataset=yes ignore=true /]
+        [with]
+          [sql]
+            SELECT coll_id as data_id,object_id, stamp as created_date FROM `plot_activities` where meta_key='activity_id' 
+             [if.not_whitespace form_data.before_date]
+                       and date(stamp) <= date('[env.get form_data.before_date /]')	
+             [/if.not_whitespace] 
+				     [if.not_whitespace form_data.after_date]
+                       and date(stamp) >= date('[env.get form_data.after_date /]')	
+             [/if.not_whitespace] 
+          [/sql]  
+          [filter new not_empty={form_data.users}]
+              [sql raw]
+                select [module.previous_query_no /].*   
+                from [module.previous_query_no /] JOIN plot_activities as pa 
+                ON [module.previous_query_no /].data_id = pa.coll_id AND meta_key='activity_user' AND meta_value='[env.get form_data.users /]'
+              [/sql]
+          [/filter] 
+            
+        [/with]   
+        [transform ref_id=data_id /]
+          [meta new]
+           [table]plot_activities[/table]
+						[meta_keys]activity_user, activity_note, activity_id, activity_datetime, activity_user[/meta_keys] 
+           [id_field]coll_id[/id_field]
+          [/meta]
+        [order]
+             created_date DESC
+        [/order]
+        [atts query_count=yes /]
+    [/query]
+    [table]     
+           [column new label='Date']
+                [calc raw]
+                   [aw2.get row.activity_datetime m.date_format='d-m-Y' /]
+                [/calc]
+            [/column] 
+						[column new label='User']
+                [calc raw]
+                	 [query.get_user_by field='email' value='{row.activity_user}' o.set='template.user' /]
+                   [template.get user.display_name /]
+                [/calc]
+            [/column] 
+            [column new label='Activity']
+              [calc raw] 
+                		 [aw2.get row.activity_note /]     
+               [/calc]
+            [/column]    		  
+                             
+    [/table]
+	[/after_submit]
+  [handlers]
+      [datatable label='Show Activites'][/datatable]    
+      [csv filename='activites-performed.csv' label='Download Report' pagesize='1000' ][/csv]
+  [/handlers]
+  [filters]
+     [section period keys="from_date,to_date" /]
+     [section filter keys='users' /]
+  [/filters]
+[/module.set_array]   
+	[env.set app.page_title="Activities Report - Plot" /]
+  <div class="body-content-wrapper">
+    <section role="tasks" class="tasks">
+       [plot.search-filter.main args="{module.args}" title='Activites Performed' auto_handler='datatable' /]
+    </section>
+  </div>
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>861112</wp:post_id>
+		<wp:post_date><![CDATA[2019-12-06 02:39:36]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-12-06 02:39:36]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[all-activity]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>task-timeline</title>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=861114</link>
+		<pubDate>Fri, 06 Dec 2019 02:40:01 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://wpoets.com/?post_type=m_plot&#038;p=861114</guid>
+		<description></description>
+		<content:encoded><![CDATA[[module.set_array tasks_timeline]
+  [after_submit raw]
+    [query]              
+        [pagesize]100[/pagesize]
+        [with]
+          [sql]
+            SELECT coll_id as data_id, object_id  FROM `plot` where coll_type = 'task' and meta_key='task_id'
+          [/sql] 
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , STR_TO_DATE(meta_value,'%d-%m-%Y') AS task_due_date   
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].data_id = plot.coll_id and coll_type='task' AND meta_key='task_due_date'
+              [/sql]
+          [/add_field] 
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , stamp AS signed_off_date   
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].data_id = plot.coll_id and coll_type='task' AND meta_key='task_status' AND meta_value='signed-off'
+              [/sql]
+          [/add_field]
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , meta_value as story_title 
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].object_id = plot.object_id and coll_type="user_stories" 
+                 AND meta_key="story_title"
+              [/sql]
+           [/add_field]       
+        [/with]   
+        [transform ref_id=data_id /]
+          [meta new]
+           [table]plot[/table]
+						[meta_keys]story_id, task_id, task_title, task_due_date, task_status[/meta_keys] 
+           [id_field]coll_id[/id_field]
+          [/meta]
+          [meta new]
+           [sql raw]
+              SELECT 'meta' AS type,data_id AS data_id,'story_title' AS meta_key,story_title AS meta_value FROM bounded_data
+           [/sql]
+          [/meta] 
+          [meta new]
+            [sql raw]
+              SELECT 'meta' AS type,data_id AS data_id,'signed_off_date' AS meta_key,signed_off_date AS meta_value FROM bounded_data
+            [/sql]
+          [/meta] 
+        [order]
+             task_due_date ASC
+        [/order]
+        [atts query_count=yes /]
+    [/query]
+    [table]     
+    				[column new label='Sr. No.' cond='{form_data.submit_handler}' equal='datatable']
+              [calc raw]
+                [module.set temp_calc='{module.dataset.pagesize}*({module.dataset.pageno}-1) + {env.@my_row.index}' /]
+								[module.get temp_calc.math /]
+              [/calc]
+            [/column]  
+            [column new label='User story' ]
+              [calc raw]
+              	[if.equal lhs='{form_data.submit_handler}' rhs='datatable']
+                 <a target="_blank" href='[app.path /]/user-story/[aw2.get row.story_id /]' rel="noopener noreferrer" class="brand-primary">
+                  [aw2.get row.story_title /]
+                </a>
+                [/if.equal]
+                [if.else]
+                		[aw2.get row.story_title /]
+                [/if.else]
+                
+              [/calc]
+            [/column]            
+            [column new label='Task']
+              [calc raw] 
+              	[if.equal lhs='{form_data.submit_handler}' rhs='datatable']
+                <a target="_blank" href='[app.path /]/task/[aw2.get row.task_id /]' rel="noopener noreferrer" class="brand-primary">
+                  [aw2.get row.task_title /]
+                </a>
+                 [/if.equal]
+                [if.else]
+                		 [aw2.get row.task_title /]
+                [/if.else]
+               [/calc]
+             [/column]
+             [column new label='Due date']
+                [calc raw]
+                   [aw2.get row.task_due_date m.date_format='d-m-Y' /]
+                [/calc]
+             [/column]            
+            [column new label='Status']
+               [calc raw]
+                   [aw2.get row.task_status /]
+                [/calc]
+            [/column]                      
+            [column new label='Signed-Off date']
+                [calc raw]
+                [if.not_empty  row.signed_off_date]
+                   [aw2.get row.signed_off_date m.date_format='d-m-Y' /]
+                 [/if.not_empty]  
+                [/calc]
+            [/column]                   
+    [/table]
+	[/after_submit]
+  [handlers]
+      [datatable label='Refresh List'][/datatable]   
+      [csv filename='task-timeline.csv' label='Download Report' pagesize='1000' ][/csv]
+  [/handlers]
+[/module.set_array]   
+	[env.set app.page_title="Task Timeline Report - Plot" /]
+  <div class="body-content-wrapper">
+  	<div class="is-flex justify-content-between">
+  		<h1 class="font-regular font-size-largest mar-b-4">Task Timeline Report</h1>
+    </div> 
+    <section role="tasks" class="tasks">
+      [plot.search-filter.main args="{module.tasks_timeline}" auto_handler="datatable" /]
+    </section>
+  </div>
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>861114</wp:post_id>
+		<wp:post_date><![CDATA[2019-12-06 02:40:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-12-06 02:40:01]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[task-timeline]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>

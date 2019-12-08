@@ -1,4 +1,4 @@
-Curent Version: 2.0.7
+Curent Version: 2.1.0
 Setup instructions
 -------------------
 1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
@@ -21,7 +21,14 @@ Setup instructions
 7. run <site.url>/plot/modules/setup to setup the database tables.
 7. run <site.url>/plot/modules/migration if you need to migrate old plot tasks.
 
+In case of updating
+
+1. Thrash the plot modules and empty the thrash
+2. Thrash the plot config and empty the thrash
+3. Thrash the plot service and empty the thrash
+4. Import this xml file.
 
 Some Issues
 ----------------
-DB service might not have  meta.select_meta_key_value_pair template, please add it.
+1. DB service might not have  meta.select_meta_key_value_pair template, please add it.
+2. search service is not included in this package, also, you may have to edit summarytable, to remove % calculations
