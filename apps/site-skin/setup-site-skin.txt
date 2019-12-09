@@ -1,0 +1,15 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+
+1. Now import site-skin.xml via wordpress importer.
+2. You may have to do it twice, due to limitation of WordPress.
+
+In case of updating
+
+1. Thrash the site-skin modules and empty the thrash
+2. Thrash the site-skin config and empty the thrash
+
+Some Issues
+----------------
+1. Check if 'settings' post in config have duplicate meta fields for values, remove the duplicate meta keys.
