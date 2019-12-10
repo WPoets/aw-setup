@@ -8480,10 +8480,12 @@ and
       [env.set module.inner_radius.new]57%[/env.set]  
         
       [loop.@inner template.task_statuses]
-      	[env.get color.status_{@inner.key} o.set='template.item_color' /]
-      	[env.set_array module.inner_data.new 
-        						value='{@inner.item}' name='{@inner.key}' itemStyle.normal.color='{template.item_color}' cond="{@inner.key}" not_equal="total"/]
-      
+        [if.not_equal lhs='{@inner.key}' rhs='total']
+          [env.get color.status_{@inner.key} o.set='template.item_color' /]
+          [env.set_array module.inner_data.new 
+                      value='{@inner.item}' name='{@inner.key}' /]
+           [env.set main="module.inner_data.last.itemStyle.normal.color"][env.get template.item_color/][/env.set]
+        [/if.not_equal]
       [/loop.@inner]
       
       [env.set_array module.chart.option.series.new name='Tasks' type='pie' selectedMode='single'  radius='{module.inner_radius}'  label.normal.position='inner' labelline.normal.show='false' data='{module.inner_data}'/]
@@ -8494,9 +8496,13 @@ and
       
       
       [loop.@outer template.user_story_statuses]
-      	[env.get color.status_{@outer.key} o.set='template.item_color' /]
-      	[env.set_array module.outer_data.new 
-        						value='{@outer.item}' name='{@outer.key}' itemStyle.normal.color='{template.item_color}' cond="{@outer.key}" not_equal="total"/]
+        [if.not_equal lhs='{@outer.key}' rhs='total']
+          [env.get color.status_{@outer.key} o.set='template.item_color' /]
+          [env.set_array module.outer_data.new 
+                      value='{@outer.item}' name='{@outer.key}' /]
+          [env.set main="module.outer_data.last.itemStyle.normal.color"][env.get template.item_color/][/env.set]
+        [/if.not_equal]
+        
       [/loop.@outer]
       [env.set_array module.chart.option.series.new name='User Stories' type='pie' selectedMode='single'  radius='{module.outer_radius}'  data='{module.outer_data}'/]
       
