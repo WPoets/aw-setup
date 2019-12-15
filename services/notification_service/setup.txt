@@ -1,0 +1,12 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
+
+[services.add notification_service service_label='Notification Services' post_type='notification_service' desc='Notification Services' /]
+2. Now import notification_service.xml via wordpress importer.
+
+In case of updating
+
+1. Trash the notification_service modules and empty the trash
+2. Import this xml file.

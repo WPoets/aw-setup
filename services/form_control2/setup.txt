@@ -1,0 +1,12 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
+
+[services.add form_control2 service_label='Form Control 2 Service' post_type='form_control2' desc='Form Control 2 Service' /]
+2. Now import form_control2.xml via wordpress importer.
+
+In case of updating
+
+1. Trash the form_control2 modules and empty the trash
+2. Import this xml file.

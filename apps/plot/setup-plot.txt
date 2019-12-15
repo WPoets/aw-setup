@@ -23,9 +23,9 @@ Setup instructions
 
 In case of updating
 
-1. Thrash the plot modules and empty the thrash
-2. Thrash the plot config and empty the thrash
-3. Thrash the plot service and empty the thrash
+1. Trash the plot modules and empty the trash
+2. Trash the plot config and empty the trash
+3. Trash the plot service and empty the trash
 4. Import this xml file.
 
 Some Issues
