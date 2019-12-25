@@ -13497,7 +13497,187 @@ body{
 		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-							
+					<item>
+		<title>upload-images</title>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=861650</link>
+		<pubDate></pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://wpoets.com/?post_type=m_plot&#038;p=861650</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>861650</wp:post_id>
+		<wp:post_date><![CDATA[2019-12-25 04:40:45]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[0000-00-00 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[]]></wp:post_name>
+		<wp:status><![CDATA[draft]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>task-worked-upon</title>
+		<link>https://wpoets.com/?post_type=m_plot&#038;p=861110</link>
+		<pubDate>Fri, 06 Dec 2019 02:39:10 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://wpoets.com/?post_type=m_plot&#038;p=861110</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+[module.set_array tasks_timeline]
+  [after_submit raw]
+    [query]              
+        [pagesize]100[/pagesize]
+        [atts query_count=yes /]
+        [with]
+          [sql]
+            SELECT coll_id as data_id, object_id  FROM `plot` where coll_type = 'task' and meta_key='task_status' 
+             [if.not_whitespace form_data.to_date]
+                       and date(stamp) <= date('[env.get form_data.to_date /]')	
+             [/if.not_whitespace] 
+				     [if.not_whitespace form_data.from_date]
+                       and date(stamp) >= date('[env.get form_data.from_date /]')	
+             [/if.not_whitespace] 
+          [/sql] 
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , STR_TO_DATE(meta_value,'%d-%m-%Y') AS task_due_date   
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].data_id = plot.coll_id and coll_type='task' AND meta_key='task_due_date'
+              [/sql]
+          [/add_field] 
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , stamp AS signed_off_date   
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].data_id = plot.coll_id and coll_type='task' AND meta_key='task_status' AND meta_value='signed-off'
+              [/sql]
+          [/add_field]
+          [add_field new ]
+              [sql raw]
+                select [module.previous_query_no /].* , meta_value as story_title 
+                from [module.previous_query_no /] LEFT JOIN plot 
+                ON [module.previous_query_no /].object_id = plot.object_id and coll_type="user_stories" 
+                 AND meta_key="story_title"
+              [/sql]
+           [/add_field]       
+        [/with]   
+        [transform ref_id=data_id /]
+          [meta new]
+           [table]plot[/table]
+						[meta_keys]story_id, task_id, task_title, task_due_date, task_status,task_created_datetime,task_assigned_to[/meta_keys] 
+           [id_field]coll_id[/id_field]
+          [/meta]
+          [meta new]
+           [sql raw]
+              SELECT 'meta' AS type,data_id AS data_id,'story_title' AS meta_key,story_title AS meta_value FROM bounded_data
+           [/sql]
+          [/meta] 
+          [meta new]
+            [sql raw]
+              SELECT 'meta' AS type,data_id AS data_id,'signed_off_date' AS meta_key,signed_off_date AS meta_value FROM bounded_data
+            [/sql]
+          [/meta] 
+        [order]
+             task_due_date DESC
+        [/order]
+    [/query]
+    [table]     
+            [column new label='Task']
+              [calc raw] 
+              	[if.equal lhs='{form_data.submit_handler}' rhs='datatable']
+                <a target="_blank" href='[app.path /]/task/[aw2.get row.task_id /]' rel="noopener noreferrer" class="brand-primary">
+                  [aw2.get row.task_title /]
+                </a>
+                 [/if.equal]
+                [if.else]
+                		 [aw2.get row.task_title /]
+                [/if.else]
+               [/calc]
+            [/column]    		  
+            [column new label='User story' ]
+              [calc raw]
+              	[if.equal lhs='{form_data.submit_handler}' rhs='datatable']
+                 <a target="_blank" href='[app.path /]/user-story/[aw2.get row.story_id /]' rel="noopener noreferrer" class="brand-primary">
+                  [aw2.get row.story_title /]
+                </a>
+                [/if.equal]
+                [if.else]
+                		[aw2.get row.story_title /]
+                [/if.else]
+                
+              [/calc]
+            [/column]            
+						[column new label='Assigned To']
+                [calc raw]
+                	 [query.get_user_by field='email' value='{row.task_assigned_to}' o.set='template.user' /]
+                   [template.get user.display_name /]
+                [/calc]
+            [/column]  
+            [column new label='Created On']
+                [calc raw]
+                   [aw2.get row.task_created_datetime m.date_format='d-m-Y' /]
+                [/calc]
+            [/column]   
+            [column new label='Due Date']
+                [calc raw]
+                   [aw2.get row.task_due_date m.date_format='d-m-Y' /]
+                [/calc]
+            [/column]            
+            [column new label='Status']
+               [calc raw]
+                   [aw2.get row.task_status /]
+                [/calc]
+            [/column]                      
+            [column new label='Signed-Off Date']
+                [calc raw]
+                [if.not_empty  row.signed_off_date]
+                   [aw2.get row.signed_off_date m.date_format='d-m-Y' /]
+                 [/if.not_empty]  
+                [/calc]
+            [/column]                   
+    [/table]
+	[/after_submit]
+  [handlers]
+      [datatable label='Show Tasks'][/datatable]    
+      [csv filename='task-worked-upon.csv' label='Download Report' pagesize='1000' ][/csv]
+  [/handlers]
+  [filters]
+     [section period keys="from_date,to_date" /]
+  [/filters]
+[/module.set_array]   
+	[env.set app.page_title="Task Timeline Report - Plot" /]
+  <div class="body-content-wrapper">
+    <section role="tasks" class="tasks">
+       [plot.search-filter.main args="{module.tasks_timeline}" title='Tasks Worked Upon'  /]
+    </section>
+  </div>
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>861110</wp:post_id>
+		<wp:post_date><![CDATA[2019-12-06 02:39:10]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-12-06 02:39:10]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[task-worked-upon]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_plot]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>		
 						
 		</channel>
 </rss>
