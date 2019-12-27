@@ -9712,7 +9712,8 @@ and
           }
       }
     });
-    
+	
+    spa.noteEditor={};
     spa.noteEditor.isReadOnly = false;
     [if.not_equal lhs='{module.heartbeatRes.status}' rhs='error']
       $('.editor-save').click(function(){
