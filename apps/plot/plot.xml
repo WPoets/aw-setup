@@ -9821,6 +9821,7 @@ and
       file_name='file_{template.current_dt}'
       dir_name='{app.slug}-docs/notes/{request.note_id}/'
       overwrite_file='no'
+	    allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
       set='template.file_response'
     /]
     [if.not_empty template.file_response.filename]
@@ -10488,6 +10489,7 @@ and
        upload_element_id="attachment"
        dir_name="plot-docs/{template.story_id}"
        overwrite_file='no'
+	     allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
        set=template.file_res /]
   	[if.empty  template.file_res.0.error]   
       [if.greater_than_zero template.file_res.count]
@@ -11193,6 +11195,7 @@ and
        upload_element_id="attachment"
        dir_name="plot-docs/{template.task_id}"
        overwrite_file='no'
+	     allowed_file_types="gif,png,jpg,jpeg,pdf,doc,docx,txt,xls,xlsx,xlsm,csv,zip,svg,tar,tar.gz,gz,ppt,psd,ai,rar,7z,ttf,xd,cdr"
        set=template.file_res /]
   	[if.empty  template.file_res.0.error]   
       [if.greater_than_zero template.file_res.count]
