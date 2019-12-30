@@ -2225,7 +2225,112 @@
 		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-			
+					<item>
+		<title>api</title>
+		<link>https://wpoets.com/?post_type=plot_service&#038;p=861734</link>
+		<pubDate>Sat, 28 Dec 2019 16:01:48 +0000</pubDate>
+		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
+		<guid isPermaLink="false">https://wpoets.com/?post_type=plot_service&#038;p=861734</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add get_tasks]
+
+	[module.set_array query]
+    [pagesize]1000[/pagesize]
+    [pageno][template.get page /][/pageno]
+    [query_count]yes[/query_count]
+    [with]
+       [sql]
+        SELECT coll_id as data_id FROM plot WHERE coll_type="task" AND meta_key='task_id' and stamp >= "[env.get api_datetime /]"
+       [/sql]
+        [add_field new ]
+          [sql raw]
+           SELECT object_id as data_id FROM plot WHERE coll_type="task_feedback" AND meta_key ='task_feedback_id'  and stamp >= "[env.get api_datetime /]"
+          [/sql]
+      [/add_field] 
+      [add_field new ]
+          [sql raw]
+            SELECT q0.*  from q0 Union select q1.* from q1
+          [/sql]
+      [/add_field]
+      [filter new]
+        [sql raw]
+           select q2.*, meta_value as task_due_date from q2 join plot pa on q2.data_id = pa.coll_id where coll_type='task' and meta_key='task_due_date'
+        [/sql]
+      [/filter] 
+      [filter new]
+        [sql raw]
+            select q3.*, sum(meta_value) as task_spent from q3 left join plot pa on q3.data_id = pa.object_id and coll_type='task_feedback' and meta_key='time_spent' group by q3.data_id
+        [/sql]
+      [/filter]
+    [/with]
+    [transform ref_id=data_id /]
+    [meta new]
+       [table]plot[/table]
+     [meta_keys]story_id,task_id,task_title,task_due_date,task_status,task_assigned_to,task_priority,task_tags,task_created_by,created_datetime,estimated_time[/meta_keys] 
+       [id_field]coll_id[/id_field]
+    [/meta]
+    [meta new]
+        [sql raw]
+            SELECT 'meta' AS type, bounded_data.data_id,'time_spent' as meta_key,bounded_data.task_spent as meta_value FROM bounded_data 
+        [/sql]
+    [/meta]
+    [order]task_due_date DESC[/order]
+	[/module.set_array]
+	[db.meta_query query="{module.query}" set="template.rs"/]
+  
+  [template.return template.rs /]
+[/templates.add]
+
+[templates.add get_activities]
+
+	[module.set_array query]
+    [pagesize]1000[/pagesize]
+    [pageno][template.get page /][/pageno]
+    [query_count]no[/query_count]
+    [with]
+       [sql]
+        SELECT coll_id as data_id FROM plot WHERE coll_type="task_feedback" AND meta_key ='task_feedback_id'  
+        [if.not_empty template.api_datetime]
+        and stamp >= "[template.api_datetime /]"
+        [/if.not_empty]  
+       [/sql]
+      [filter new]
+        [sql raw]
+           SELECT [module.previous_query_no /].* FROM [module.previous_query_no /] join plot 
+           ON [module.previous_query_no /].data_id = plot.coll_id and coll_type="task_feedback" AND meta_key ='time_spent' AND meta_value > 0 
+        [/sql]
+      [/filter] 
+
+    [/with]
+    [transform ref_id=data_id /]
+    [meta new]
+       [table]plot[/table]
+     		[meta_keys]task_feedback_id,task_id,task_feedback_created_by,time_spent,task_feedback_created_datetime[/meta_keys] 
+       [id_field]coll_id[/id_field]
+    [/meta]
+	[/module.set_array]
+	[db.meta_query query="{module.query}" set="template.rs"/]
+  
+  [template.return template.rs /]
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>861734</wp:post_id>
+		<wp:post_date><![CDATA[2019-12-28 16:01:48]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-12-28 16:01:48]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[api]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[plot_service]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 		<item>
 		<title>Send</title>
 		<link>http://nxt.wpoets.com/?post_type=notification_service&#038;p=558662</link>
@@ -11353,6 +11458,15 @@ and
   [php.json_encode p1="{template.rs.rows}" set="template.res" /]
   [template.return template.res /]
 
+[/templates.add]
+
+[templates.add activities]
+
+ [template.set api_datetime={qs.0} c.not_empty=qs.0 /]
+ [plot.api.get_activities api_datetime='{template.api_datetime}' o.set='template.rs'/]
+ [env.get template.rs.rows  m.json_encode=true o.set='template.res'/]
+ [template.return template.res /]
+ 
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>860507</wp:post_id>
