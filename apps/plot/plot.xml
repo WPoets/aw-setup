@@ -1784,7 +1784,7 @@
 
 //** Element **//
 [templates.add get_note_type]
-  [form_control.select label="Story Status" id="note_type" taxonomy = "note_type" value="{template.note_type}"  /]
+  [form_control.select label="Note Type" id="note_type" taxonomy = "note_type" value="{template.note_type}" required="{template.is_required}" /]
 [/templates.add]
 
 
@@ -8015,6 +8015,7 @@ and
 		<category domain="story_status" nicename="ops"><![CDATA[OPS]]></category>
 		<category domain="task_status" nicename="signed-off"><![CDATA[Signed Off]]></category>
 		<category domain="story_status" nicename="signed-off"><![CDATA[Signed Off]]></category>
+		<category domain="note_type" nicename="story"><![CDATA[Story]]></category>
 		<category domain="note_type" nicename="usage"><![CDATA[Usage]]></category>
 		<category domain="task_status" nicename="work-in-progress"><![CDATA[WIP]]></category>
 						<wp:postmeta>
@@ -11049,15 +11050,7 @@ and
               	<input id="note_title" name="note_title" type="text" placeholder="Note Title" class="form-control input-md " value="" required>
               </div>
               <div class="form-group col-md-7 col-12">
-                <label>Note Type</label>
-                <select id="note_type" name="note_type" class="form-control selectpicker" required> 
-                	<option disabled="" value="" selected>Select Note Type</option>
-                  <option value="implementation">Implementation</option>
-                  <option value="architecture">Architecture</option>
-                  <option value="development">Developement</option>
-                  <option value="migration">Migration</option>
-                  <option value="usage">Usage</option>
-                </select>
+				[plot.filter.get_note_type is_required=yes /]
               </div>
               <div class="text-center col-12 col-md-7 mar-t-4">
               	<button type="submit" id="add-note" value="" class="btn btn-primary add_note width-100">Add Note</button>
@@ -12189,6 +12182,10 @@ body{
 }
 .status-discussion, .status-architecture{
 		background-color: #01aaac;
+    color: #fff;
+}
+.status-story{
+		background-color: #795548;
     color: #fff;
 }
 .status-migration{
