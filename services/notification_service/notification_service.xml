@@ -307,7 +307,7 @@
     //*****loop through all the attachments****//
     [loop.@file template.email.attachments.file]
         [php.get_attached_file p1="{@file.item}" set=template.file_path /]
-        [template.set email.attachments.file={template.file_path}/]
+        [template.set email.attachments.file_path={template.file_path}/]
     [/loop.@file]
     
   	//*****loop through all the attachments paths****//

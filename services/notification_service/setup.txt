@@ -1,4 +1,4 @@
-Curent Version: 1.0
+Curent Version: 1.1
 Setup instructions
 -------------------
 1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
