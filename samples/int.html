@@ -1,0 +1,79 @@
+<pre>
+<h1>to.int</h1>
+Cast any expression to integer
+Uses php (int)expr
+
+<h3>Parameters</h3>
+u0 or expr: expression
+
+<h3>Returns</h3>
+The Integer Value
+
+<h3>Errors</h3>
+No expression Provided.
+PHP might throw error if it cannot be casted to int
+
+</pre>
+
+[code.run]
+	output: [to.int 100 /]
+[/code.run]
+
+[code.run]
+	[to.int]
+		200
+	[/to.int]
+[/code.run]
+
+<pre>
+<h1>is.int</h1>
+Check whether expr is integer or not.
+If content is provided and the expr is an integer the content will be parsed
+Uses php (int)expr
+
+<h3>Parameters</h3>
+u0 or expr: expression
+content : The content to parse if the expr is integer
+<h3>Returns</h3>
+True or False
+
+<h3>Errors</h3>
+No expression Provided.
+PHP might throw error if it cannot be casted to int
+
+</pre>
+
+[code.run]
+	output: [is.int i:100 /]
+[/code.run]
+
+[code.run]
+	[is.int i:200]
+		I am an int [to.int 40 /]
+	[/is.int]
+[/code.run]
+
+
+
+<pre>
+<h1>int.plus</h1>
+Add a integer to an integer
+
+<h3>Parameters</h3>
+u0 or expr: expression
+plus : The integer to add
+<h3>Returns</h3>
+Final result
+
+<h3>Errors</h3>
+No expression Provided.
+No plus provided
+
+</pre>
+
+[code.run]
+	<div>output: [int.plus.1 i:5 /]</div>
+	<div>output: [int.plus i:5 i:1/]</div>
+	<div>output: [int.plus i:5 plus=i:1/]</div>
+[/code.run]
+
