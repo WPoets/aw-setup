@@ -1,0 +1,12 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
+
+[services.add facebook_service service_label='Facebook Service' post_type='facebook_service' desc='Facebook Service' /]
+2. Now import facebook_service.xml via wordpress importer.
+
+In case of updating
+
+1. Trash the facebook_service modules and empty the trash
+2. Import this xml file.
