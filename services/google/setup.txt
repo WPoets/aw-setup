@@ -12,7 +12,7 @@ In case of updating
 
 1. Trash the facebook_service modules and empty the trash
 2. Import this xml file.
-
+3. the redirect url to set in google developer console is <site-url>?social_auth=google
 Sample Module code to test this service
 
 create this in samples app, module name is google-login
