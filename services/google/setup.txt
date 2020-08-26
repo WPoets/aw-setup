@@ -1,0 +1,45 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+NOTE: Requires Awesome Enterprise Vrsion 1.3.4 +
+
+1. Goto Awesome Core -> services module and add following lines, and save (most of these lines will be present, make sure last line is added if missing.)
+
+[services.add google_service service_label='Google Service' post_type='google_service' desc='Google Service' /]
+2. Now import google_service.xml via wordpress importer.
+
+In case of updating
+
+1. Trash the facebook_service modules and empty the trash
+2. Import this xml file.
+
+Sample Module code to test this service
+
+create this in samples app, module name is google-login
+
+------------------
+
+  <script type='text/javascript' src='https://cdn.getawesomestudio.com/lib/jquery/1.11.3/jquery.min.js'></script>  
+      <script>
+       jQuery( document ).ready(function( $ ) {          
+           $.getScript('[env.get settings.cdn /]spa/spa.v2.min.js', function() {          
+              spa.app.start({
+                   homeurl:'[php.site_url /]',          
+                   cdn:'[env.get settings.cdn /]',
+                   path:'[app.path /]/'
+                });          
+          });           
+       });
+      </script>
+
+[if.request t]
+	[session_ticket.get {request.t} field='user_data' o.set='module.user_data'/]
+ DUMP after login:  
+  [env.dump module.user_data.json_decode /]
+[/if.request]
+[if.else]
+  [google_service.login app_id='{env.settings.opt-google-id}' app_secret='{env.settings.opt-google-secret}'  scope='https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email'  o.set='module.gplus' /]
+  <template axn=cookie.set get='[module.get gplus.ticket_id /]' set='google_login' hour=true></template>   
+
+  <a href='[module.get gplus.url /]?redirect_to=[app.path /]/[module.slug /]'>Login By Google</a>
+[/if.else]
