@@ -1,0 +1,15 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+1. Goto Awesome Core -> services module and add following line, and save (most of these line will be present, make sure last line is added if missing.)
+[services.add aw_form service_label='aw Form Service' post_type='aw_form' desc='aw Forms' /]
+
+2. Now import aw_forms.xml via wordpress importer, Tools > Import
+
+
+In case of updating:
+
+1. Trash the aw_form modules and empty the trash
+2. Import this xml file
+
+Note: https://www.wpoets.com/plot/note/nt16767178540219804777864
