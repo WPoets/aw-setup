@@ -266,7 +266,6 @@
 		<guid isPermaLink="false">http://dc.wordpoets.com/?post_type=notification_service&#038;p=558664</guid>
 		<description></description>
 		<content:encoded><![CDATA[
-				
 				//****Adds attachment for the application****//
 [templates.add add_attachment]
     //*****Check if object_id is present or not and object type is lapp or not*****//
@@ -307,14 +306,15 @@
     //*****loop through all the attachments****//
     [loop.@file template.email.attachments.file]
         [php.get_attached_file p1="{@file.item}" set=template.file_path /]
-        [template.set email.attachments.file_path={template.file_path}/]
+        [template.set email.attachments.file.new={template.file_path}/]
     [/loop.@file]
     
   	//*****loop through all the attachments paths****//
     [loop.@file template.email.attachments.file_path]
       [aw2.get @file.item set=template.file_path /]
-      [template.set email.attachments.file_path={template.file_path} /]
+      [template.set email.attachments.file.new={template.file_path} /]
     [/loop.@file]
+    [template.set email.attachments="{template.email.attachments.file}"/]
     //*****Return new array formed with file path******//
     [template.return template.email/]
 [/templates.add]
@@ -336,7 +336,7 @@
     [php.get_attached_file p1="{template.file_name}" set=template.file_path /]
     //***return the file path***//
     [template.return template.file_path/]
-[/templates.add]				]]></content:encoded>
+[/templates.add]			]]></content:encoded>
 		<excerpt:encoded><![CDATA[
 				
 								]]></excerpt:encoded>
