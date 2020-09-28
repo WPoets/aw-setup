@@ -1,0 +1,11 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+
+1. Create the "settings" app
+2. Import settings_modules.xml via wordpress importer.
+
+In case of updating
+1. Trash the settings app > modules and empty the trash
+
+Settings App usage note: https://www.wpoets.com/plot/note/nt16768707053968387553033
