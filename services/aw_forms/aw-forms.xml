@@ -226,6 +226,8 @@
 		<description></description>
 		<content:encoded><![CDATA[[templates.add render]
 
+		[module.set default_form_control_service="{template.default_form_control_service}" /]
+
 	<div class="fields-group [module.get data.class /]">
   	<fieldset>
   		<legend>
@@ -237,8 +239,6 @@
       </legend>
 
 			<div class="row">
-      
-      	[aw2.get module.key dump=t /]
         
         [loop.@fields template.data.section] 
         	[aw2.get @fields.item.field /]
