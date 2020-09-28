@@ -17,6 +17,7 @@
 <!--    contained in this file into your site. -->
 <!-- 8. Version 1.0 -->
 
+
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -26,21 +27,23 @@
 >
 
 <channel>
-	<title>alpha.wordpoets.com</title>
-	<link>http://alpha.wordpoets.com</link>
+	<title>ilsnxt.wordpoets.com</title>
+	<link>http://ilsnxt.wordpoets.com</link>
 	<description></description>
-	<pubDate>Thu, 03 Sep 2020 03:57:04 +0000</pubDate>
+	<pubDate>Mon, 28 Sep 2020 05:24:57 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
-	<wp:base_site_url>http://alpha.wordpoets.com</wp:base_site_url>
-	<wp:base_blog_url>http://alpha.wordpoets.com</wp:base_blog_url>
+	<wp:base_site_url>http://ilsnxt.wordpoets.com</wp:base_site_url>
+	<wp:base_blog_url>http://ilsnxt.wordpoets.com</wp:base_blog_url>
 
-		<wp:author><wp:author_id>8</wp:author_id><wp:author_login><![CDATA[praveen]]></wp:author_login><wp:author_email><![CDATA[praveen.g@amiworks.com]]></wp:author_email><wp:author_display_name><![CDATA[Praveen Gupta]]></wp:author_display_name><wp:author_first_name><![CDATA[Praveen]]></wp:author_first_name><wp:author_last_name><![CDATA[Gupta]]></wp:author_last_name></wp:author>
+		<wp:author><wp:author_id>12</wp:author_id><wp:author_login><![CDATA[praveen]]></wp:author_login><wp:author_email><![CDATA[praveen.g@amiworks.com]]></wp:author_email><wp:author_display_name><![CDATA[Praveen Gupta]]></wp:author_display_name><wp:author_first_name><![CDATA[Praveen]]></wp:author_first_name><wp:author_last_name><![CDATA[Gupta]]></wp:author_last_name></wp:author>
+
+				
 	
 
 		<item>
 		<title>create</title>
-		<link>http://alpha.wordpoets.com/?post_type=aw_form&#038;p=871676</link>
+		<link>http://ilsnxt.wordpoets.com/?post_type=aw_form&#038;p=881500</link>
 		<pubDate>Sat, 04 Jul 2020 04:21:28 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://alpha.wordpoets.com/?post_type=aw_form&#038;p=871676</guid>
@@ -49,22 +52,24 @@
 
 	[this_collection.css /]
 
-	[if.empty module.form_config_service]
-  	[template.set error_message]
- 		<h4 class='text-center brand-danger mar-t-5'>Form config service not provided!</h4>
-    [/template.set]
-  	[template.return template.error_message /]
-  [/if.empty]
+	[if.equal lhs="{module.form-config}" rhs=""]
+      [if.empty module.form_config_service]
+        [template.set error_message]
+        <h4 class='text-center brand-danger mar-t-5'>Form config service not provided!</h4>
+        [/template.set]
+        [template.return template.error_message /]
+      [/if.empty]
   
-  //** Short of above if condition
-  	[template.return template.error_array empty='{module.form_config_service}' /]
-  **//
+      //** Short of above if condition
+        [template.return template.error_array empty='{module.form_config_service}' /]
+      **//
   
-	[if.not_empty module.form_config_service]
-    [service.run {module.form_config_service} set="module.form-config" /]
-	[/if.not_empty]
+      [if.not_empty module.form_config_service]
+        [service.run {module.form_config_service} set="module.form-config" /]
+      [/if.not_empty]
+	[/if.equal]
 
-  
+
   [if.empty module.form-config.groups]
   	[template.set error]
 	 		<h4 class='text-center brand-danger mar-t-5'>
@@ -76,7 +81,7 @@
     [template.return template.error /]
   [/if.empty]
 
-  [aw2.get token set=module.token /]
+	[session_ticket.create {token} set='module.token' /]
 
   //** [html.trusted] **// //** remove from form class > [module.get form_layout default="top-label" /]**//
     <form data-safe_id='[app.safe_id /]' id='[module.token/]' class='[module.token/] request-queries-form [module.get form_layout default="top-label" /]'> 
@@ -115,7 +120,18 @@
     	[template.set submit_to="{template.save_handler_exploded.1}" /]
     [/if.not_equal]
   [/if.empty]
-  [this_collection.ticket.generate collection_type='{module.collection_type}' submit_to='{template.submit_to}' o.set=template.ticket /]
+																																																				  
+
+
+  [this_collection.ticket.generate 
+  		collection_type='{module.collection_type}' 
+      submit_to='{template.submit_to}' 
+      form_config_service='{module.form_config_service}' 
+      callback_service='{module.form-config.callback_service}' 
+      extra_params='{module.extra_params}' 
+      token="{module.token}"
+      o.set='template.ticket' /]
+
 
   <script type='spa/axn' 
   	data-safe_id='[app.safe_id /]' 
@@ -123,8 +139,8 @@
     bind="submit" 
     bind_selector='#[module.token /]' 
     disable_selector='.[module.token /]-submit' 
-    form_config_service='[module.form_config_service /]' 
-    callback_service='[module.form-config.callback_service /]' 
+														 
+																																					 
     route_ajax='t/[template.ticket/]'>
   </script>
 
@@ -152,7 +168,7 @@
             
 **//]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>871676</wp:post_id>
+		<wp:post_id>881500</wp:post_id>
 		<wp:post_date><![CDATA[2020-07-04 04:21:28]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-07-04 04:21:28]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -166,41 +182,49 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_value><![CDATA[12]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>ticket</title>
-		<link>http://alpha.wordpoets.com/?post_type=aw_form&#038;p=871681</link>
+		<link>http://ilsnxt.wordpoets.com/?post_type=aw_form&#038;p=881501</link>
 		<pubDate>Sat, 04 Jul 2020 04:22:51 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://alpha.wordpoets.com/?post_type=aw_form&#038;p=871681</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add generate]
-	//** Create ticket **//
-	[session_ticket.create nonce=yes set=template.ticket/]     
-	//** Create collection (module.collection.post_type ki value) array **//
+    //** Create ticket **//
+    [session_ticket.create nonce=yes set=template.ticket/]     
+    //** Create collection (module.collection.post_type ki value) array **//
 
-	[if.not_empty template.submit_to]
-    [arr.create set="template.collection_array"]
-      [post_type][template.get collection_type /][/post_type]
-    [/arr.create]
-    //** Set activity against the ticket **//
-    [session_ticket.set_activity {template.ticket} collection={template.collection_array} module='{template.submit_to}' /]
-	[/if.not_empty]
+    [if.not_empty template.submit_to]
+      [arr.create set="template.collection_array"]
+        [post_type][template.get collection_type /][/post_type]
+      [/arr.create]
+      //** Set activity against the ticket **//
+      [session_ticket.set_activity {template.ticket} collection={template.collection_array} module='{template.submit_to}' /]
+    [/if.not_empty]
 
-  [if.empty template.submit_to]
-    [arr.create set="template.collection_array"]
-      [post_type][module.collection.post_type /][/post_type]
-    [/arr.create]
-    //** Set activity against the ticket **//
-    [session_ticket.set_activity {template.ticket} collection={template.collection_array} module='auto-save' /]
-  [/if.empty]
+    [if.empty template.submit_to]
+      [arr.create set="template.collection_array"]
+        [post_type][module.collection.post_type /][/post_type]
+      [/arr.create]
+      //** Set activity against the ticket **//
+      [session_ticket.set_activity {template.ticket} collection={template.collection_array} module='auto-save' /]
+    [/if.empty]
+
+
+  [session_ticket.set {template.token} field="form_config_service" value="{template.form_config_service}" /]
+  [session_ticket.set {template.token} field="callback_service" value="{template.callback_service}" /]
+  [loop.@eachExtra template.extra_params]
+    [session_ticket.set {template.token} field="{@eachExtra.key}" value="{@eachExtra.item}" /]
+  [/loop.@eachExtra]
+
 
 	[template.return template.ticket/]
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>871681</wp:post_id>
+		<wp:post_id>881501</wp:post_id>
 		<wp:post_date><![CDATA[2020-07-04 04:22:51]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-07-04 04:22:51]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -214,19 +238,19 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_value><![CDATA[12]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>group</title>
-		<link>http://alpha.wordpoets.com/?post_type=aw_form&#038;p=871683</link>
+		<link>http://ilsnxt.wordpoets.com/?post_type=aw_form&#038;p=881502</link>
 		<pubDate>Sat, 04 Jul 2020 04:23:49 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://alpha.wordpoets.com/?post_type=aw_form&#038;p=871683</guid>
 		<description></description>
 		<content:encoded><![CDATA[[templates.add render]
 
-		[module.set default_form_control_service="{template.default_form_control_service}" /]
+	[module.set default_form_control_service="{template.default_form_control_service}" /]
 
 	<div class="fields-group [module.get data.class /]">
   	<fieldset>
@@ -307,7 +331,7 @@
 	[if.else not_empty="{module.default_form_control_service}"]
   	[template.set service_name="{module.default_form_control_service}.{@field.item.type}" /]
   [/if.else]
-	
+	  
 	//** TODO: attributes should be dynamic, so not need to edit this when new attribute introduced **//
 	[service.run {template.service_name} id={@field.key}
     label="{@field.item.label}"
@@ -334,7 +358,7 @@
     /]
 [/templates.add]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>871683</wp:post_id>
+		<wp:post_id>881502</wp:post_id>
 		<wp:post_date><![CDATA[2020-07-04 04:23:49]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-07-04 04:23:49]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -348,12 +372,12 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_value><![CDATA[12]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>css</title>
-		<link>http://alpha.wordpoets.com/?post_type=aw_form&#038;p=871685</link>
+		<link>http://ilsnxt.wordpoets.com/?post_type=aw_form&#038;p=881503</link>
 		<pubDate>Sat, 04 Jul 2020 04:24:27 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://alpha.wordpoets.com/?post_type=aw_form&#038;p=871685</guid>
@@ -413,7 +437,7 @@
       }
     [/css.style]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>871685</wp:post_id>
+		<wp:post_id>881503</wp:post_id>
 		<wp:post_date><![CDATA[2020-07-04 04:24:27]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-07-04 04:24:27]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -427,12 +451,12 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_value><![CDATA[12]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>auto-save</title>
-		<link>http://alpha.wordpoets.com/?post_type=aw_form&#038;p=873376</link>
+		<link>http://ilsnxt.wordpoets.com/?post_type=aw_form&#038;p=881504</link>
 		<pubDate>Mon, 31 Aug 2020 13:58:06 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://alpha.wordpoets.com/?post_type=aw_form&#038;p=873376</guid>
@@ -442,18 +466,22 @@
 		[template.set_array ack status="error" int_reason="meta is not provided." reason="meta is required." /]
 		[template.return template.ack empty='{module.meta}' /]
 	**//
-    [if.not_empty request.form_config_service]
-      [service.run {request.form_config_service} set="module.form-config" /]
+	[session_ticket.get {request.id} set="template.ticket_data" /]
+
+
+    [if.not_empty template.ticket_data.form_config_service]
+      [service.run {template.ticket_data.form_config_service} set="module.form-config" /]
     [/if.not_empty]
 
 		//** return_type = array | js **//
-    [if.empty module.form-config.do_validation]
-		//** [/if.empty]
-    [if.or lhs="{module.form-config.do_validation}" rhs="yes"] **//
-  			[aw_form.validate-form.process form_config_service="{request.form_config_service}"  set="template.validation_result" /]    
+    [if.equal lhs="{module.form-config.do_validation}" rhs=""]
+    [/if.equal]
+    [if.or lhs="{module.form-config.do_validation}" rhs="yes"]
+  			[aw_form.validate-form.process form_config_service="{template.ticket_data.form_config_service}"  set="template.validation_result" /]    
 				[template.return template.validation_result not_empty="{template.validation_result}" /]
 		//** [/if.or] **//
-		[/if.empty]
+		[/if.or]
+
 
     //** Form data save **//
     [if.equal lhs="{module.form-config.save_handler}" rhs=""]
@@ -489,14 +517,14 @@
       [loop.@eachKey @eachAllowedFields.item.fields.comma]
           [aw2.get @eachKey.item set="template.column" /]
           [aw2.get request.{template.column} set="template.value" /]
-          [module.set_array form_meta.new meta_key="{template.column}" meta_value="{template.value}" /]
+          [module.set_array form_meta.new meta_key="{template.column}" meta_value="{template.value}" coll_type="{@eachAllowedFields.item.coll_type default=info}" /]
       [/loop.@eachKey]
 
       [templates.run send_to_db 
-      		meta_table="{@eachAllowedFields.item.meta_table default='form_meta'}"
+      		meta_table="{@eachAllowedFields.item.meta_table default=form_meta}"
           object_id="{@eachAllowedFields.item.object_id}"
-          coll_id="{@eachAllowedFields.item.coll_id}" 
-          coll_type="{@eachAllowedFields.item.coll_type}" 
+          coll_id="{@eachAllowedFields.item.coll_id default=form}" 
+														  
       /]
     [/loop.@eachAllowedFields]
   [/if.not_empty]
@@ -512,7 +540,7 @@
         meta_table='{template.meta_table}' 
         object_id='{template.object_id}' 
         coll_id='{template.coll_id default=form}' 
-        coll_type='{template.coll_type default=info}' 
+													  
     /]
 [/templates.add]
 
@@ -522,19 +550,20 @@
   [php.time set="template.timeseconds" /]
 	[aw2.get server_variables.REMOTE_ADDR set="template.ip" /]
 	[aw2.get server_variables.HTTP_REFERER set="template.referer" /]
+	[template.set coll_type="general" empty="{template.coll_type}" /]
 
 	[module.set_array default_meta="" /]
-  [module.set_array default_meta.new meta_key="created_by" meta_value="{current_user.user_login}" /]
-  [module.set_array default_meta.new meta_key="created_date" meta_value="{template.date}" /]
-  [module.set_array default_meta.new meta_key="created_datetime" meta_value="{template.dttime}" /]
-  [module.set_array default_meta.new meta_key="created_timeseconds" meta_value="{template.timeseconds}" /]
-  [module.set_array default_meta.new meta_key="ip" meta_value="{template.ip}" /]
-  [module.set_array default_meta.new meta_key="referer" meta_value="{template.referer}" /]
-  [module.set_array default_meta.new meta_key="src" meta_value="{request.src}" /]
+  [module.set_array default_meta.new meta_key="created_by" meta_value="{current_user.user_login}" coll_type='{template.coll_type}' /]
+  [module.set_array default_meta.new meta_key="created_date" meta_value="{template.date}" coll_type='{template.coll_type}' /]
+  [module.set_array default_meta.new meta_key="created_datetime" meta_value="{template.dttime}" coll_type='{template.coll_type}' /]
+  [module.set_array default_meta.new meta_key="created_timeseconds" meta_value="{template.timeseconds}" coll_type='{template.coll_type}' /]
+  [module.set_array default_meta.new meta_key="ip" meta_value="{template.ip}" coll_type='{template.coll_type}' /]
+  [module.set_array default_meta.new meta_key="referer" meta_value="{template.referer}"coll_type='{template.coll_type}' /]
+  [module.set_array default_meta.new meta_key="src" meta_value="{request.src}" coll_type='{template.coll_type}' /]
 [/templates.add]
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>873376</wp:post_id>
+		<wp:post_id>881504</wp:post_id>
 		<wp:post_date><![CDATA[2020-08-31 13:58:06]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-08-31 13:58:06]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -548,12 +577,12 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		<wp:meta_value><![CDATA[12]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>validation</title>
-		<link>http://alpha.wordpoets.com/?post_type=aw_form&#038;p=873607</link>
+		<link>http://ilsnxt.wordpoets.com/?post_type=aw_form&#038;p=881505</link>
 		<pubDate>Wed, 02 Sep 2020 01:28:53 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://alpha.wordpoets.com/?post_type=aw_form&#038;p=873607</guid>
@@ -776,7 +805,7 @@
 [/templates.add]
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>873607</wp:post_id>
+		<wp:post_id>881505</wp:post_id>
 		<wp:post_date><![CDATA[2020-09-02 01:28:53]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-09-02 01:28:53]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -790,12 +819,12 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		<wp:meta_value><![CDATA[12]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>validate-form</title>
-		<link>http://alpha.wordpoets.com/?post_type=aw_form&#038;p=873609</link>
+		<link>http://ilsnxt.wordpoets.com/?post_type=aw_form&#038;p=881506</link>
 		<pubDate>Wed, 02 Sep 2020 01:50:03 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://alpha.wordpoets.com/?post_type=aw_form&#038;p=873609</guid>
@@ -810,6 +839,11 @@
     [if.not_empty template.form_config_service]
       [service.run {template.form_config_service} set="module.form-config" /]
     [/if.not_empty]
+
+		[if.not_empty template.form-config]
+    	[template.get form-config set="module.form-config" /]
+    [/if.not_empty]
+
 
 		[module.set error_fields="" /]
 
@@ -854,7 +888,7 @@
 
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>873609</wp:post_id>
+		<wp:post_id>881506</wp:post_id>
 		<wp:post_date><![CDATA[2020-09-02 01:50:03]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-09-02 01:50:03]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -868,7 +902,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		<wp:meta_value><![CDATA[12]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 				</channel>
