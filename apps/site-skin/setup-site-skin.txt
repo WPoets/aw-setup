@@ -13,3 +13,4 @@ In case of updating
 Some Issues
 ----------------
 1. Check if 'settings' post in config have duplicate meta fields for values, remove the duplicate meta keys.
+2. If you get the error saying @gray-light or any other variable not defined, then check if in "core->register" module exists.
