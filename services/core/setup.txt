@@ -1,0 +1,10 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+1. Now import core.xml via wordpress importer, Tools > Import
+
+
+In case of updating:
+
+1. Trash the awesome_core modules and empty the trash
+2. Import this xml file
