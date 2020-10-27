@@ -1080,6 +1080,10 @@ class="btn [module.get class default=' btn-primary btn-md'/]">[if.not_empty modu
        	SELECT post_name as value,post_title as label FROM `wp_posts` where `post_type`="[module.get posttype /]" and post_status='publish'
        [/template.set]
 
+//** this is custom - start **//
+[module.get predefined_values set=module.options_array not_empty="{module.predefined_values}" /]
+//** this is custom - end **//
+
 [templates.get_users_options set=module.options_array user_role="{module.user-role}" not_empty="{module.user-role}"/]
 
 //** set option array if taxonomy select needed **//
@@ -1149,7 +1153,7 @@ class="btn [module.get class default=' btn-primary btn-md'/]">[if.not_empty modu
 				[if.else]
 					name="[module.get id /]"
 				[/if.else]				
-				[if.equal lhs="{module.multiple}" rhs="yes"]multiple[/if.equal]
+				[if.equal lhs="{module.multiple}" rhs="yes"]multiple="multiple"[/if.equal]
 				class="form-control selectpicker [aw2.get module.select_picker /] [aw2.get module.class /]"					
 				[if.equal lhs="{module.required}" rhs="yes"]required[/if.equal] 
 				[module.get attr_string/]
@@ -1186,7 +1190,7 @@ class="btn [module.get class default=' btn-primary btn-md'/]">[if.not_empty modu
        
 		
     <script type=spa/axn axn=core.run_script js_files='https://cdn.getawesomestudio.com/lib/jquery.sumoselect/3.0.2/jquery.sumoselect.min.js'>
-     $('.selectpicker.[aw2.get module.select_picker /]').SumoSelect({search: [module.search default=true /], searchText: 'Search Here'});
+     $('.selectpicker.[aw2.get module.select_picker /]').SumoSelect({search: [module.search default=true /], searchText: 'Search Here', selectAll: [module.selectall default=false /]});
      $('.[module.get id /]-parent').removeClass('visibility-hidden');
     </script> 
   <style>.selectpicker .child{text-indent: 15px;}</style>
