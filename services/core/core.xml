@@ -234,7 +234,9 @@
   "footer_menu_third":"Footer Menu Third",
   "footer_menu_fourth":"Footer Menu Fourth"
 } 
-[/register.menu_location]]]></content:encoded>
+[/register.menu_location]
+[post_types.add.private taxonomy_holder singular_name='Taxonomy Holder' plural_name='Taxonomy Holder' /]
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[												]]></excerpt:encoded>
 		<wp:post_id>231</wp:post_id>
 		<wp:post_date><![CDATA[2019-04-10 08:43:40]]></wp:post_date>

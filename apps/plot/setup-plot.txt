@@ -10,7 +10,7 @@ Setup instructions
 [services.add notification_service service_label='Notification Services' post_type='notification_service' desc='Notification Services' /]
 [services.add plot service_label='Plot Service' post_type='plot_service' desc='Plot Service' /]
 
-2. If post type 'taxonomy_holder' does not exists create it, keep public = false.
+2. If post type 'taxonomy_holder' does not exists create it, keep public = false. you can put this line in register module in core to do this [post_types.add.private taxonomy_holder singular_name='Taxonomy Holder' plural_name='Taxonomy Holder' /]
 3. Create following taxonomies, and assign it to taxonomy holder post type, for each of these taxonomies make sure public=false, and hierarchical = true
 	a. task_status
 	b. story_status
