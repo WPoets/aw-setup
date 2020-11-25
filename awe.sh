@@ -22,4 +22,5 @@ composer require wpoets/payments-handler
 composer require wpoets/pdf-handler
 composer require wpoets/woocommerce-handler
 
-echo 'Environment is ready.';
+wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/aw3-setup.sh" && chmod u+x aw3-setup.sh
+echo 'Environment is ready. Use aw3-setup.sh to setup awesome for the site.';
