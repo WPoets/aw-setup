@@ -12,16 +12,22 @@ function getReleaseVersion() {
     sed -E 's/.*"([^"]+)".*/\1/'
 }
 
+function getReleaseVersion2() {
+  curl --silent "https://github.com/$1/releases/latest" |
+    grep '\/tag\/\(.*\)"' |
+    sed -E 's/.*\/tag\/([^"]+)".*/\1/'
+}
+
 function installAw2(){
     printf "${GREEN}Info:${YELLOW} Installing Monomyth Enterprise latest version\n${NC}";
     #aw2_theme_version=$(getReleaseVersion 'WPoets/awesome-enterprise');
     #wp theme install https://github.com/WPoets/monomyth-enterprise/archive/$aw2_theme_version.zip --activate --allow-root
     wp theme install https://github.com/WPoets/monomyth-enterprise/archive/master.zip --activate --allow-root
 
-    aw2_plugin_version=$(getReleaseVersion 'WPoets/awesome-enterprise-wp');
-    printf "${GREEN}Info:${YELLOW} Installing Awesome Enterprise version $aw2_plugin_version${NC}\n";
+    aw2_plugin_version=$(getReleaseVersion2 'WPoets/awesome-enterprise-wp');
+    printf "${GREEN}Info:${YELLOW} Installing Awesome Enterprise WP version $aw2_plugin_version${NC}\n";
 
-    wp plugin install https://github.com/WPoets/awesome-enterprise/archive/$(getReleaseVersion 'WPoets/awesome-enterprise-wp').zip --activate --allow-root
+    wp plugin install https://github.com/WPoets/awesome-enterprise-wp/archive/$(getReleaseVersion2 'WPoets/awesome-enterprise-wp').zip --activate --allow-root
     printf "${CYANBG}Please enter REDIS_DATABASE_GLOBAL_CACHE number.${NC}\n"
     read redis_db_no
     wp config set REDIS_DATABASE_GLOBAL_CACHE $redis_db_no --add=true --type=constant --allow-root
@@ -123,7 +129,7 @@ if [ -z "$1" ]; then
     exit
 fi
 
-echo 'Checking ee...'
+echo 'Checking WordOps...'
 if op=$(! wo); then
     printf 'EasyEngine not installed!!!'
     exit
