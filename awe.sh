@@ -1,5 +1,9 @@
 #!/bin/bash
 #
+
+echo 'Setting update date to IST'
+dpkg-reconfigure tzdata
+
 echo "Downloading WordOps"
 wget -qO wo wops.cc && bash wo
 
