@@ -81,6 +81,11 @@ To enable the admin tools enter y when this script ask to enable the admin tools
 
 ### Installing WO setup Script
 ```
+wget -qO awe.sh https://www.wpoets.com/awe && bash awe.sh
+
+```
+ALternativley 
+```
 wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/awe.sh" && bash awe.sh
 
 ```
