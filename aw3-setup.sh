@@ -39,8 +39,6 @@ function installAw2(){
     wp config set REDIS_PORT 6379 --add=true --type=constant --allow-root
     
 	wp config set AWESOME_PATH /var/www/awesome-enterprise --add=true --type=constant --allow-root
-    wp config set SITE_URL "(\$_SERVER['HTTPS'] ? 'https://' : 'http://') . \$_SERVER['HTTP_HOST']" --raw --add=true --type=constant --allow-root
-    wp config set HOME_URL "(\$_SERVER['HTTPS'] ? 'https://' : 'http://') . \$_SERVER['HTTP_HOST']" --raw --add=true --type=constant --allow-root
    
     wp plugin install advanced-custom-fields --activate --allow-root
     wp plugin install custom-post-type-ui --activate --allow-root
@@ -65,7 +63,10 @@ function installAw2(){
     wget -O /tmp/samples-app.2020-09-14.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/apps/samples/samples-app.2020-09-14.xml /tmp
     wget -O /tmp/settings-modules.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/apps/settings/settings-modules.xml /tmp
 	
+    wget -O /tmp/basic-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/basic-apps.xml /tmp
     #wget -O /tmp/all-posts.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/all-posts.xml /tmp
+    
+	wp import /tmp/basic-apps.xml --authors=skip --allow-root
     wp import /tmp/core.xml --authors=skip --allow-root
     wp import /tmp/aw-forms.xml --authors=skip --allow-root
     wp import /tmp/db.xml --authors=skip --allow-root
@@ -77,8 +78,8 @@ function installAw2(){
     wp import /tmp/single_service.xml --authors=skip --allow-root
 	
     wp import /tmp/awesome-js.xml --authors=skip --allow-root
-    wp import /tmp/awesome-js.xml --authors=skip --allow-root
-    wp import /tmp/site-skin.xml --authors=skip --allow-root
+
+   
     wp import /tmp/site-skin.xml --authors=skip --allow-root
     wp import /tmp/samples-app.2020-09-14.xml --authors=skip --allow-root
     wp import /tmp/samples-app.2020-09-14.xml --authors=skip --allow-root
@@ -90,6 +91,10 @@ function installAw2(){
     #to change the file permission of all new installed plugins to www-data user
     chown -R www-data:www-data wp-content/uploads/*
     
+	wp config set SITE_URL "(\$_SERVER['HTTPS'] ? 'https://' : 'http://') . \$_SERVER['HTTP_HOST']" --raw --add=true --type=constant --allow-root
+    wp config set HOME_URL "(\$_SERVER['HTTPS'] ? 'https://' : 'http://') . \$_SERVER['HTTP_HOST']" --raw --add=true --type=constant --allow-root
+  
+	
     printf "\n\n\n\n\n"
 }
 
@@ -131,7 +136,7 @@ fi
 
 echo 'Checking WordOps...'
 if op=$(! wo); then
-    printf 'EasyEngine not installed!!!'
+    printf 'WordOps not installed!!!'
     exit
 fi
 
@@ -145,4 +150,4 @@ else
     createWpUserPrompt $1
 fi
 
-printf "${GREEN}Site Successfully configured...\n${NC}"
+printf "${GREEN}Site Successfully configured... ✌ \n${NC}"
