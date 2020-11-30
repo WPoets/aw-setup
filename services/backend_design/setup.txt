@@ -1,0 +1,13 @@
+Curent Version: 1.0
+Setup instructions
+-------------------
+1. Goto Awesome Core -> services module and add following line, and save (most of these line will be present, make sure last line is added if missing.)
+[services.add backend_design service_label='Backend Design Service' post_type='backend_service' desc='Backend Design Service' /]
+
+2. Now import backend_design.xml via wordpress importer, Tools > Import
+
+
+In case of updating:
+
+1. Trash the backend_service modules and empty the trash
+2. Import this xml file
