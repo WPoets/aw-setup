@@ -9,5 +9,5 @@ Setup instructions
 
 In case of updating:
 
-1. Trash the aw_form modules and empty the trash
+1. Trash the backend_service modules and empty the trash
 2. Import this xml file
