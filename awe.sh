@@ -23,7 +23,7 @@ wo stack install
 
 wo stack status
 
-touch /etc/nginx/conf.d/map-wp-fastcgi-cache.conf.custom
+
 
 printf "${ORANGE}Setting up Redis Server ${NC}\n";
 add-apt-repository ppa:chris-lea/redis-server
@@ -32,6 +32,11 @@ apt-get install redis-server php-redis -y
 
 service redis-server start
 
+printf "${ORANGE} Updating conf files ${NC}\n";
+git clone https://github.com/WPoets/conf.git $HOME/wpoets-conf
+touch /etc/nginx/conf.d/map-wp-fastcgi-cache.conf.custom
+cp -f $HOME/wpoets-conf/nginx/fastcgi.conf /etc/nginx/conf.d/fastcgi.conf
+cp -f $HOME/wpoets-conf/nginx/map-wp-fastcgi-cache.conf /etc/nginx/conf.d/map-wp-fastcgi-cache.conf
 
 printf "${CYANBG}Please enter GITHUB API Access Token for composer (get from https://github.com/settings/tokens ) :${NC}\n";
 read access_token
