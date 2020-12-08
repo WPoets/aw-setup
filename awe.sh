@@ -8,8 +8,10 @@ YELLOW='\033[0;33m'
 ULINE='\033[4m'
 NC='\033[0m' # No Color
 
-apt-get install unzip
-apt-get install awscli
+printf "${ORANGE}        [aw]        \n\n\n\n${NC}\n";
+apt-get update && apt-get dist-upgrade -y && apt-get autoremove --purge -y && apt-get clean
+apt-get install unzip pigz -y
+apt-get install awscli -y
 printf "${ORANGE}Setting update date to IST ${NC}\n";
 dpkg-reconfigure tzdata
 
@@ -21,33 +23,48 @@ wo stack install
 
 wo stack status
 
+touch /etc/nginx/conf.d/map-wp-fastcgi-cache.conf.custom
 
 printf "${ORANGE}Setting up Redis Server ${NC}\n";
 add-apt-repository ppa:chris-lea/redis-server
 apt-get update
-apt-get install redis-server php-redis
+apt-get install redis-server php-redis -y
 
 service redis-server start
 
+
 printf "${CYANBG}Please enter GITHUB API Access Token for composer (get from https://github.com/settings/tokens ) :${NC}\n";
 read access_token
-composer config --global github-oauth.github.com $access_token
+
+composer config --global github-oauth.github.com $access_token --no-interaction
 
 printf "${ORANGE}Installing Awesome Enterprise Composer Package ${NC}\n";
-cd /var/www/ && composer create-project wpoets/awesome-enterprise --no-interaction
+cd /var/www/ && composer create-project wpoets/awesome-enterprise --no-interaction --quiet
 cd awesome-enterprise 
 
 printf "${ORANGE}Installing Extra Handlers for Awesome Enterprise ${NC}\n";
 
-composer require wpoets/communication-handler
-composer require wpoets/docx-handler
-composer require wpoets/google-handler
-composer require wpoets/facebook-handler
+composer require wpoets/communication-handler --no-interaction --quiet
+composer require wpoets/docx-handler --no-interaction --quiet
+composer require wpoets/google-handler --no-interaction --quiet
+composer require wpoets/facebook-handler --no-interaction --quiet
 #composer require wpoets/linkedin-handler
-composer require wpoets/payments-handler
-composer require wpoets/pdf-handler
-composer require wpoets/woocommerce-handler
+composer require wpoets/payments-handler --no-interaction --quiet
+composer require wpoets/pdf-handler --no-interaction --quiet
+composer require wpoets/woocommerce-handler --no-interaction --quiet
+
+printf "${ORANGE} Downloading Backup Script ${NC}\n";
+wget -qO /usr/local/sbin/backup.sh "https://raw.githubusercontent.com/WPoets/aw-setup/master/wo-backup.sh" && chmod u+x /usr/local/sbin/backup.sh
 
 cd ~
+#crontab -l > mycron
+#echo "#0 2 * * * /usr/local/sbin/backup.sh  > /dev/null 2>&1 #backup setup for s3" >> mycron
+#crontab mycron
+#rm mycron
+(crontab -l ; echo "#0 2 * * * /usr/local/sbin/backup.sh  > /dev/null 2>&1 #backup setup for s3") | sort - | uniq - | crontab -
+printf "${YELLOW} Remember to configure backup script ${ULINE}wo-backup.sh & CRON Schedule ${NC}\n";
+
+# need to update the conf file in etc/nginx with support for vsession as well as cache control
+
 wget -qO aw3.sh "https://raw.githubusercontent.com/WPoets/aw-setup/master/aw3-setup.sh" && chmod u+x aw3.sh
 printf "${ORANGE}Environment is ready. Use ${ULINE}aw3.sh${NC} ${ORANGE} to setup awesome for the site. ${NC}\n";
