@@ -20,14 +20,14 @@ printf "${ORANGE}Downloading WordOps ${NC}\n";
 wget -qO wo wops.cc && bash wo
 
 printf "${ORANGE} ---Installing WordOps Stack--- ${NC}\n";
+
 wo stack install
 
 wo stack status
 
 
-
 printf "${ORANGE}Setting up Redis Server ${NC}\n";
-add-apt-repository ppa:chris-lea/redis-server
+add-apt-repository ppa:chris-lea/redis-server -y
 apt-get update
 apt-get install redis-server php-redis -y
 
