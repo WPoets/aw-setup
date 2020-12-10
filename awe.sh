@@ -38,6 +38,7 @@ git clone https://github.com/WPoets/conf.git $HOME/wpoets-conf
 touch /etc/nginx/conf.d/map-wp-fastcgi-cache.conf.custom
 cp -f $HOME/wpoets-conf/nginx/fastcgi.conf /etc/nginx/conf.d/fastcgi.conf
 cp -f $HOME/wpoets-conf/nginx/map-wp-fastcgi-cache.conf /etc/nginx/conf.d/map-wp-fastcgi-cache.conf
+cp -f $HOME/wpoets-conf/nginx/locations-wo.conf /etc/nginx/common/locations-wo.conf
 
 printf "${CYANBG}Please enter GITHUB API Access Token for composer (get from https://github.com/settings/tokens ) :${NC}\n";
 read access_token
