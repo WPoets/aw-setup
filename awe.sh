@@ -9,9 +9,9 @@ ULINE='\033[4m'
 NC='\033[0m' # No Color
 
 printf "${ORANGE}        [aw]        \n\n\n\n${NC}\n";
-apt-get update && apt-get dist-upgrade -y && apt-get autoremove --purge -y && apt-get clean
-apt-get install unzip pigz -y
-apt-get install awscli -y
+apt-get -qq update && apt-get dist-upgrade -y && apt-get autoremove --purge -y && apt-get clean
+apt-get -qq install unzip pigz
+apt-get -qq install awscli
 printf "${ORANGE}Setting update date to IST ${NC}\n";
 timedatectl set-timezone 'Asia/Kolkata'
 dpkg-reconfigure --frontend noninteractive tzdata
