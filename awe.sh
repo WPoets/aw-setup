@@ -13,7 +13,8 @@ apt-get update && apt-get dist-upgrade -y && apt-get autoremove --purge -y && ap
 apt-get install unzip pigz -y
 apt-get install awscli -y
 printf "${ORANGE}Setting update date to IST ${NC}\n";
-dpkg-reconfigure tzdata
+timedatectl set-timezone 'Asia/Kolkata'
+dpkg-reconfigure --frontend noninteractive tzdata
 
 printf "${ORANGE}Downloading WordOps ${NC}\n";
 wget -qO wo wops.cc && bash wo
