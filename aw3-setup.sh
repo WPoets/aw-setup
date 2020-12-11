@@ -57,26 +57,30 @@ function installAw2(){
     
     wp rewrite structure '/%postname%/' --allow-root --quiet
     
-    wget -O /tmp/core.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/core/core.xml /tmp
-    wget -O /tmp/aw-forms.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/aw_forms/aw-forms.xml /tmp
-    wget -O /tmp/db.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/db/db.xml /tmp
-    wget -O /tmp/form_control.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/form_control/form_control.xml /tmp
-    wget -O /tmp/form_control2.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/form_control2/form_control2.xml /tmp
-    wget -O /tmp/notification_service.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/notification_service/notification_service.xml /tmp
-    wget -O /tmp/ui.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/services/ui/ui.xml /tmp
-    wget -O /tmp/search_service.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/search_service/search_service.xml /tmp
-    wget -O /tmp/single_service.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/services/single_service/single_service.xml /tmp
-    wget -O /tmp/awesome-js.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/apps/awesome-js/awesome-js.xml /tmp
-    wget -O /tmp/site-skin.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/apps/site-skin/site-skin.xml /tmp
-    wget -O /tmp/samples-app.2020-09-14.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/apps/samples/samples-app.2020-09-14.xml /tmp
-    wget -O /tmp/settings-modules.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/apps/settings/settings-modules.xml /tmp
+    wget -O /tmp/core.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/core.xml /tmp
+	wget -O /tmp/basic-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/basic-apps.xml /tmp
 	
-    wget -O /tmp/basic-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/basic-apps.xml /tmp
-    #wget -O /tmp/all-posts.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/all-posts.xml /tmp
-    
 	wp import /tmp/basic-apps.xml --authors=skip --allow-root --quiet
     wp import /tmp/core.xml --authors=skip --allow-root --quiet
 	wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
+	
+    wget -O /tmp/aw-forms.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/aw_forms/aw-forms.xml /tmp
+    wget -O /tmp/db.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/db/db.xml /tmp
+    wget -O /tmp/form_control.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/form_control/form_control.xml /tmp
+    wget -O /tmp/form_control2.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/form_control2/form_control2.xml /tmp
+    wget -O /tmp/notification_service.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/notification_service/notification_service.xml /tmp
+    wget -O /tmp/ui.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/services/ui/ui.xml /tmp
+    wget -O /tmp/search_service.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/search_service/search_service.xml /tmp
+    wget -O /tmp/single_service.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/single_service/single_service.xml /tmp
+    wget -O /tmp/awesome-js.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/awesome-js/awesome-js.xml /tmp
+    wget -O /tmp/site-skin.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/site-skin/site-skin.xml /tmp
+    wget -O /tmp/samples-app.2020-09-14.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/samples/samples-app.2020-09-14.xml /tmp
+    wget -O /tmp/settings-modules.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/settings/settings-modules.xml /tmp
+	
+    
+    #wget -O /tmp/all-posts.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/all-posts.xml /tmp
+    
+	
 	wp post-type list --fields=name --allow-root
     wp import /tmp/aw-forms.xml --authors=skip --allow-root
     wp import /tmp/db.xml --authors=skip --allow-root
