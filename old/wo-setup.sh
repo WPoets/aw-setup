@@ -40,7 +40,7 @@ function installAw2(){
     
     wp rewrite structure '/%postname%/' --allow-root
     
-    wget -O /tmp/all-posts.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/all-posts.xml /tmp
+    wget -O /tmp/all-posts.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/old/all-posts.xml /tmp
     wp import /tmp/all-posts.xml --authors=skip --allow-root
     #import all data again to import the posts whose post type is registered by the above command
     wp import /tmp/all-posts.xml --authors=skip --allow-root

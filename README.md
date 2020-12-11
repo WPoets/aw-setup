@@ -1,72 +1,49 @@
 <p align="center">
-<a href="https://www.wpoets.com/" target="_blank"><img width="200"src="https://www.wpoets.com/wp-content/uploads/2018/05/WPoets-logo-1.svg"></a>
+	<a href="https://www.wpoets.com/" target="_blank"><img width="200"src="https://www.wpoets.com/wp-content/uploads/2018/05/WPoets-logo-1.svg"></a>
 </p>
 
-# Enterprise Site Setup with Easyengine and WordOps
+# Awesome Enterprise Site Setup using WordOps
 
 shell scripts to setup Awesome Enterprise platform on a new WordPress website
 Use this bash file to create the enterprise site in one command for Easyengine V3 and above
 
 ### Prerequisites
 
-Either EasyEngine v3 and above OR WOrdOps 
+We need 
 
+1. Ubuntu 18.04 + server
 
-### Installing Setup Script
+### Installing WO setup Script
 
-Create the wordpress site by using EasyEngine
+Download this script, It will setup the WordOps on the server, along with other dependecies.
 
-for EE3
 ```
-ee site create example.com --wpfc --php7 --letsencrypt
+wget -qO awe.sh https://www.wpoets.com/awe && bash awe.sh
+
 ```
-for EE4
+Alternativley 
 ```
-ee site create example.com --type=wp --cache
+wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/awe.sh" && bash awe.sh
+
 ```
-for wo
+
+### Create the Site
+
+Create the wordpress site by using WordOps
+
 ```
 wo site create example.com --wpfc
-```
-
-Download this script
-
-for EE3
-```
-wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/ee3-setup.sh" && chmod u+x ee3-setup.sh
-```
-
-for EE4
-```
-wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/ee4-setup.sh" && chmod u+x ee4-setup.sh
-```
-
-for WO
-```
-wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/wo-setup.sh" && chmod u+x wo-setup.sh
 ```
 
 ## Running the Script
 
 Use below command to configure any wordpress site with Awesome Enterprise
 
-for EE3
 ```
-./ee3-setup.sh example.com
+./aw3.sh example.com
 
 ```
 
-for EE4
-```
-./ee4-setup.sh example.com
-
-```
-
-for WO
-```
-./wo-setup.sh example.com
-
-```
 After running this command this script will ask the redis database no.
 enter the appropriate database no.
 
@@ -75,20 +52,6 @@ enter the appropriate database no.
 To add new WP user this script will promt you to register new user.
 enter y to add new user and follow the procedure.
 
-### Enabling the EE Admin-Tools(Only available in EE4)
-
-To enable the admin tools enter y when this script ask to enable the admin tools.
-
-### Installing WO setup Script
-```
-wget -qO awe.sh https://www.wpoets.com/awe && bash awe.sh
-
-```
-ALternativley 
-```
-wget "https://raw.githubusercontent.com/WPoets/aw-setup/master/awe.sh" && bash awe.sh
-
-```
 
 ## We're Hiring!
 
