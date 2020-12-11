@@ -23,9 +23,6 @@ printf "${ORANGE} ---Installing WordOps Stack--- ${NC}\n";
 
 wo stack install
 
-wo stack status
-
-
 printf "${ORANGE}Setting up Redis Server ${NC}\n";
 add-apt-repository ppa:chris-lea/redis-server -y
 apt-get update
@@ -74,4 +71,6 @@ printf "${YELLOW} Remember to configure backup script ${ULINE}wo-backup.sh & CRO
 # need to update the conf file in etc/nginx with support for vsession as well as cache control
 
 wget -qO aw3.sh "https://raw.githubusercontent.com/WPoets/aw-setup/master/aw3-setup.sh" && chmod u+x aw3.sh
+
+wo stack status
 printf "${ORANGE}Environment is ready. Use ${ULINE}aw3.sh${NC} ${ORANGE} to setup awesome for the site. ${NC}\n";
