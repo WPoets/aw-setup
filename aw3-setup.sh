@@ -40,7 +40,7 @@ function installAw2(){
 	printf "${GREEN}Info:${YELLOW} Installing Monomyth Enterprise latest version\n${NC}";
     #aw2_theme_version=$(getReleaseVersion 'WPoets/awesome-enterprise');
     #wp theme install https://github.com/WPoets/monomyth-enterprise/archive/$aw2_theme_version.zip --activate --allow-root
-    wp theme install https://github.com/WPoets/monomyth-enterprise/archive/master.zip --activate --allow-root
+    wp theme install https://github.com/WPoets/monomyth-enterprise/archive/master.zip --activate --allow-root --quiet
 
     aw2_plugin_version=$(getReleaseVersion2 'WPoets/awesome-enterprise-wp');
     printf "${GREEN}Info:${YELLOW} Installing Awesome Enterprise WP version $aw2_plugin_version${NC}\n";
@@ -64,6 +64,8 @@ function installAw2(){
     wp import /tmp/core.xml --authors=skip --allow-root --quiet
 	wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
 	
+	wp post-type list --fields=name --allow-root
+	
     wget -O /tmp/aw-forms.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/aw_forms/aw-forms.xml /tmp
     wget -O /tmp/db.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/db/db.xml /tmp
     wget -O /tmp/form_control.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/form_control/form_control.xml /tmp
@@ -72,17 +74,8 @@ function installAw2(){
     wget -O /tmp/ui.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/services/ui/ui.xml /tmp
     wget -O /tmp/search_service.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/search_service/search_service.xml /tmp
     wget -O /tmp/single_service.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/single_service/single_service.xml /tmp
-    wget -O /tmp/awesome-js.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/awesome-js/awesome-js.xml /tmp
-    wget -O /tmp/site-skin.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/site-skin/site-skin.xml /tmp
-    wget -O /tmp/samples-app.2020-09-14.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/samples/samples-app.2020-09-14.xml /tmp
-    wget -O /tmp/settings-modules.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/settings/settings-modules.xml /tmp
-	
     
-    #wget -O /tmp/all-posts.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/all-posts.xml /tmp
-    
-	
-	wp post-type list --fields=name --allow-root
-    wp import /tmp/aw-forms.xml --authors=skip --allow-root
+	wp import /tmp/aw-forms.xml --authors=skip --allow-root
     wp import /tmp/db.xml --authors=skip --allow-root
     wp import /tmp/form_control.xml --authors=skip --allow-root
     wp import /tmp/form_control2.xml --authors=skip --allow-root
@@ -91,16 +84,17 @@ function installAw2(){
     wp import /tmp/search_service.xml --authors=skip --allow-root
     wp import /tmp/single_service.xml --authors=skip --allow-root
 	
-    wp import /tmp/awesome-js.xml --authors=skip --allow-root
+    wget -O /tmp/awesome-js.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/awesome-js/awesome-js.xml /tmp
+    wget -O /tmp/site-skin.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/site-skin/site-skin.xml /tmp
+    wget -O /tmp/samples-app.2020-09-14.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/samples/samples-app.2020-09-14.xml /tmp
 
-   
+		
+    wp import /tmp/awesome-js.xml --authors=skip --allow-root
     wp import /tmp/site-skin.xml --authors=skip --allow-root
     wp import /tmp/samples-app.2020-09-14.xml --authors=skip --allow-root
 
-    wp import /tmp/settings-modules.xml --authors=skip --allow-root
   
     #import all data again to import the posts whose post type is registered by the above command
-    #wp import /tmp/all-posts.xml --authors=skip --allow-root
     
     #to change the file permission of all new installed plugins to www-data user
     chown -R www-data:www-data wp-content/uploads/*
