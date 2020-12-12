@@ -58,6 +58,7 @@
 [services.add form service_label='Forms Service' post_type='forms' desc='Common Forms' /]
 [services.add aw_form service_label='AW Form Service' post_type='aw_form' desc='AW Form Service' /]
 [services.add search_service service_label='Search Service' post_type='search_service' desc='search services' /]
+[services.add backend_design service_label='Backend Design Service' post_type='backend_service' desc='Backend Design Service' /]
 [services.add sample_service service_label='Sample App Service' post_type='sample_service' desc='Sample App Service' /]
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[				

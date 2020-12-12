@@ -13,6 +13,14 @@ We need
 
 1. Ubuntu 18.04 + server
 
+This will setup following items
+
+1. Change the Timezone to Aisa/Kolkata
+2. Install WordOps 
+3. Change the conf files for Nginx
+4. Installs aws-cli
+5. Install aw3.sh script.
+
 ### Installing WO setup Script
 
 Download this script, It will setup the WordOps on the server, along with other dependecies.

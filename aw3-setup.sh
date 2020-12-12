@@ -56,6 +56,9 @@ function installAw2(){
     wp plugin install google-apps-login --allow-root --quiet
     
     wp rewrite structure '/%postname%/' --allow-root --quiet
+	
+	printf "${GREEN}Info:${YELLOW} Importing Basic Apps & Core Services ${NC}\n";
+
     
     wget -O /tmp/core.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/core.xml /tmp
 	wget -O /tmp/basic-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/basic-apps.xml /tmp
@@ -66,32 +69,13 @@ function installAw2(){
 	
 	wp post-type list --fields=name --allow-root
 	
-    wget -O /tmp/aw-forms.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/aw_forms/aw-forms.xml /tmp
-    wget -O /tmp/db.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/db/db.xml /tmp
-    wget -O /tmp/form_control.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/form_control/form_control.xml /tmp
-    wget -O /tmp/form_control2.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/form_control2/form_control2.xml /tmp
-    wget -O /tmp/notification_service.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/notification_service/notification_service.xml /tmp
-    wget -O /tmp/ui.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/services/ui/ui.xml /tmp
-    wget -O /tmp/search_service.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/search_service/search_service.xml /tmp
-    wget -O /tmp/single_service.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/services/single_service/single_service.xml /tmp
+    wget -O /tmp/common-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-apps.xml /tmp
+    wget -O /tmp/common-services.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-services.xml /tmp
     
-	wp import /tmp/aw-forms.xml --authors=skip --allow-root
-    wp import /tmp/db.xml --authors=skip --allow-root
-    wp import /tmp/form_control.xml --authors=skip --allow-root
-    wp import /tmp/form_control2.xml --authors=skip --allow-root
-    wp import /tmp/notification_service.xml --authors=skip --allow-root
-    wp import /tmp/ui.xml --authors=skip --allow-root
-    wp import /tmp/search_service.xml --authors=skip --allow-root
-    wp import /tmp/single_service.xml --authors=skip --allow-root
-	
-    wget -O /tmp/awesome-js.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/awesome-js/awesome-js.xml /tmp
-    wget -O /tmp/site-skin.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/site-skin/site-skin.xml /tmp
-    wget -O /tmp/samples-app.2020-09-14.xml https://raw.githubusercontent.com/WPoets/awesome-apps/master/apps/samples/samples-app.2020-09-14.xml /tmp
-
-		
-    wp import /tmp/awesome-js.xml --authors=skip --allow-root
-    wp import /tmp/site-skin.xml --authors=skip --allow-root
-    wp import /tmp/samples-app.2020-09-14.xml --authors=skip --allow-root
+	wp import /tmp/common-apps.xml --authors=skip --allow-root --quiet
+    wp import /tmp/common-services.xml --authors=skip --allow-root --quiet
+   
+  
 
   
     #import all data again to import the posts whose post type is registered by the above command
