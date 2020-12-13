@@ -24,11 +24,12 @@ printf "${ORANGE} ---Installing WordOps Stack--- ${NC}\n";
 wo stack install
 
 printf "${ORANGE}Setting up Redis Server ${NC}\n";
-add-apt-repository ppa:chris-lea/redis-server -y
+add-apt-repository ppa:redislabs/redis -y
 apt-get update
 apt-get install redis-server php-redis -y
 
 service redis-server start
+systemctl enable redis-server --quiet
 
 printf "${ORANGE} Updating conf files ${NC}\n";
 git clone https://github.com/WPoets/conf.git $HOME/wpoets-conf

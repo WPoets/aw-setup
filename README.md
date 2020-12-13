@@ -19,7 +19,16 @@ This will setup following items
 2. Install WordOps 
 3. Change the conf files for Nginx
 4. Installs aws-cli
-5. Install aw3.sh script.
+5. Installs Redis Server
+6. Installs aw3.sh script
+7. Installs wo-backup.sh script
+8. Installs Awesome Enterprise Platform
+
+Post installation you will need to configure 
+
+1. AWS CLI 
+2. Backup Script
+3. Schedule the Cron for backup
 
 ### Installing WO setup Script
 
