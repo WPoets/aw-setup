@@ -7558,6 +7558,14 @@ transition: height 0.35s ease;
 .visibility-hidden{
 visibility: hidden;
 }
+
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
 [/css.less]]]></content:encoded>
 	<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 	<wp:post_id>572895</wp:post_id>
@@ -8987,6 +8995,39 @@ border-color: #5897fb; }
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+						<item>
+		<title>editor-styles</title>
+		<link>https://g2a.wordpoets.com/?post_type=m_skin&#038;p=874350</link>
+		<pubDate>Sat, 26 Dec 2020 03:25:23 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://g2a.wordpoets.com/?post_type=m_skin&#038;p=874350</guid>
+		<description></description>
+		<content:encoded><![CDATA[[css.less]
+
+.editor-post-title__block, .block-editor-block-list__block.wp-block{
+	width: 100%;
+    max-width: 1256px;
+}
+
+[/css.less]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>874350</wp:post_id>
+		<wp:post_date><![CDATA[2020-12-26 03:25:23]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2020-12-26 03:25:23]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[editor-styles]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_skin]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 				
