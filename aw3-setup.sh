@@ -181,6 +181,7 @@ function updateAw3(){
 	composer create-project wpoets/awesome-enterprise ./ --no-interaction --quiet
 	printf "${GREEN}Info:${YELLOW} Creating a Backup \n${NC}";
 	cp /var/www/awesome-enterprise/composer.lock ./
+	cp /var/www/awesome-enterprise/composer.json ./
 	composer update --no-interaction --quiet
 	mv /var/www/awesome-enterprise /var/www/$DATE-awesome-enterprise
 	mv /var/www/$DATE /var/www/awesome-enterprise
