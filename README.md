@@ -57,7 +57,13 @@ wo site create example.com --wpfc
 Use below command to configure any wordpress site with Awesome Enterprise
 
 ```
-aw3 example.com
+aw3 --setup example.com
+
+```
+
+For other options type
+```
+aw3 --help
 
 ```
 
