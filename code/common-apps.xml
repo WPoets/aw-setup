@@ -72,21 +72,21 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
 		<dc:creator><![CDATA[wpoid_web]]></dc:creator>
 		<guid isPermaLink="false">http://dc.wordpoets.com/?post_type=m_awesome_js&#038;p=559053</guid>
 		<description></description>
-		<content:encoded><![CDATA[[aw2.module slug="jquery-js" /]
-[aw2.module slug="swiper-js" /]
+		<content:encoded><![CDATA[[js.minify]  
+  [this_collection.include_raw jquery-js /]
+  [this_collection.include_raw swiper-js /]
 
-
-
-jQuery( document ).ready(function( $ ) {          
-  $.ajax({
+  jQuery( document ).ready(function( $ ) {
+    $.ajax({
       url: '[env.get settings.cdn /]spa/spa.v2.min.js',
       dataType: "script",
       cache: true,
       success: function() {
-      	spa.app.start(aw2);
+        spa.app.start(aw2);
       }
     });
-});]]></content:encoded>
+  });
+[/js.minify] ]]></content:encoded>
 		<excerpt:encoded><![CDATA[
 				
 								]]></excerpt:encoded>
