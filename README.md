@@ -57,7 +57,7 @@ wo site create example.com --wpfc
 Use below command to configure any wordpress site with Awesome Enterprise
 
 ```
-./aw3.sh example.com
+aw3 example.com
 
 ```
 

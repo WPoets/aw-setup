@@ -75,8 +75,8 @@ function installAw2(){
 	wp import /tmp/common-apps.xml --authors=skip --allow-root --quiet
     wp import /tmp/common-services.xml --authors=skip --allow-root --quiet
    
-  
-
+	wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
+	
   
     #import all data again to import the posts whose post type is registered by the above command
     
@@ -121,8 +121,96 @@ function createWpUserPrompt(){
     done
 }
 
+function baseImport(){
+	if [ -z "$1" ]; then
+		echo 'Usage: ./aw3.sh --base-import <example.com>'
+		exit
+	fi	
+	echo 'Checking site...'$1
+	if op=$(! wo site info $1); then
+		echo "Site does not exists"
+		exit
+	else
+		cd /var/www/$1/htdocs
+		echo 'DONE'
+	fi
+	printf "${ORANGE} ...[✌]... \n${NC}"	
+}
+
+function createUser(){
+	if [ -z "$1" ]; then
+		echo 'Usage: ./aw3.sh --base-import <example.com>'
+		exit
+	fi	
+	 echo 'Checking site...'
+	if op=$(! wo site info $1); then
+		echo "Site does not exists"
+		exit
+	else
+		cd /var/www/$1/htdocs
+		createWpUserPrompt $1
+	fi 
+	printf "${ORANGE} ...[✌]... \n${NC}"
+}
+
+function setup(){
+	if [ -z "$1" ]; then
+		echo 'Usage: ./aw3.sh --base-import <example.com>'
+		exit
+	fi	
+	
+	echo 'Checking site...'
+	if op=$(! wo site info $1); then
+		echo "Site does not exists"
+		exit
+	else
+		cd /var/www/$1/htdocs
+		installAw2 $1
+		createWpUserPrompt $1
+	fi
+	
+	printf "${ORANGE}Site Successfully configured... ✌ \n${NC}"
+}
+
+function updateAw3(){
+	DATE=$(date +%d%m%Y)
+	printf "${GREEN}Info:${YELLOW} Updating Awesome Enterprise to latest version\n${NC}";
+
+	mkdir /var/www/$DATE
+	cd /var/www/$DATE
+	composer create-project wpoets/awesome-enterprise ./ --no-interaction --quiet
+	printf "${GREEN}Info:${YELLOW} Creating a Backup \n${NC}";
+	cp /var/www/awesome-enterprise/composer.lock ./
+	composer update --no-interaction --quiet
+	mv /var/www/awesome-enterprise /var/www/$DATE-awesome-enterprise
+	mv /var/www/$DATE /var/www/awesome-enterprise
+
+	printf "${ORANGE} ...[✌]... \n${NC}"
+}
+
+function usage()
+{
+    cat <<-EOF
+
+  Usage: aw3.sh [options] <site>
+
+  Options:
+
+     --setup <site>       installs awesome enterprise wp plugin along with 
+						  theme and other commonly used plugins 
+						  for <site> and activates them.
+    --create-user <site>  interactivly creates the admin users for <site>
+    --base-import <site>  only imports the awesome base code base for <site>
+    --update-awesome      updates the awesome enterprise core, 
+						  assumes it is kept at /var/www/awesome-enterprise
+    --version        	  output program version
+    -h, --help            output help information
+
+EOF
+}
+
 if [ -z "$1" ]; then
-    echo "Please mention site name!!!"
+    usage
     exit
 fi
 
@@ -132,14 +220,25 @@ if op=$(! wo); then
     exit
 fi
 
-echo 'Checking site...'
-if op=$(! wo site info $1); then
-    echo "Site does not exists"
-    exit
-else
-    cd /var/www/$1/htdocs
-    installAw2 $1
-    createWpUserPrompt $1
-fi
+while [ "$1" != "" ]; do
+    case $1 in
+        --setup )   shift
+                   setup $1
+                    ;;
+		--create-user )  shift
+						createUser $1
+                    ;;
+		--base-import )   shift
+						  baseImport $1	
+                    ;;
+        --update-awesome )  updateAw3
+                            ;;
+        -h | --help )    usage
+                         exit
+                         ;;
+        * )             usage
+                        exit 1
+    esac
+    shift
+done
 
-printf "${ORANGE}Site Successfully configured... ✌ \n${NC}"
