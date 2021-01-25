@@ -74,7 +74,7 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
 		<description></description>
 		<content:encoded><![CDATA[[aw2.module slug="jquery-js" /]
 [aw2.module slug="swiper-js" /]
-[aw2.module slug="flatpickr-js" /]
+
 
 
 jQuery( document ).ready(function( $ ) {          
