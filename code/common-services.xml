@@ -4110,10 +4110,10 @@ class="btn [module.get class default=' btn-primary btn-md'/]">[if.not_empty modu
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=form_control&#038;p=854990</guid>
 		<description></description>
 		<content:encoded><![CDATA[<script type="spa/axn" axn=core.run_script> 
-  spa.trumbowyg = {};
+    spa.trumbowyg = {};
   spa.trumbowyg.prerequisites = {};
-  spa.trumbowyg.prerequisites.js_files = 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/trumbowyg.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/upload/trumbowyg.upload.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/table/trumbowyg.table.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/history/trumbowyg.history.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/fontsize/trumbowyg.fontsize.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/colors/trumbowyg.colors.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/cleanpaste/trumbowyg.cleanpaste.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/template/trumbowyg.template.min.js';
-  spa.trumbowyg.prerequisites.css_files = 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/ui/trumbowyg.min.css,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/table/ui/trumbowyg.table.min.css,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/plugins/colors/ui/trumbowyg.colors.min.css';
+  spa.trumbowyg.prerequisites.js_files = 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/trumbowyg.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/upload/trumbowyg.upload.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/table/trumbowyg.table.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/history/trumbowyg.history.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/fontsize/trumbowyg.fontsize.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/colors/trumbowyg.colors.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/cleanpaste/trumbowyg.cleanpaste.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/template/trumbowyg.template.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/indent/trumbowyg.indent.min.js,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/preformatted/trumbowyg.preformatted.min.js';
+  spa.trumbowyg.prerequisites.css_files = 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/ui/trumbowyg.min.css,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/table/ui/trumbowyg.table.min.css,https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/plugins/colors/ui/trumbowyg.colors.min.css';
 
   spa.trumbowyg.init = function(o) {}
   spa.trumbowyg.run = function(o) {
@@ -4121,7 +4121,7 @@ class="btn [module.get class default=' btn-primary btn-md'/]">[if.not_empty modu
       var editor = o.el.attr('editor');
       var upload_path = o.el.attr('upload_url');
 
-      $.trumbowyg.svgPath = 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/ui/icons.svg';
+      $.trumbowyg.svgPath = 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/ui/icons.svg';
      var t =  $(editor).trumbowyg({
           btnsDef: {
               // Create a new dropdown 
@@ -4131,18 +4131,19 @@ class="btn [module.get class default=' btn-primary btn-md'/]">[if.not_empty modu
               }
           },
           btns: [
-              ['viewHTML'],
-              ['undo', 'redo'], // Only supported in Blink browsers 
-              ['formatting'],
               ['strong', 'em', 'del'],
-              ['superscript', 'subscript'],
-              ['foreColor', 'backColor'],
+  						['unorderedList', 'orderedList'],
+              ['indent', 'outdent'],
               ['link'],
               ['image'],
-              ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
-              ['unorderedList', 'orderedList'],
               ['table'],
+              ['justifyLeft', 'justifyCenter', 'justifyRight'],
+              ['formatting'],
+              ['superscript', 'subscript'],
+              ['foreColor', 'backColor'],
               ['horizontalRule'],
+              ['undo', 'redo'], // Only supported in Blink browsers 
+              ['viewHTML'],
               ['removeformat'],
               ['fullscreen']
           ],
