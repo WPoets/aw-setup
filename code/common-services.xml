@@ -8818,10 +8818,9 @@ action:
 		</wp:postmeta>
 							</item>
 		
-
-		<item>
+<item>
 		<title>layout</title>
-		<link>https://alpha.wordpoets.com/?post_type=backend_service&#038;p=867719</link>
+		<link>https://awxdocs.com/?post_type=backend_service&#038;p=867719</link>
 		<pubDate>Thu, 21 May 2020 05:27:02 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://ilsnxt.wordpoets.com/?post_type=backend_service&#038;p=867719</guid>
@@ -8834,17 +8833,17 @@ action:
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>[aw2.get app.name /]</title>
     <link rel="stylesheet" href="[aw2.get url.home /]site-skin/css/awesome-css">
-    <script type='text/javascript' src='https://cdn.getawesomestudio.com/lib/jquery/3.1.1/jquery.min.js'></script>
-    <script type='text/javascript' src='[aw2.get url.home /]/awesome-js/js/lightbox-js'></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type='text/javascript' src='[aw2.get url.home /]/awesome-js/js/lightbox-js' defer></script>
+    
     [loop.@a apps]
       [aw2.set template.app='{@a.item.path}/' /]
       [template.get app set='template.apps.{@a.key}' /]
     [/loop.@a]
-    
     <script>
       jQuery( document ).ready(function( $ ) {
         $.ajax({
-          url: '[env.get settings.cdn /]spa/spa.v2.min.js',
+          url: '[env.get settings.cdn /]spa/spa.v3.min.js',
           dataType: "script",
           cache: true,
           success: function() {
@@ -8871,16 +8870,20 @@ action:
             	<div class="is-flex align-items-center brand-white-bg justify-content-between">
                 <div class="col-6 col-lg-10 logo-wrapper pad-4">
                   <a href="[php.site_url]/dashboard" class="anchor-absolute">
-                  	<img src="[php.site_url]/wp-content/uploads/2019/12/College-logo-with-R.png"  class="logo-img img-responsive">
+                  [if.not_empty settings.backend-logo]
+                  	<img src="[env.settings.backend-logo/]"  class="logo-img img-responsive">
+                  [/if.not_empty]  
+                  [if.else]
+                  	[wp.get option.blogname /]
+                  [/if.else]
                   </a>
                 </div>
                 <div class="align-items-center justify-content-center col-2 col-md-1 is-flex is-lg-none">
                   <i class="font-size-largest icon-menu icon-close mobile-menu"></i>
                 </div>
               </div>
-              [if.empty module.menu]
-              	[this_collection.side-bar-menu /]
-              [/if.empty]
+            	[this_collection.side-bar-menu menu='{module.menu}'/]
+              
             </aside>
             <div class="header-gap"></div>
           </div>
@@ -8891,12 +8894,16 @@ action:
         	</div>
       </div>
     </div>
+   [if.not_empty app.page_title]
+    <script>document.title = "[env.get app.page_title /]"; </script>
+   [/if.not_empty]
    <script type="spa/axn" axn="core.run_script">
     $(".mobile-menu").click(function(){
         $(".sidebar-wrapper").toggleClass("active");
         $(this).toggleClass("icon-menu");
     });
   </script>
+  	
  </body>
 </html>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -8913,13 +8920,13 @@ action:
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_edit_lock]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1612425208:2]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>backend-js</title>
-		<link>https://alpha.wordpoets.com/?post_type=backend_service&#038;p=867721</link>
+		<link>https://awxdocs.com/?post_type=backend_service&#038;p=867721</link>
 		<pubDate>Thu, 21 May 2020 05:28:22 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://ilsnxt.wordpoets.com/?post_type=backend_service&#038;p=867721</guid>
@@ -8998,7 +9005,7 @@ action:
     hours = hours ? hours : 12;
     minutes = minutes < 10 ? '0'+minutes : minutes;
     var strTime = hours + ':' + minutes + ' ' + ampm;
-    return date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear() + ' at ' + strTime;
+    return date.getDate() + '-' + months[ date.getMonth() ] + '-' + date.getFullYear() + ' at ' + strTime;
   }
   
   /* This js for search*/
@@ -9053,25 +9060,13 @@ action:
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_edit_lock]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1612415793:2]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>backend-css</title>
-		<link>https://alpha.wordpoets.com/?post_type=backend_service&#038;p=867723</link>
+		<link>https://awxdocs.com/?post_type=backend_service&#038;p=867723</link>
 		<pubDate>Thu, 21 May 2020 05:47:49 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://ilsnxt.wordpoets.com/?post_type=backend_service&#038;p=867723</guid>
@@ -10158,25 +10153,13 @@ i.fa{
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_edit_lock]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1612415769:2]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>side-bar-menu</title>
-		<link>https://alpha.wordpoets.com/?post_type=backend_service&#038;p=867725</link>
+		<link>https://awxdocs.com/?post_type=backend_service&#038;p=867725</link>
 		<pubDate>Thu, 21 May 2020 05:48:20 +0000</pubDate>
 		<dc:creator><![CDATA[praveen]]></dc:creator>
 		<guid isPermaLink="false">http://ilsnxt.wordpoets.com/?post_type=backend_service&#038;p=867725</guid>
@@ -10184,7 +10167,9 @@ i.fa{
 		<content:encoded><![CDATA[[templates.add main]
 	
 	//**Template Menus of array**//
-  [this_collection.menu-array.arr_collection  set="template.menus" /]
+  
+   [core.backend-menu  o.set="template.menus" c.empty='{module.menu}'/]
+   [module.menu  o.set="template.menus" c.not_empty='{module.menu}'/]
   
   <div class="menubar pad-y-4">
   	//**Search bar**//
@@ -10198,22 +10183,30 @@ i.fa{
 		<div class="left-side-bar-searched-nav-links"></div>
     <ul class="left-side-bar-nav-links">
       [loop.@menu template.menus]
+          [if.user_can_access link='{@menu.item.link}' o.set='template.user_allowed'/]
+          [if.true template.user_allowed]
           <li class="[aw2.get @menu.item.class /]">
             <a href="[aw2.get @menu.item.link /]" title='[aw2.get @menu.item.title /]' target='[aw2.get @menu.item.target /]' rel="noopener noreferrer">
-              <img src="[aw2.get @menu.item.icon /]"/>
+              [if.not_empty @menu.item.icon]
+              	<img src="[aw2.get @menu.item.icon /]"/>
+              [/if.not_empty]
               <span>[aw2.get @menu.item.title /]</span>
             </a>
-            [if.not_empty @menu.item.child-nav]
+            	[if.not_empty @menu.item.child-nav]
                   <i class="icon-arrow-drop-down brand-white submenu-icon [if.equal lhs='{@menu.item.class}' rhs='{app.slug}'] icon-arrow-drop-up[/if.equal]"></i>
                   <ul class="sub-menu">
                     [loop.@submenu @menu.item.child-nav]
+                    [if.user_can_access link='{@submenu.item.link}' o.set='template.user_allowed'/]
+          					[do.@x c.true=template.user_allowed]
                       <li class="[if.equal lhs='{{php.site_url}}{server_variables.REQUEST_URI}' rhs='{@submenu.item.link}'] active[/if.equal]">
                           <a href="[aw2.get @submenu.item.link /]" target="[aw2.get @submenu.item.target/]" rel="noopener noreferrer">[aw2.get @submenu.item.title /]</a>
                       </li>
+                     [/do.@x] 
                     [/loop.@submenu]
                   </ul>
               [/if.not_empty]
           </li>
+          [/if.true]
       [/loop.@menu]
     </ul>
   </div>
@@ -10232,463 +10225,17 @@ i.fa{
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
 		<wp:meta_value><![CDATA[side-bar-admin]]></wp:meta_value>
 		</wp:postmeta>
-							</item>
-					<item>
-		<title>svg-icon</title>
-		<link>https://alpha.wordpoets.com/?post_type=backend_service&#038;p=867731</link>
-		<pubDate>Thu, 21 May 2020 05:51:26 +0000</pubDate>
-		<dc:creator><![CDATA[praveen]]></dc:creator>
-		<guid isPermaLink="false">http://ilsnxt.wordpoets.com/?post_type=backend_service&#038;p=867731</guid>
-		<description></description>
-		<content:encoded><![CDATA[[templates.add main]
-	[css.style]
-  	.sprite-icon{
-    		width: 20px;
-        cursor: pointer;
-    }
-  [/css.style]
-  <svg style="display:none;">
-      <g id="icon-dashboard">
-        <path d="M84.762,41.232c-4.92,3.529-11.826,8.222-14.941,8.222c-0.617,0-0.815-0.186-0.959-0.361
-						c-1.272-1.568-0.928-7.066,1.025-16.335c0.193-0.918-0.291-1.841-1.152-2.204c-0.861-0.365-1.861-0.066-2.383,0.71
-						c-6.721,10.021-9.799,12.123-11.194,12.123c-1.979,0-3.99-5.692-5.986-16.92c-0.159-0.896-0.915-1.549-1.813-1.601v-0.011
-						c-0.019,0-0.037,0.004-0.056,0.004c-0.019,0-0.04-0.004-0.058-0.004v0.011c-0.895,0.052-1.649,0.705-1.811,1.601
-						c-1.998,11.228-4.011,16.92-5.988,16.92c-1.396,0-4.472-2.103-11.192-12.123c-0.521-0.776-1.521-1.075-2.384-0.71
-						c-0.862,0.363-1.346,1.286-1.152,2.204c1.952,9.269,2.299,14.767,1.024,16.335c-0.141,0.176-0.342,0.361-0.958,0.361
-						c-3.115,0-10.021-4.692-14.943-8.222c-0.778-0.559-1.845-0.468-2.52,0.209c-0.676,0.674-0.765,1.741-0.207,2.52
-						c11.253,14.392,9.135,30.91,9.135,30.91c-0.041,0.229-0.063,0.463-0.063,0.709c0,4.058,5.682,5.664,10.631,6.61
-						c5.453,1.045,12.635,1.627,20.266,1.647v0.002c0.073,0,0.147,0,0.22-0.002c0.073,0.002,0.146,0.002,0.221,0.002v-0.002
-						c7.629-0.021,14.812-0.603,20.263-1.647c4.95-0.946,10.633-2.555,10.633-6.61c0-0.246-0.022-0.479-0.063-0.709
-						c0,0-2.117-16.521,9.134-30.91c0.559-0.778,0.471-1.846-0.205-2.52C86.607,40.766,85.542,40.674,84.762,41.232z M47.522,78.238
-						h-0.015c-0.07,0-0.137,0.003-0.206,0.003c-0.07,0-0.135-0.003-0.205-0.003h-0.015c-12.127-0.035-20.144-1.446-23.682-2.657
-						c3.538-1.213,11.555-2.624,23.682-2.658h0.029c0.063,0,0.126,0,0.19,0s0.124,0,0.19,0h0.03
-						c12.126,0.034,20.142,1.445,23.681,2.658C67.664,76.792,59.648,78.203,47.522,78.238z"/>
-      </g>
-      <path id="icon-user-stories" d="M8.1,78.9c0.3,0.3,0.3,0.7,0,0.9l-1.7,1.7c-0.1,0.1-0.3,0.2-0.5,0.2l-0.1,0c0,0-0.1,0-0.2,0l-0.1,0  c0,0-0.1,0-0.1-0.1l-0.9-0.9c-0.1-0.1-0.2-0.3-0.2-0.5s0.1-0.3,0.2-0.5c0.1-0.1,0.3-0.2,0.5-0.2h0c0.2,0,0.3,0.1,0.5,0.2l0.4,0.4  l1.2-1.2C7.4,78.7,7.8,78.7,8.1,78.9z M7.1,75.4l-1.2,1.2l-0.4-0.4c-0.3-0.3-0.7-0.3-0.9,0c-0.1,0.1-0.2,0.3-0.2,0.5  s0.1,0.3,0.2,0.5L5.5,78c0.1,0.1,0.1,0.1,0.2,0.1c0.1,0,0.2,0,0.2,0c0.2,0,0.3-0.1,0.5-0.2l1.7-1.7c0.3-0.3,0.3-0.7,0-0.9  C7.8,75.2,7.4,75.2,7.1,75.4z M7.1,82.4l-1.2,1.2l-0.4-0.4C5.4,83.1,5.3,83,5.1,83h0c-0.2,0-0.3,0.1-0.5,0.2  c-0.1,0.1-0.2,0.3-0.2,0.5c0,0.2,0.1,0.3,0.2,0.5L5.5,85c0,0,0.1,0.1,0.1,0.1l0.1,0c0.1,0,0.1,0,0.1,0l0.1,0c0.2,0,0.3-0.1,0.5-0.2  l1.7-1.7c0.3-0.3,0.3-0.7,0-0.9C7.8,82.1,7.4,82.1,7.1,82.4z M15,82.8h-5c-0.4,0-0.7,0.3-0.7,0.7c0,0.4,0.3,0.7,0.7,0.7h5  c0.4,0,0.7-0.3,0.7-0.7C15.7,83.1,15.4,82.8,15,82.8z M17.8,73.8v11.3c0,1.1-0.9,1.9-1.9,1.9H4.1c-1.1,0-1.9-0.9-1.9-1.9V73.8  c0-1.1,0.9-1.9,1.9-1.9h1.3v-0.3c0-0.7,0.6-1.3,1.3-1.3h0.9C8,69.4,9.1,69,10,69c0.9,0,2,0.4,2.3,1.4h0.9c0.7,0,1.3,0.6,1.3,1.3v0.3  h1.4C16.9,71.9,17.8,72.8,17.8,73.8z M13.1,72.6c0-0.1,0-0.1,0-0.2v-0.7l-1.4,0c-0.4,0-0.7-0.3-0.7-0.7c0-0.6-0.7-0.7-1.1-0.7  S8.9,70.4,8.9,71c0,0.4-0.3,0.7-0.7,0.7H6.8v1.5l6.4,0l0-0.4C13.1,72.7,13.1,72.6,13.1,72.6z M15.9,73.2h-1.4c0,0.7-0.6,1.3-1.3,1.3  H6.8c-0.7,0-1.3-0.6-1.3-1.3H4.1c-0.3,0-0.6,0.3-0.6,0.6v11.3c0,0.3,0.3,0.6,0.6,0.6h11.7c0.3,0,0.6-0.3,0.6-0.6V73.8  C16.5,73.5,16.2,73.2,15.9,73.2z M15,76.1h-5c-0.4,0-0.7,0.3-0.7,0.7c0,0.4,0.3,0.7,0.7,0.7h5c0.4,0,0.7-0.3,0.7-0.7  C15.7,76.4,15.4,76.1,15,76.1z M15,79.4h-5c-0.4,0-0.7,0.3-0.7,0.7s0.3,0.7,0.7,0.7h5c0.4,0,0.7-0.3,0.7-0.7S15.4,79.4,15,79.4z"/>
-      <g id="icon-tasks" transform="translate(0,-952.36218)">
-        <path d="M5.5,1073.4c-0.3,0-0.5,0.2-0.7,0.4l-1.4,2.8l-1.1-0.9c-0.3-0.3-0.8-0.2-1.1,0.1s-0.2,0.8,0.1,1.1h0l1.9,1.6   c0.3,0.3,0.8,0.2,1.1-0.1c0,0,0.1-0.1,0.1-0.2l1.9-3.7c0.2-0.4,0-0.9-0.3-1.1C5.7,1073.4,5.6,1073.4,5.5,1073.4z"/>
-        <path d="M10.5,1074.4h6.4c1.2,0,2.1,0.7,2.1,1.6l0,0c0,0.9-0.9,1.6-2.1,1.6h-6.4c-1.2,0-2.1-0.7-2.1-1.6l0,0   C8.4,1075.1,9.4,1074.4,10.5,1074.4z"/>
-        <path d="M5.2,1082.9c0,0.9-0.7,1.6-1.6,1.6s-1.6-0.7-1.6-1.6s0.7-1.6,1.6-1.6S5.2,1082,5.2,1082.9z"/>
-        <path d="M10.5,1081.3h6.4c1.2,0,2.1,0.7,2.1,1.6l0,0c0,0.9-0.9,1.6-2.1,1.6h-6.4c-1.2,0-2.1-0.7-2.1-1.6l0,0   C8.4,1082,9.4,1081.3,10.5,1081.3z"/>
-        <path d="M5.2,1089.8c0,0.9-0.7,1.6-1.6,1.6s-1.6-0.7-1.6-1.6s0.7-1.6,1.6-1.6S5.2,1088.9,5.2,1089.8z"/>
-        <path d="M10.5,1088.2h6.4c1.2,0,2.1,0.7,2.1,1.6l0,0c0,0.9-0.9,1.6-2.1,1.6h-6.4c-1.2,0-2.1-0.7-2.1-1.6l0,0   C8.4,1088.9,9.4,1088.2,10.5,1088.2z"/>
-      </g>
-      <g id="icon-notes">
-        <path d="M18.7,175.7L18,175c-0.3-0.3-0.8-0.4-1.1-0.1l-2.4,2.4v-2.1c0-0.9-0.7-1.6-1.6-1.6H2.6c-0.9,0-1.6,0.7-1.6,1.6v13.6   c0,0.9,0.7,1.6,1.6,1.6h10.2c0.9,0,1.6-0.7,1.6-1.6v-7.7l4.3-4.3C19.1,176.5,19.1,176,18.7,175.7z M13.5,188.8   c0,0.3-0.3,0.6-0.6,0.6H2.6c-0.3,0-0.6-0.3-0.6-0.6v-13.6c0-0.3,0.3-0.6,0.6-0.6h10.2c0.3,0,0.6,0.3,0.6,0.6v3.1l-3.1,3.1l1.9,1.9   l1.3-1.3V188.8z"/>
-        <path d="M9.2,184c-0.1,0.4,0.1,0.6,0.5,0.5l2-0.6L9.8,182L9.2,184z"/>
-        <path d="M3.5,177.7h8.2c0.3,0,0.5-0.2,0.5-0.5c0-0.3-0.2-0.5-0.5-0.5H3.5c-0.3,0-0.5,0.2-0.5,0.5C3,177.4,3.2,177.7,3.5,177.7z"/>
-        <path d="M11.7,186.2H3.5c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5h8.2c0.3,0,0.5-0.2,0.5-0.5C12.2,186.5,12,186.2,11.7,186.2z   "/>
-        <path d="M3.5,180.9h5.1c0.3,0,0.5-0.2,0.5-0.5c0-0.3-0.2-0.5-0.5-0.5H3.5c-0.3,0-0.5,0.2-0.5,0.5C3,180.6,3.2,180.9,3.5,180.9z"/>
-        <path d="M3.5,184.1h4.2c0.3,0,0.5-0.2,0.5-0.5c0-0.3-0.2-0.5-0.5-0.5H3.5c-0.3,0-0.5,0.2-0.5,0.5C3,183.8,3.2,184.1,3.5,184.1z"/>
-      </g>
-      <g id="icon-add-new">
-        <g>
-          <path d="M10,225c-5,0-9,4-9,9s4,9,9,9c5,0,9-4,9-9S15,225,10,225z M10,242c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8    C18,238.4,14.4,242,10,242z"/>
-        </g>
-        <g>
-          <path d="M13.9,233.5h-3.4v-3.4c0-0.3-0.2-0.5-0.5-0.5c-0.3,0-0.5,0.2-0.5,0.5v3.4H6.1c-0.3,0-0.5,0.2-0.5,0.5    c0,0.3,0.2,0.5,0.5,0.5h3.4v3.4c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5v-3.4h3.4c0.3,0,0.5-0.2,0.5-0.5    C14.4,233.7,14.2,233.5,13.9,233.5z"/>
-        </g>
-      </g>
-      <path id="icon-search" d="M8.9,292.7c1.8,0,3.4-0.6,4.7-1.6l3.6,3.6c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1.1,0-1.5  l-3.6-3.6c1-1.3,1.6-3,1.6-4.7c0-4.3-3.5-7.8-7.8-7.8S1,280.5,1,284.8S4.5,292.7,8.9,292.7z M8.9,279.1c3.2,0,5.7,2.6,5.7,5.7  s-2.6,5.7-5.7,5.7s-5.7-2.6-5.7-5.7S5.7,279.1,8.9,279.1z"/>
-      <g id="icon-filters">
-        <path d="M6.3,339.1c-0.3-0.8-1-1.3-1.9-1.5v-6.9c0-0.4-0.3-0.7-0.7-0.7c-0.4,0-0.7,0.3-0.7,0.7v6.9c-0.2,0-0.3,0.1-0.5,0.2   c-1.4,0.6-2,2.3-1.4,3.7c0.3,0.8,1,1.3,1.9,1.5v2.5c0,0.4,0.3,0.7,0.7,0.7c0.4,0,0.7-0.3,0.7-0.7v-2.5c0.9-0.2,1.6-0.9,1.9-1.7   C6.6,340.5,6.6,339.7,6.3,339.1z M5.1,340.7c-0.3,0.7-1.1,1.1-1.8,0.8c-0.7-0.3-1.1-1.1-0.8-1.8c0.1-0.4,0.4-0.6,0.7-0.8   c0.2-0.1,0.4-0.1,0.6-0.1c0.6,0,1.1,0.3,1.3,0.8C5.2,340,5.3,340.4,5.1,340.7L5.1,340.7z"/>
-        <path d="M18.7,339.1c-0.3-0.8-1-1.3-1.9-1.5v-6.9c0-0.4-0.3-0.7-0.7-0.7s-0.7,0.3-0.7,0.7v6.9c-0.2,0-0.3,0.1-0.5,0.2   c-1.4,0.6-2,2.3-1.4,3.7c0.3,0.8,1,1.3,1.9,1.5v2.5c0,0.4,0.3,0.7,0.7,0.7s0.7-0.3,0.7-0.7v-2.5c0.9-0.2,1.6-0.9,1.9-1.7   C19.1,340.5,19.1,339.7,18.7,339.1z M17.6,340.7c-0.3,0.7-1.1,1.1-1.8,0.8c-0.7-0.3-1.1-1.1-0.8-1.8c0.1-0.4,0.4-0.6,0.7-0.8   c0.2-0.1,0.4-0.1,0.6-0.1c0.6,0,1.1,0.3,1.3,0.8C17.7,340,17.7,340.4,17.6,340.7z"/>
-        <path d="M11,333.3c-0.1,0-0.2-0.1-0.3-0.1v-2.6c0-0.4-0.3-0.7-0.7-0.7s-0.7,0.3-0.7,0.7v2.6c-1.5,0.4-2.4,1.9-2,3.4   c0,0.2,0.1,0.3,0.2,0.5c0.3,0.7,0.9,1.2,1.5,1.5c0.1,0,0.2,0.1,0.3,0.1v6.8c0,0.4,0.3,0.7,0.7,0.7s0.7-0.3,0.7-0.7v-6.8   c0.2,0,0.3-0.1,0.5-0.2c1.4-0.6,2-2.3,1.4-3.7C12.2,334.1,11.7,333.5,11,333.3z M11.3,336.4c-0.3,0.7-1.1,1.1-1.8,0.8   c-0.4-0.1-0.6-0.4-0.8-0.7c-0.3-0.7,0-1.6,0.7-1.9c0.2-0.1,0.4-0.1,0.6-0.1c0.2,0,0.3,0,0.5,0.1c0.4,0.1,0.6,0.4,0.8,0.8l0,0   C11.5,335.7,11.5,336,11.3,336.4z"/>
-      </g>
-      <path id="icon-arrow-left" d="M8.3,385.3l-3.8,3.8H19v1.8H4.5l3.8,3.8L7,396l-6-6l6-6L8.3,385.3z"/>
-      <path id="icon-arrow-right" d="M13,436l6,6l-6,6l-1.3-1.3l3.8-3.8H1v-1.8h14.5l-3.8-3.8L13,436z"/>
-      <path id="icon-arrow-down" d="M3.1,488.4l6.9,6.9l6.9-6.9l2.1,2.1l-9,9l-9-9L3.1,488.4z"/>
-      <path id="icon-calendar" d="M13.6,537h1.8v1.8h0.9c0.5,0,0.9,0.2,1.3,0.5c0.4,0.4,0.5,0.8,0.5,1.3v12.6c0,0.5-0.2,0.9-0.5,1.3  c-0.4,0.4-0.8,0.5-1.3,0.5H3.7c-0.5,0-0.9-0.2-1.3-0.5c-0.4-0.4-0.5-0.8-0.5-1.3v-12.6c0-0.5,0.2-0.9,0.5-1.3  c0.4-0.4,0.8-0.5,1.3-0.5h0.9V537h1.8v1.8h7.2V537z M16.3,543.3H3.7v9.9h12.6V543.3z M14.5,551.4H10v-4.5h4.5V551.4z"/>
-      <path id="icon-drop-down" d="M10,602.5l-9-9h18L10,602.5z"/>
-      <path id="icon-drop-up" d="M19,654.5H1l9-9L19,654.5z"/>
-      <g xmlns="http://www.w3.org/2000/svg" id="icon-remove">
-          <path d="M10,693c-5,0-9,4-9,9c0,5,4,9,9,9c5,0,9-4,9-9C19,697,15,693,10,693z M10,710c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8    C18,706.4,14.4,710,10,710z"/>
-          <path d="M6.1,701.5c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5l7.8,0c0.3,0,0.5-0.2,0.5-0.5c0-0.3-0.2-0.5-0.5-0.5H6.1z"/>
-      </g>
-      <g xmlns="http://www.w3.org/2000/svg" id="icon-close">
-          <path d="M3.6,747.6c-3.5,3.5-3.5,9.2,0,12.7s9.2,3.5,12.7,0c3.5-3.5,3.5-9.2,0-12.7S7.1,744.1,3.6,747.6z M15.6,759.6    c-3.1,3.1-8.2,3.1-11.3,0c-3.1-3.1-3.1-8.2,0-11.3c3.1-3.1,8.2-3.1,11.3,0C18.7,751.5,18.7,756.5,15.6,759.6z"/>
-          <path d="M12.4,750.9l-2.4,2.4l-2.4-2.4c-0.2-0.2-0.5-0.2-0.7,0c-0.2,0.2-0.2,0.5,0,0.7l2.4,2.4l-2.4,2.4c-0.2,0.2-0.2,0.5,0,0.7    c0.2,0.2,0.5,0.2,0.7,0l2.4-2.4l2.4,2.4c0.2,0.2,0.5,0.2,0.7,0c0.2-0.2,0.2-0.5,0-0.7l-2.4-2.4l2.4-2.4c0.2-0.2,0.2-0.5,0-0.7    C12.9,750.7,12.6,750.7,12.4,750.9z"/>
-      </g>
-      <g xmlns="http://www.w3.org/2000/svg" id="icon-comment">
-        <path d="M14.1,803.5h-2.8v-2.8c0-0.2-0.2-0.4-0.4-0.4H9.1c-0.2,0-0.4,0.2-0.4,0.4v2.8H5.9c-0.2,0-0.4,0.2-0.4,0.4v1.8   c0,0.2,0.2,0.4,0.4,0.4h2.8v2.8c0,0.2,0.2,0.4,0.4,0.4h1.8c0.2,0,0.4-0.2,0.4-0.4v-2.8h2.9c0.2,0,0.4-0.2,0.4-0.4v-1.8   C14.5,803.7,14.3,803.5,14.1,803.5L14.1,803.5z"/>
-        <path d="M17.9,797.3H2.1c-0.6,0-1.1,0.5-1.1,1.1V811c0,0.6,0.5,1.1,1.1,1.1h0h12.5l2.1,2.1c0.3,0.3,0.7,0.5,1.1,0.5l0,0   c0.6,0,1.1-0.5,1.1-1.1c0,0,0,0,0,0v-15.2C19,797.8,18.5,797.3,17.9,797.3z M17,811.7l-1.6-1.5h-12c-0.2,0-0.4-0.2-0.4-0.4v-10.1   c0-0.2,0.2-0.4,0.4-0.4h13.2c0.2,0,0.4,0.2,0.4,0.4V811.7z"/>
-      </g>
-      <path xmlns="http://www.w3.org/2000/svg" id="icon-text-formatting" d="M1.6,864.6v2.4h16.8v-2.4H1.6z M7,859.6h6l1.1,2.6h2.5L10.9,849H9.1l-5.7,13.2h2.5L7,859.6z M10,851.4  l2.2,6H7.8L10,851.4z"/>
-      <path xmlns="http://www.w3.org/2000/svg" id="icon-revision" d="M11.3,902.3c1.1,0,2.1,0.2,3,0.6c0.9,0.4,1.8,1,2.5,1.7s1.3,1.5,1.7,2.5c0.4,0.9,0.6,1.9,0.6,3  s-0.2,2.1-0.6,3c-0.4,0.9-1,1.8-1.7,2.5s-1.5,1.3-2.5,1.7c-0.9,0.4-1.9,0.6-3,0.6s-2.1-0.2-3-0.6c-0.9-0.4-1.7-1-2.4-1.7l1.2-1.2  c0.5,0.5,1.2,1,1.9,1.3c0.7,0.3,1.5,0.5,2.3,0.5c0.8,0,1.6-0.2,2.3-0.5c0.7-0.3,1.4-0.7,1.9-1.3s1-1.2,1.3-1.9  c0.3-0.7,0.5-1.5,0.5-2.3s-0.2-1.6-0.5-2.3c-0.3-0.7-0.7-1.4-1.3-1.9s-1.2-1-1.9-1.3c-0.7-0.3-1.5-0.5-2.3-0.5  c-0.8,0-1.6,0.2-2.3,0.5c-0.7,0.3-1.4,0.7-1.9,1.3s-1,1.2-1.3,1.9c-0.3,0.7-0.5,1.5-0.5,2.3h2.6l-3.5,3.5l-0.1-0.1L1,910h2.6  c0-1.1,0.2-2.1,0.6-3c0.4-0.9,1-1.8,1.7-2.5s1.5-1.3,2.5-1.7C9.2,902.5,10.2,902.3,11.3,902.3z M10.4,906.6h1.3v3.7l3,1.8l-0.6,1  l-3.7-2.2V906.6z"/>
-      <path xmlns="http://www.w3.org/2000/svg" id="icon-save" d="M5.5,969.5h9V965h-9V969.5z M16,969.5h1.5V959c0-0.1,0-0.3-0.1-0.5s-0.2-0.3-0.2-0.4l-3.3-3.3  c-0.1-0.1-0.2-0.2-0.4-0.2s-0.3-0.1-0.5-0.1v4.9c0,0.3-0.1,0.6-0.3,0.8s-0.5,0.3-0.8,0.3H5.1c-0.3,0-0.6-0.1-0.8-0.3  S4,959.7,4,959.4v-4.9H2.5v15H4v-4.9c0-0.3,0.1-0.6,0.3-0.8s0.5-0.3,0.8-0.3h9.8c0.3,0,0.6,0.1,0.8,0.3s0.3,0.5,0.3,0.8V969.5z   M11.5,958.6v-3.8c0-0.1,0-0.2-0.1-0.3s-0.2-0.1-0.3-0.1H8.9c-0.1,0-0.2,0-0.3,0.1s-0.1,0.2-0.1,0.3v3.8c0,0.1,0,0.2,0.1,0.3  s0.2,0.1,0.3,0.1h2.2c0.1,0,0.2,0,0.3-0.1S11.5,958.7,11.5,958.6z M19,959v10.9c0,0.3-0.1,0.6-0.3,0.8s-0.5,0.3-0.8,0.3H2.1  c-0.3,0-0.6-0.1-0.8-0.3S1,970.2,1,969.9v-15.8c0-0.3,0.1-0.6,0.3-0.8s0.5-0.3,0.8-0.3H13c0.3,0,0.7,0.1,1,0.2s0.7,0.3,0.9,0.6  l3.3,3.3c0.2,0.2,0.4,0.5,0.6,0.9S19,958.7,19,959z"/>
-      <path xmlns="http://www.w3.org/2000/svg" id="icon-check" d="M6.7,1018l10.8-10.8l1.4,1.4l-12.3,12.3l-5.7-5.7l1.4-1.5L6.7,1018z"/>
-  </svg>
-[/templates.add]
-[templates.add dashboard]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 17 20 20" class="[template.token /] sprite-icon" >
-    <use xlink:href="#icon-dashboard"></use>
-  </svg>
-[/templates.add]
-[templates.add user-stories]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 68 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-user-stories"></use>
-  </svg>
-[/templates.add]
-[templates.add tasks]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 120 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-tasks"></use>
-  </svg>
-[/templates.add]
-[templates.add notes]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 173 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-notes"></use>
-  </svg>
-[/templates.add]
-[templates.add add-new]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 224 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-add-new"></use>
-  </svg>
-[/templates.add]
-[templates.add search]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 277 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-search"></use>
-  </svg>
-[/templates.add]
-[templates.add filters]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 329 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-filters"></use>
-  </svg>
-[/templates.add]
-[templates.add arrow-left]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 380 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-arrow-left"></use>
-  </svg>
-[/templates.add]
-[templates.add arrow-right]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 432 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-arrow-right"></use>
-  </svg>
-[/templates.add]
-[templates.add arrow-down]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 484 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-arrow-down"></use>
-  </svg>
-[/templates.add]
-[templates.add calendar]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 537 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-calendar"></use>
-  </svg>
-[/templates.add]
-[templates.add drop-down]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 588 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-drop-down"></use>
-  </svg>
-[/templates.add]
-[templates.add drop-up]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 541 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-drop-up"></use>
-  </svg>
-[/templates.add]
-[templates.add remove]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 692 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-remove"></use>
-  </svg>
-[/templates.add]
-[templates.add close]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 744 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-close"></use>
-  </svg>
-[/templates.add]
-[templates.add comment]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 796 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-comment"></use>
-  </svg>
-[/templates.add]
-[templates.add text-formatting]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 848 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-text-formatting"></use>
-  </svg>
-[/templates.add]
-[templates.add revision]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 900 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-revision"></use>
-  </svg>
-[/templates.add]
-[templates.add save]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 952 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-save"></use>
-  </svg>
-[/templates.add]
-[templates.add check]
-	[aw2.get token set=template.token /]
-  [template.set color="{module.color}" not_empty="{module.color}" /]
-  [css.style]
-  	.[template.token /].sprite-icon{
-    		fill: @[template.color default="brand-black"/];
-    }
-  [/css.style]
-	<svg viewBox="0 1004 20 20" class="[template.token /] sprite-icon">
-    <use xlink:href="#icon-check"></use>
-  </svg>
-[/templates.add]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>867731</wp:post_id>
-		<wp:post_date><![CDATA[2020-05-21 05:51:26]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2020-05-21 05:51:26]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[svg-icon]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[backend_service]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
 							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_edit_lock]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1612428425:2]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-					<item>
-		<title>menu-array</title>
-		<link>https://alpha.wordpoets.com/?post_type=backend_service&#038;p=881191</link>
-		<pubDate>Thu, 30 Jul 2020 10:59:25 +0000</pubDate>
-		<dc:creator><![CDATA[praveen]]></dc:creator>
-		<guid isPermaLink="false">http://ilsnxt.wordpoets.com/?post_type=backend_service&#038;p=881191</guid>
-		<description></description>
-		<content:encoded><![CDATA[[templates.add arr_collection]
-  [template.set_array apps-navigation]
-    
-    //** Photo / Scan Copy array of menus **//
-  	[photocopy-scan link='#' chckbox="yes" title='Photo / Scan Copy' class="photo-scan-copy" icon='{url.site}wp-content/uploads/2020/05/photocopy-scan.png']
-    	[child-nav]
-        [photo-scan-copy link='{url.site}photo-scan-copy/' title='All Copies' class='photo-scan-copy' target='' /]
-        [new-request link='{url.site}photo-scan-copy/new-request' title='New Request' class='photo-scan-copy' target='_blank' /]
-        [resolved link='{url.site}photo-scan-copy/resolved' title='Resolved' class='photo-scan-copy' target='_blank' /]
-        [xyz link='{url.site}photo-scan-copy/#' title='Payment' class='photo-scan-copy' target='_blank' /]
-      [/child-nav]
-    [/photocopy-scan]
-    
-    //** Prospectus array of menus **//
-    [prospectus link='#' chckbox="yes" title='Prospectus' class='prospectus-manage' icon='{url.site}wp-content/uploads/2020/05/Prospectus.png']
-    	[child-nav]
-        [manage-prospectus link='{url.site}manage-prospectus/' title='All Prospectus' class='prospectus-manage' target='' /]
-        [add link='{url.site}manage-prospectus/add' title='Add New' class='prospectus-manage' target='_blank' /]
-      [/child-nav]
-    [/prospectus]
-    
-    //** Settings array of menus **//
-  	[setting link='#' chckbox="yes" title='Settings' class="settings" target='' icon='{url.site}wp-content/uploads/2020/05/settings.png' ]
-    	[child-nav]
-      	[settings link='{url.site}settings/' title='All App Settings' class='settings' target='' /] 
-        [fee link='{url.site}settings/#' title='Fees' class='settings' target='_blank' /]
-        [late-fees link='{url.site}settings/#' title='Late Fees' class='settings' target='_blank' /]
-        [user-roles link='{url.site}settings/user-roles' title='User Roles' class='settings' target='_blank' /]
-        [application-ids link='{url.site}admission-manage/application-ids' title='Application Ids' class='settings' target='_blank' /]
-        [form-visibility link='{url.site}settings/#' title='Admission Form Visibility' class='settings' target='_blank' /]
-        [payments link='{url.site}settings/#' title='Payment Settings' class='settings' target='_blank' /]
-      [/child-nav]
-    [/setting]
-   
-  [/template.set_array]
-  //** template return **//
-  [template.return template.apps-navigation /]
-[/templates.add]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>881191</wp:post_id>
-		<wp:post_date><![CDATA[2020-07-30 10:59:25]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2020-07-30 10:59:25]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[menu-array]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[backend_service]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[menu-array]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-			
+				
+		
+	
 </channel>
 </rss>
 	
