@@ -31,6 +31,8 @@ apt-get install redis-server php-redis -y
 service redis-server start
 systemctl enable redis-server --quiet
 
+
+
 printf "${ORANGE} Updating conf files ${NC}\n";
 git clone https://github.com/WPoets/conf.git $HOME/wpoets-conf
 touch /etc/nginx/conf.d/map-wp-fastcgi-cache.conf.custom
@@ -53,10 +55,12 @@ composer require wpoets/communication-handler --no-interaction --quiet
 composer require wpoets/docx-handler --no-interaction --quiet
 composer require wpoets/google-handler --no-interaction --quiet
 composer require wpoets/facebook-handler --no-interaction --quiet
-#composer require wpoets/linkedin-handler
+composer require wpoets/linkedin-handler --no-interaction --quiet
 composer require wpoets/payments-handler --no-interaction --quiet
 composer require wpoets/pdf-handler --no-interaction --quiet
 composer require wpoets/woocommerce-handler --no-interaction --quiet
+
+wp package install git@github.com:wp-cli/profile-command.git  --allow-root
 
 printf "${ORANGE} Downloading Backup Script ${NC}\n";
 wget -qO /usr/local/sbin/backup.sh "https://raw.githubusercontent.com/WPoets/aw-setup/master/wo-backup.sh" && chmod u+x /usr/local/sbin/backup.sh
