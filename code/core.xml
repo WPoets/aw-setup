@@ -1105,47 +1105,47 @@ text-decoration: none;
             //********** Managed Service Menu Start Here **********//
             <div class="col-md-2">
               <p class="text-uppercase gray-lighter mar-b-1 font-semibold">Managed Services</p>
-              [aw2.get menu]
+              [wp.menu]
                 {
                 "theme_location": "footer_menu_first",
                 "echo":false,
                 "walker":true
                 }
-             [/aw2.get]
+             [/wp.menu]
             </div>
              //********** EdTech Solutions Menu Start Here **********//
             <div class="col-md-2">
             <p class="text-uppercase gray-lighter mar-b-1 font-semibold">EdTech Solutions</p>
-               [aw2.get menu] 
+               [wp.menu] 
                 {
                 "theme_location": "footer_menu_second",
                 "echo":false,
                 "walker":true
                 }
-             [/aw2.get]
+             [/wp.menu]
             </div>
  
             //********** Plug & Play Solutio Menu Start Here **********//
             <div class="col-md-2">
             <p class="text-uppercase gray-lighter mar-b-1 font-semibold">Plug & Play Solutions</p>
-              [aw2.get menu]
+              [wp.menu]
                 {
                 "theme_location": "footer_menu_third",
                 "echo":false,
                 "walker":true
                 }
-             [/aw2.get]
+             [/wp.menu]
             </div>
             //********** Quick Links & Contact Us Start Here **********//
             <div class="col-md-2 gray-darker">
              <p class="text-uppercase gray-lighter  mar-b-1 font-semibold contact-title">Quick Links</p>
-             [aw2.get menu]
+             [wp.menu]
                 {
                 "theme_location": "footer_menu_fourth",
                 "echo":false,
                 "walker":true
                 }
-             [/aw2.get]
+             [/wp.menu]
                <div class="mar-t-4">
                   <div class="gray-lighter">Call us on:</div>
                     <p class="font-size-smaller"><a href="tel:[env.get settings.opt-landline-one /]" class="gray-light contact" title=" [env.get settings.opt-landline-one /]">
@@ -1797,23 +1797,23 @@ nav.navbar.desktop_menu .primary_menu ul#menu-menu-1>li.contact-us-nav>a:after{
             <div class="float-right height-100 menu_wrapper no-padding-right-lg pad-x-4">
               <div class="text-right top-menu">
                       <div class="branch-contact font-size-smallest is-inline-block top-menus" style="padding-top: 14px;padding-bottom: 0px;">
-                        [aw2.get menu]
+                        [wp.menu]
                         {
                         "theme_location": "primary_menu_top",
                         "echo":false,
                          "walker":true
                         }
-                        [/aw2.get]
+                        [/wp.menu]
                       </div>  
                   </div>
                   <div class="float-right primary_menu">
-                      [aw2.get menu]
+                      [wp.menu]
                         {
                           "theme_location": "primary_navigation",
                           "echo":false,
                           "walker":true
                         }
-                      [/aw2.get]
+                      [/wp.menu]
                   </div>
             </div>
         </div>
@@ -1842,23 +1842,23 @@ nav.navbar.desktop_menu .primary_menu ul#menu-menu-1>li.contact-us-nav>a:after{
     <div class="sidenav" id="mySidenav">
     <div class="gap-3"></div>
         <div class="primary_menu is-flex justify-content-end">
-              [aw2.get menu]
+              [wp.menu]
                 {
                   "theme_location": "primary_navigation",
                   "echo":false,
                   "walker":true
                 }
-              [/aw2.get]
+              [/wp.menu]
               
           </div>
           <div class="primary_menu is-flex justify-content-end">
-               [aw2.get menu]
+               [wp.menu]
                 {
                 "theme_location": "primary_menu_top",
                 "echo":false,
                 "walker":true
                 }
-                [/aw2.get]
+                [/wp.menu]
           </div>
         <div class="gap-8"></div>
         <div class="gap-8"></div>
