@@ -9044,180 +9044,6 @@ border-color: #5897fb; }
 	<wp:meta_value><![CDATA[3]]></wp:meta_value>
 	</wp:postmeta>
 						</item>
-					<item>
-		<title>register</title>
-		<link>https://kccms.wordpoets.com/?awesome_core=register</link>
-		<pubDate>Tue, 13 Oct 2020 06:00:30 +0000</pubDate>
-		<dc:creator><![CDATA[Amit]]></dc:creator>
-		<guid isPermaLink="false">https://kccms.wordpoets.com/?post_type=awesome_core&#038;p=861759</guid>
-		<description></description>
-		<content:encoded><![CDATA[[query.all_post_meta post_slug='settings' post_type='c_skin' set='module.skin' /]
-
-[register.less_variables]
- @brand-primary:   [module.get skin.brand-primary default='#ff5722' /];
-  @brand-success:   [module.get skin.brand-success default='#8ec63f' /];
-  @brand-info:      [module.get skin.brand-info default='#01aaad' /];
-  @brand-warning:   [module.get skin.brand-warning default='#f09a09' /];
-  @brand-danger:    [module.get skin.brand-danger default='#d9534f' /];
-  @brand-secondary:	[module.get skin.brand-secondary default='#7cb342' /];
-  @brand-third:		  [module.get skin.brand-third default='#601848' /];
-  @brand-fourth:		[module.get skin.brand-fourth default='#fabe28' /];
-  @brand-fifth:		  [module.get skin.brand-fifth default='#03a9f4' /];
-  @brand-sixth:		  [module.get skin.brand-sixth default='#fff' /];
-  @brand-seventh:		  [module.get skin.brand-seventh default='#fff' /];
-  @brand-black:  		[module.get skin.brand-black default='#000000' /];
-  @brand-white:  		[module.get skin.brand-white default='#ffffff' /];
-  @gray-base:       [module.get skin.gray-base default='#000' /];
-  @gray-darker:     [module.get skin.gray-darker default='#2e3030' /];
-  @gray-dark:       [module.get skin.gray-dark default='#424242' /];
-  @gray:            [module.get skin.gray default='#727272' /];
-  @gray-light:      [module.get skin.gray-light default='#a9a9a9' /];
-  @gray-lighter:    [module.get skin.gray-lighter default='#d5d5d5' /];
-  @gray-white:      [module.get skin.gray-white default='#efefef' /];
-[/register.less_variables]
-
-[register.less_variables]
- @font-family-base: [module.get skin.font-family-base default='"Roboto", sans-serif' /];
- @font-family: 		[module.get skin.font-family default='"Roboto", sans-serif' /];
- 
-  @font-size-smallest:  [module.get skin.font-size-smallest default='12px' /];
-  @font-size-smaller:   [module.get skin.font-size-smaller default='13px' /];
-  @font-size-small:     [module.get skin.font-size-small default='14px' /];
-  @font-size-base:      [module.get skin.font-size-base default='16px' /];
-  @font-size-big:       [module.get skin.font-size-big default='18px' /];
-  @font-size-large:     [module.get skin.font-size-large default='20px' /];
-  @font-size-larger:    [module.get skin.font-size-larger default='24px' /];
-  @font-size-largest:   [module.get skin.font-size-largest default='30px' /];
-  @font-size-huge:      [module.get skin.font-size-huge default='36px' /];
-  @font-size-jumbo:     [module.get skin.font-size-jumbo default='48px' /];
-  @font-size-giant:     [module.get skin.font-size-giant default='68px' /];
-  @font-size-smallest-sm:  [module.get skin.font-size-smallest-sm default='12px' /];
-  @font-size-smaller-sm:   [module.get skin.font-size-smaller-sm default='13px' /];
-  @font-size-small-sm:     [module.get skin.font-size-small-sm default='14px' /];
-  @font-size-base-sm:      [module.get skin.font-size-base-sm default='14px' /];
-  @font-size-big-sm:       [module.get skin.font-size-big-sm default='16px' /];
-  @font-size-large-sm:     [module.get skin.font-size-large-sm default='18px' /];
-  @font-size-larger-sm:    [module.get skin.font-size-larger-sm default='20px' /];
-  @font-size-largest-sm:   [module.get skin.font-size-largest-sm default='24px' /];
-  @font-size-huge-sm:      [module.get skin.font-size-huge-sm default='30px' /];
-  @font-size-jumbo-sm:     [module.get skin.font-size-jumbo-sm default='36px' /];
-  @font-size-giant-sm:     [module.get skin.font-size-giant-sm default='48px' /];
-  @font-size-smallest-xs:  [module.get skin.font-size-smallest-xs default='10px' /];
-  @font-size-smaller-xs:   [module.get skin.font-size-smaller-xs default='12px' /];
-  @font-size-small-xs:     [module.get skin.font-size-small-xs default='13px' /];
-  @font-size-base-xs:      [module.get skin.font-size-base-xs default='14px' /];
-  @font-size-big-xs:       [module.get skin.font-size-big-xs default='16px' /];
-  @font-size-large-xs:     [module.get skin.font-size-large-xs default='19px' /];
-  @font-size-larger-xs:    [module.get skin.font-size-larger-xs default='21px' /];
-  @font-size-largest-xs:   [module.get skin.font-size-largest-xs default='28px' /];
-  @font-size-huge-xs:      [module.get skin.font-size-huge-xs default='32px' /];
-  @font-size-jumbo-xs:     [module.get skin.font-size-jumbo-xs default='36px' /];
-  @font-size-giant-xs:     [module.get skin.font-size-giant-xs default='48px' /];
-[/register.less_variables]
-
-[register.less_variables]
- @line-height-1:		[module.get skin.line-height-1 default='1.5' /];
-  @line-height-2:		[module.get skin.line-height-2 default='1.5' /];
-  @line-height-3:		[module.get skin.line-height-3 default='1.6' /];
-  @line-height-4:		[module.get skin.line-height-4 default='1.75' /];
-  @line-height-5:		[module.get skin.line-height-5 default='1.6' /]; 
-  @line-height-6:		[module.get skin.line-height-6 default='1.5' /]; 
-  @line-height-7:		[module.get skin.line-height-7 default='1.3' /]; 
-  @line-height-8:		[module.get skin.line-height-8 default='1.3' /]; 
-  @line-height-9:		[module.get skin.line-height-9 default='1.25' /];   
-  @line-height-10:	[module.get skin.line-height-10 default='1.2' /];   
-  @line-height-11:	[module.get skin.line-height-11 default='1.1' /];
-  @line-height-sm-1:	[module.get skin.line-height-sm-1 default='1.5' /];
-  @line-height-sm-2:	[module.get skin.line-height-sm-2 default='1.5' /];
-  @line-height-sm-3:	[module.get skin.line-height-sm-3 default='1.6' /];
-  @line-height-sm-4:	[module.get skin.line-height-sm-4 default='1.75' /];
-  @line-height-sm-5:	[module.get skin.line-height-sm-5 default='1.6' /]; 
-  @line-height-sm-6:	[module.get skin.line-height-sm-6 default='1.5' /]; 
-  @line-height-sm-7:	[module.get skin.line-height-sm-7 default='1.3' /]; 
-  @line-height-sm-8:	[module.get skin.line-height-sm-8 default='1.3' /]; 
-  @line-height-sm-9:	[module.get skin.line-height-sm-9 default='1.25' /];   
-  @line-height-sm-10:	[module.get skin.line-height-sm-10 default='1.2' /];   
-  @line-height-sm-11:	[module.get skin.line-height-sm-11 default='1.1' /];
-  @line-height-xs-1:	[module.get skin.line-height-xs-1 default='1.5' /];
-  @line-height-xs-2:	[module.get skin.line-height-xs-2 default='1.5' /];
-  @line-height-xs-3:	[module.get skin.line-height-xs-3 default='1.5' /];
-  @line-height-xs-4:	[module.get skin.line-height-xs-4 default='1.5' /];
-  @line-height-xs-5:	[module.get skin.line-height-xs-5 default='1.5' /]; 
-  @line-height-xs-6:	[module.get skin.line-height-xs-6 default='1.4' /]; 
-  @line-height-xs-7:	[module.get skin.line-height-xs-7 default='1.3' /]; 
-  @line-height-xs-8:	[module.get skin.line-height-xs-8 default='1.3' /]; 
-  @line-height-xs-9:	[module.get skin.line-height-xs-9 default='1.25' /];   
-  @line-height-xs-10:	[module.get skin.line-height-xs-10 default='1.2' /];   
-  @line-height-xs-11:	[module.get skin.line-height-xs-11 default='1.2' /]; 
-[/register.less_variables]
-
-[register.less_variables]
-  @gap-1:		[module.get skin.gap-1 default='5px' /];
-  @gap-2:		[module.get skin.gap-2 default='10px' /];
-  @gap-3:		[module.get skin.gap-3 default='15px' /];
-  @gap-4:		[module.get skin.gap-4 default='20px' /];
-  @gap-5:		[module.get skin.gap-5 default='25px' /];
-  @gap-6:		[module.get skin.gap-6 default='30px' /];
-  @gap-7:		[module.get skin.gap-7 default='40px' /];
-  @gap-8:		[module.get skin.gap-8 default='50px' /];
-  @gap-9:		[module.get skin.gap-9 default='60px' /];
-  @gap-10:	[module.get skin.gap-10 default='70px' /];
-  
-  @gap-xs-1:		[module.get skin.gap-xs-1 default='5px' /];
-  @gap-xs-2:		[module.get skin.gap-xs-2 default='10px' /];
-  @gap-xs-3:		[module.get skin.gap-xs-3 default='15px' /];
-  @gap-xs-4:		[module.get skin.gap-xs-4 default='20px' /];
-  @gap-xs-5:		[module.get skin.gap-xs-5 default='20px' /];
-  @gap-xs-6:		[module.get skin.gap-xs-6 default='20px' /];
-  @gap-xs-7:		[module.get skin.gap-xs-7 default='20px' /];
-  @gap-xs-8:		[module.get skin.gap-xs-8 default='25px' /];
-  @gap-xs-9:		[module.get skin.gap-xs-9 default='30px' /];
-  @gap-xs-10:	[module.get skin.gap-xs-10 default='35px' /];
-[/register.less_variables]
-
-[register.less_variables]
- @pad-1:		[module.get skin.pad-1 default='5px' /];
-  @pad-2:		[module.get skin.pad-2 default='10px' /];
-  @pad-3:		[module.get skin.pad-3 default='12px' /];
-  @pad-4:		[module.get skin.pad-4 default='15px' /];
-  @pad-5:		[module.get skin.pad-5 default='20px' /];
-  @pad-6:		[module.get skin.pad-6 default='25px' /];
-  @pad-7:		[module.get skin.pad-7 default='30px' /];
-  @pad-8:		[module.get skin.pad-8 default='40px' /];
-  @pad-9:		[module.get skin.pad-9 default='50px' /];
-  @pad-10:	[module.get skin.pad-10 default='60px' /];
-[/register.less_variables]
-
-[register.menu_location]
-{
-  "primary_navigation":"Header Primary Menu",
-  "primary_menu_top":"Header Primary Top Menu",
-  "footer_primary_menu":"Footer Menu App",
-  "footer-menu-app-2":"Footer Menu App 2",
-  "footer_menu_first":"Footer Menu First",
-  "footer_menu_second":"Footer Menu Second",
-  "footer_menu_third":"Footer Menu Third",
-  "footer_menu_fourth":"Footer Menu Fourth"
-} 
-[/register.menu_location]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>861759</wp:post_id>
-		<wp:post_date><![CDATA[2020-10-13 06:00:30]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2020-10-13 06:00:30]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[register]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[awesome_core]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
 						<item>
 		<title>editor-styles</title>
 		<link>https://g2a.wordpoets.com/?post_type=m_skin&#038;p=874350</link>
@@ -10242,7 +10068,1801 @@ option = {
 		<wp:meta_value><![CDATA[3]]></wp:meta_value>
 		</wp:postmeta>
 							</item>	
-			
+	<item>
+		<title><![CDATA[excel-test]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=881508</link>
+		<pubDate>Mon, 14 Dec 2020 13:00:55 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=881508</guid>
+		<description></description>
+		<content:encoded><![CDATA[  
+  [module.set filepath='/var/www/html/prods-import.xls' /]
+  [excel.info file_path='{module.filepath}' set='module.total_rows'/]  
+  [excel.read_header filename='{module.filepath}' set='module.header_info' /]  
+
+[module.dump header_info /]
+[module.dump total_rows ignore=true/]
+[env.dump module.total_rows ignore=true/]
+
+  [excel.file_reader file_path='{module.filepath}' start_from='0' limit='10' set='parsed.data' /] 
+
+
+[int.create 1 o.set='module.xl_data.pageno' /]
+[env.get parsed.data m.arr_item='s:first' o.set="module.xl_data.header" /]
+[module.set_array xl_data rows='{parsed.data}' /]
+
+[env.dump parsed.data ignore=true /] 
+  [loop.@a parsed.data]
+  	[aw2.get @a.item dump=true ignore=true/]
+  [/loop.@a]  
+
+[module.dump xl_data ignore=true /]
+  [excel.write_bulk data='module.xl_data' file_name='/var/www/html/bulk-write.xlsx'  file_format='Xls' ignore=true /]
+  [excel.dataset_write dataset='{module.xl_data}' file_name='/var/www/html/bulk-write-dataset.xls'  file_format='Xls' /]
+  [excel.write_bulk_csv data='module.xl_data' file_name='/var/www/html/bulk-write-dataset.csv'  file_format='csv' /]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>881508</wp:post_id>
+		<wp:post_date><![CDATA[2020-12-14 13:00:55]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2020-12-14 13:00:55]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2020-12-15 16:41:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2020-12-15 16:41:02]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[excel-test]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[arrays]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231206</link>
+		<pubDate>Sun, 16 May 2021 12:31:58 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231206</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+
+<h3>Arrays in Awesome Enterprise</h3>
+
+ Array Delaration
+  <pre>
+    Type 1:
+    
+       0 => 'Fitst Name'
+       1 => 'Last Name'
+       2 => 'email_id'
+   </pre>	 
+  [template.set_array type_1 new="first_name"/]
+  [template.set_array type_1 new="last_name"/]
+  [template.set_array type_1 new="email_id"/]
+  
+  [template.type_1.dump/]
+   
+  <pre>
+    Type 2 :
+    
+      'first_name'=>'amit'
+      'last_name'=>'singh'
+      'email_id'=>'sample@sample.com'
+  </pre>
+  
+  [template.set_array type_2 first_name="amit" last_name="singh" email_id="sample@sample.com"/]
+  
+  [template.type_2.dump/]
+  
+	<pre>
+    Type 3 :
+    
+      0 => array(
+            fitst_name => 'amit',
+            last_name  => 'singh',
+            email_id   => 'amit@sample.com'
+            )
+      1 = > array(
+            fitst_name => 'ravi',
+          	fitst_name  => 'singh',
+            email_id   => 'ravi@sample.com'
+            )
+	</pre>
+  
+  [template.set_array type_3.new first_name="amit" last_name="singh" email_id="amit@sample.com"/]
+  
+  [template.set_array type_3.new FIRST_NAMEEEEEEE="ravi" last_name="singh" email_id="ravi@sample.com"/]
+  
+  [template.type_3.dump/]
+  
+  <pre>
+    Type 4 :
+    
+      'FirstName=>'Amit',
+      'LastName'=>'Singh'
+  </pre>
+  
+  [template.set_array type_4]
+  	[FirstName]Amit[/FirstName]
+  	[LastName]Singh[/LastName]
+    
+    [email_id _value="sample@sample.com"/]
+    
+    [contact]
+    	[number new mobile_number="123" landline_number='456'][/number]
+    	[addr new addr_line1="addr1" addr_line2='addr2'][/addr]
+    [/contact]
+    
+  [/template.set_array]
+  [template.type_4.dump/]
+  
+  [arr.create o.set=template.type_5]
+  	[number new mobile_number="123" landline_number='456'][/number]
+  [/arr.create]
+
+ [template.type_5.dump/]
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231206</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:31:58]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:31:58]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:31:58]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:31:58]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[arrays]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[forms-sample]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231208</link>
+		<pubDate>Sun, 16 May 2021 12:32:40 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231208</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+  
+  <div class="gap-4"></div>
+
+ 
+  [session_ticket.create o.set=template.ticket/]
+  [session_ticket.set_activity {template.ticket} app='{app.slug}' module='{module.slug}.submit' /]
+  
+  <h3> Contact Us </h3>
+  <section role="changing-form-block"> 
+
+    <form class="horizontal loan-tap-form" 
+      id="contact_us" 
+      novalidate>
+
+      //** Load form fields according to steps **//
+      [form_control2.text id="full_name" label="Full Name" required=yes plcaceholder="Full Name" /]
+
+      [form_control2.email id="email_id" label="Email Id" placeholder="Email Id" required=yes /]
+      
+      [form_control2.textarea id="comment" label="Comment" placeholder="Comment" required=yes /]
+
+      [form_control2.button type="submit" value='<i class="fa fa-check icon icon-check"></i> Submit Details' /] 
+
+    </form>
+
+    <template 
+      type=spa/axn 
+      axn='form.ajax' 
+      bind='submit' 
+      bind_selector='#contact_us' 
+      route_ajax='t/[template.ticket/]' 
+      disable_selector='.btn' 
+     >
+    </template>  
+
+  </section>			
+
+
+
+  <div class="gap-4"></div>
+  
+  <div id="update-block"></div>
+     
+[/templates.add]
+
+[templates.add submit]
+	[template.set req={request2} /]
+	[template.echo /]
+  
+   <template axn=selector.update selector='#update-block' get='me.html'> 
+   	 <h3> [template.req.dump/] Thank you for showing interest </h3>
+   </template> 
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231208</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:32:40]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:32:40]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:38:19]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:38:19]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[forms-sample]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[if-checks]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231210</link>
+		<pubDate>Sun, 16 May 2021 12:38:53 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231210</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+ <h4>If Condition Demo</h4>
+<ol>
+
+  
+  [if.equal lhs="india" rhs="india"]
+    <li> india is <b>equal</b> to india  </li>	
+  [/if.equal]
+ 
+
+  
+  [if.equal lhs="india" rhs="INDIA"]
+    <li> india is <b>equal</b> to INDIA  </li>	
+  [/if.equal]
+  [if.else]
+  	<li> india is <b>not equal</b> to INDIA  </li>	
+  [/if.else]
+	
+  [template.set str_1="india" str_2="india" str_3="india" str_4="india"/] 
+  [if.equal lhs='{template.str_1}' rhs='{template.str_2}']
+  [/if.equal]
+  [if.and lhs='{template.str_3}' equal='{template.str_4}']
+  	<li> If and works  </li>	
+  [/if.and]
+  [if.else]
+  	<li> If and fails  </li>	
+  [/if.else]  
+	
+  [template.set str_1="indiaAA" str_2="in" str_3="india" str_4="india"/] 
+  [if.equal lhs='{template.str_1}' rhs='{template.str_2}']
+  [/if.equal]
+  [if.or lhs='{template.str_3}' equal='{template.str_4}']
+  	<li> If or works  </li>	
+  [/if.or]
+  [if.else]
+  	<li> If or fails  </li>	
+  [/if.else]  
+
+
+  [if.not_equal lhs="india" rhs="US"]
+    <li> india is <b>not_equal</b> to US  </li>	
+  [/if.not_equal]
+
+  [if.greater_equal lhs="14" rhs="14"]
+    <li> 14 is <b>greater_equal </b> to 14  </li>	
+  [/if.greater_equal]
+
+  [if.greater_than lhs="14" rhs="10"]
+    <li> 14 is <b>greater_than </b> to 10  </li>	
+  [/if.greater_than]
+  
+  [if.less_equal lhs="10" rhs="10"]
+    <li> 10 is <b>less_equal </b> to 10  </li>	
+  [/if.less_equal]
+  
+  [if.less_than lhs="9" rhs="10"]
+  	<li> 9 is <b>less_than </b> to 10  </li>	
+  [/if.less_than]
+	 
+  
+  [if.whitespace Hello world]
+  	<li> whitespace found</li>
+  [/if.whitespace]
+  
+  [template.set not_whitespace_str="Helloworld" /]
+  
+  [if.not_whitespace template.not_whitespace_str]
+  	<li> whitespace not found</li>
+  [/if.not_whitespace]
+
+	[template.set str_no="no" /]
+  [if.no template.str_no]
+  	<li>string value is no</li>
+  [/if.no]
+  
+	[template.set str_yes="yes" /]
+  [if.yes template.str_yes]
+  	<li>string value is yes</li>
+  [/if.yes]
+	
+  
+  [if.not_empty template.str_yes]
+  	<li> <b>[template.str_yes/]</b> : this string is not empty </li>
+  [/if.not_empty]
+  
+  [if.empty template.test]
+  	<li>THis string is empty</li>
+  [/if.empty]
+  
+	
+  [template.set odd_num=3/]
+  [if.odd template.odd_num]
+  	<li>3 is odd</li>
+  [/if.odd]
+  [if.even 12]
+  	<li>12 is even</li>
+  [/if.even]
+
+  [if.user_can administrator]
+  	<li>I am admin</li>
+  [/if.user_can]
+  [if.user_cannot Management]
+  	<li>I Dont have access of Management</li>
+  [/if.user_cannot]
+ 
+
+  [if.logged_in]
+  		<li>I am logged in</li>
+  [/if.logged_in]
+  [if.not_logged_in]
+  	<li>I am not logged in</li>
+  [/if.not_logged_in]
+
+   
+  
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231210</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:38:53]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:38:53]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:38:53]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:38:53]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[if-checks]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[if-checks-datatype]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231212</link>
+		<pubDate>Sun, 16 May 2021 12:39:12 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231212</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+  <h4>Datatype checks</h4>
+  //**array**//
+  [template.set_array ack new="jan"/]
+  [template.set_array ack new="feb"/]
+  [template.set_array ack new="mar"/]
+  
+  //**string**//
+  [template.set str_var="My string"/]
+  
+  //**int**//
+  [int.create 12 o.set=template.int_num/]
+  
+  //**Num**//
+  [num.create 13.45 o.set=template.num/]
+  [template.dump/]
+  <ol>
+    //**Array check**//
+    [if.arr template.ack]
+      <li>It is array</li>
+    [/if.arr]
+    [if.not_arr template.str_var]
+      <li><b>[template.str_var/]</b> is not array</li>	
+    [/if.not_arr]
+
+    //**integer check**//
+    [if.int template.int_num]
+      <li>[template.int_num/] is integer</li>
+    [/if.int]
+    [if.not_int template.str_var]
+      <li>[template.str_var/] It is not integer</li>
+    [/if.not_int]
+
+    //**string check**//
+    [if.str template.str_var]
+    <li> <b>[template.get str_var /] </b>It is string</li>
+    [/if.str]
+    [if.not_str template.int_num]
+      <li><b>[template.int_num/] </b>It is not string</li>
+    [/if.not_str]
+
+     //**number check**//
+    [if.num template.num]
+      <li>[template.num/] It is number</li>
+    [/if.num]
+    [if.not_num template.str_var]
+    	<li>[template.str_var/] It is not number </li>
+    [/if.not_num]
+
+    [if.not_date_obj template.str_var]
+      <li> [template.str_var/] is not date</li>
+    [/if.not_date_obj]
+
+
+    //**Check the single value in array**//
+    [if.contains needle="jan" haystack={template.ack}]
+      <li>jan found</li>
+    [/if.contains]
+    [if.not_contains needle="dec" haystack={template.ack}]
+      <li>Dec not found</li>
+    [/if.not_contains]
+
+    //**Check the single value in comma seperated string**//
+    [if.contains needle="feb" haystack="s:jan,feb,mar,apr"]
+      <li>Feb found</li>
+    [/if.contains]
+    [if.not_contains needle="aug" haystack="s:jan,feb,mar,apr"]
+      <li>aug not found</li>
+    [/if.not_contains]
+  
+  </ol>
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231212</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:39:12]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:39:12]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:39:13]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:39:13]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[if-checks-datatype]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[loops-sample]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231214</link>
+		<pubDate>Sun, 16 May 2021 12:39:50 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231214</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+	
+  
+  //***Simple array**//
+  [template.set_array names new="Amit"/]
+  [template.set_array names new="Ravi"/]
+  [template.set_array names new="Raju"/]
+  [template.set_array names new="Ramesh"/]
+  
+  [template.names.count.echo /]
+  
+  [loop.@name template.names]
+   NEW VALUE:  	[env.get @name.item/] <br/>
+  [/loop.@name]
+  
+  //**Nested array**//
+  [template.set_array users.new first_name="Amit" last_name="Singh" /]
+  [template.set_array users.new first_name="Ravi" last_name="Kumar" /]
+  [template.set_array users.new first_name="Ramesh" last_name="soni" /]
+  
+  USers count [template.get users.count /]
+  
+  [loop.@user template.users]
+  	[env.@user.dump/]
+    First Name : [env.get @user.item.first_name/] <br/>
+    
+    Odd : [env.get @user.odd/] <br/>
+    Even : [env.get @user.even/] <br/>
+  [/loop.@user]
+  
+  //**Some advance concepts in loop**//
+  
+ 
+  [template.set_array month new="Jan"/]
+  [template.set_array month new="Feb"/]
+  [template.set_array month new="March"/]
+  
+  [template.set_array days new="1" /]
+  [template.set_array days new="2" /]
+  [template.set_array days new="3" /]
+  [template.set_array days new="4" /]
+  [template.set_array days new="5" /]
+    
+  
+  //**First**//
+  [loop.@m template.month]
+  	Month : [env.get @m.item/]
+    
+      [loop.@d template.days]
+        Day : - [env.get @d.item/] <br/>
+      [/loop.@d]
+      
+    <br/>
+  [/loop.@m]
+   
+
+   
+   
+   [loop.@i start="1" stop=10 step=1]   	      
+      [if.true @i.odd] ODD :: [env.get @i.item]  [/if.true]    <br/>  
+      [if.true @i.even] Even :: [env.get @i.item]  [/if.true]     <br/>
+       <br>
+      [if.true i.first]I am first [aw2.get i.item /][/if.true]
+      <br>
+      [if.true i.last]I am last [aw2.get i.item /][/if.true]
+
+      
+   [/loop.@i]
+   
+  [template.dump/]
+  
+  
+  [loop.i module.x]
+    [loop.j module.y]
+      <h5>i am inside j  i is: [aw2.get i.item /] j is [aw2.get j.item /]</h5>
+    [/loop.j]
+[/loop.i]
+  
+[/templates.add]
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231214</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:39:50]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:39:50]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:55:10]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:55:10]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[loops-sample]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[mysqli-samples]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231216</link>
+		<pubDate>Sun, 16 May 2021 12:40:08 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231216</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+  
+  //**
+  	Desc : This will help us to manage CREATE,UPDATE,DELETE COMMAND
+    	Data Definition Language (DDL) and Data Manipulation Language (DML) 
+    return : <array>**//
+    
+  //****//
+  [mysqli.cud o.set=template.result.cud]
+  	create table sample_test (
+      id int primary key,
+      name varchar(255)
+    );
+    
+    insert into sample_test (id,name) values (1,'Rajesh'),(2,'Ramesh');
+    
+    #update  sample_test set name="SAM" where id=1;
+    
+    #delete from sample_test where id=1;
+    
+    #alter table sample_test add column city varchar(255);
+    
+    #truncate table sample_test;
+    
+    #drop table demo;
+    
+  [/mysqli.cud]
+  
+    //**
+
+      Desc : Fetch multiple rows from table
+      	Data Query Language (DQL)
+      return : <return>  
+    **//
+    [mysqli.fetch.rows o.set=template.result.rows]
+      select * from sample_test;
+    [/mysqli.fetch.rows]
+
+
+    
+    //**
+      Desc : Fetch single row from table
+      return : <return>  
+    **//
+    [mysqli.fetch.row o.set=template.result.row]
+      select * from sample_test where id=1;
+    [/mysqli.fetch.row]
+
+
+    //**
+      Desc : This will help us to manage single row/alice to fetch.row
+      return : <return>  
+    **//
+    [mysqli.fetch.exactly_one_row o.set=template.result.exact_one_row]
+        select * from sample_test where id=1;
+    [/mysqli.fetch.exactly_one_row]
+
+
+
+    //**
+      Desc : Fetch only ONE column value
+      return : <return>  
+    **//
+    [mysqli.fetch.col o.set=template.result.col]
+       select name from sample_test ;
+    [/mysqli.fetch.col]
+
+
+    //**
+      Desc : performs a calculation on a set of values, and returns a single value. 
+      return : <return>  
+      example , min(), max(),count(),sum() etc
+    **//
+    [mysqli.fetch.scalar o.set=template.result.scalar]
+      select count(1) from sample_test; 
+    [/mysqli.fetch.scalar]
+    
+
+     //**
+      Desc : alice to scalar
+      return : <return>  
+      example , min(), max(),count(),sum() etc
+    **//
+     [mysqli.fetch.count o.set=template.result.count]
+      select count(1) from sample_test; 
+     [/mysqli.fetch.count]
+ 
+  [template.result.echo /]
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231216</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:40:08]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:40:08]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:40:09]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:40:09]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[mysqli-samples]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[mysqli-2-samples]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231218</link>
+		<pubDate>Sun, 16 May 2021 12:40:37 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231218</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+  
+  <h3> TCL (Transaction Control Language)</h3>
+  
+  //**
+  	Desc : This will help us to manage multiple queries CREATE,UPDATE,DELETE COMMAND
+    	Data Definition Language (DDL) and Data Manipulation Language (DML) 
+    return : <array>**//
+    
+
+  [mysqli.multi.cud o.set=template.result.cud]
+    
+    drop table if exists multi_sample_test ;
+    
+  	create table multi_sample_test (
+      id int primary key,
+      name varchar(255),
+      age int
+    );
+    
+    insert into multi_sample_test (id,name,age) values (1,'Rajesh',18),(2,'Ramesh',18);
+    
+    update multi_sample_test set name="SAM" where id=1;
+    
+    delete from multi_sample_test where id=1;
+    
+    alter table multi_sample_test add column city varchar(255);
+    
+    #truncate table multi_sample_test;
+    
+    #drop table multi_sample_test;
+    
+  [/mysqli.multi.cud]
+  
+    //**
+
+      Desc : Fetch multiple rows from table
+      	Data Query Language (DQL)
+      return : <return>  
+    **//
+    [mysqli.multi.fetch.rows o.set=template.result.rows]
+    	  set @age=18;
+        select * from multi_sample_test where age= @age;
+    [/mysqli.multi.fetch.rows]
+
+
+    
+    //**
+      Desc : Fetch single row from table
+      return : <return>  
+    **//
+    [mysqli.multi.fetch.row o.set=template.result.row]
+    	set @id=2;
+      select * from multi_sample_test where id=@id;
+    [/mysqli.multi.fetch.row]
+
+    //**
+      Desc : This will help us to manage single row/alice to fetch.row
+      return : <return>  
+    **//
+    [mysqli.multi.fetch.exactly_one_row o.set=template.result.exact_one_row]
+    		set @id=2;
+        select * from multi_sample_test where id=@id;
+    [/mysqli.multi.fetch.exactly_one_row]
+
+
+
+    //**
+      Desc : Fetch only ONE column value
+      return : <return>  
+    **//
+    [mysqli.multi.fetch.col o.set=template.result.col]
+    	 set @id=2;
+       select name from multi_sample_test where id=@id;
+    [/mysqli.multi.fetch.col]
+
+
+    //**
+      Desc : performs a calculation on a set of values, and returns a single value. 
+      return : <return>  
+      example , min(), max(),count(),sum() etc
+    **//
+    [mysqli.multi.fetch.scalar o.set=template.result.scalar]
+    	set @id=2;
+      select count(1) from multi_sample_test where id=@id; 
+    [/mysqli.multi.fetch.scalar]
+    
+
+     //**
+      Desc : alice to scalar
+      return : <return>  
+      example , min(), max(),count(),sum() etc
+    **//
+     [mysqli.multi.fetch.count o.set=template.result.count]
+     		set @id=2;
+      select count(1) from multi_sample_test where id=@id;
+     [/mysqli.multi.fetch.count]
+     
+     
+     //**
+     	commit the transaction
+     **//
+     [mysqli.transaction.commit  o.set=template.result.commit]
+     		
+        drop table if exists multi_sample_test_t2;
+        
+        create table multi_sample_test_t2 (
+        id int primary key,
+        name varchar(255),
+        age int
+        );
+
+        insert into multi_sample_test_t2 (id,name,age) values (1,'Rajesh',20),(2,'Ramesh',20);
+     [/mysqli.transaction.commit]
+     
+  
+     //**
+     	rollback the transaction
+     **//
+     [mysqli.transaction.rollback o.set=template.result.rollback]
+   		 update multi_sample_test_t2 set age=40 where id=1;
+     [/mysqli.transaction.rollback]
+     
+    
+     //**
+
+      Desc : Fetch multiple rows from table
+      	Data Query Language (DQL)
+      return : <return>  
+    **//
+    [mysqli.multi.fetch.row o.set=template.result.rollback_rows]
+    		set @id=1;
+        select * from multi_sample_test_t2 where id=@id;
+    [/mysqli.multi.fetch.row]
+     [debug.ignore]
+  [/debug.ignore]
+  [template.result.dump /]
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231218</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:40:37]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:40:37]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:40:38]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:40:38]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[mysqli-2-samples]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[post-builder]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231220</link>
+		<pubDate>Sun, 16 May 2021 12:41:00 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231220</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+	
+  [query.posts_builder part=start]
+    {
+      "posts_per_page": "-1",
+      "post_type": "testimonials",
+      "post_status": "publish",
+      "order": "ASC",
+      "orderby": "date"
+    }
+  [/query.posts_builder]
+   [query.posts_builder part=meta_query]
+   {
+     "key": "testimonial_author",
+     "value": "test author 2",
+     "compare": "="
+   }
+  [/query.posts_builder]
+  [query.posts_builder part=tax_query]
+    {
+    "taxonomy": "testimonial_type",
+    "field": "slug",
+    "terms": "test-1"
+    }
+ 	[/query.posts_builder]
+ 
+	[query.posts_builder part=run set="template.result" /]
+  [template.result.dump /]
+  
+[/templates.add]
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231220</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:41:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:41:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:41:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:41:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-builder]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[modifier-samples]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231222</link>
+		<pubDate>Sun, 16 May 2021 12:41:35 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231222</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+	
+  [module.set  str_a='I Passed the test. test is example' str_test='i failed <a>the</a> test' date="2018-10-02" number="142344" math_test="6*44" slashes="\ I am ' \" tags="<b>Bold tag</b>"/]
+  [arr.set module.arrset a="hi" b="there" c="hello"/]
+  [module.dump /]
+  <ol>       
+    <li>
+      <h3>modifier <strong>lower</strong>  m.lower </h3> 
+      <ul>
+        <li> [module.str_a m.lower='yes' /] </li>
+        <li> [module.str_test m.lower='yes' /]</li>      
+      </ul>
+    </li>
+    
+    <li>
+      <h3>modifier <strong>upper</strong>  m.upper </h3> 
+      <ul>
+        <li> [module.str_a m.upper='yes' /] </li>
+        <li> [module.str_test m.upper='yes' /]</li>      
+      </ul>
+    </li>
+    
+    <li>
+      <h3>modifier <strong>capitalize</strong>  m.capitalize </h3> 
+      <ul>
+        <li> [module.str_a m.capitalize='yes' /] </li>
+        <li> [module.str_test m.capitalize='yes' /]</li>      
+      </ul>
+    </li>
+    
+    <li>
+      <h3>modifier <strong>sentence</strong>  m.sentence </h3> 
+      <ul>
+        <li> [module.str_a m.sentence='yes' /] </li>
+        <li> [module.str_test m.sentence='yes' /]</li>      
+      </ul>
+    </li>
+    
+     <li>
+      <h3>modifier <strong>trim</strong>  m.trim </h3> 
+      <ul>
+        <li> [module.str_a m.trim='yes' /] </li>
+        <li> [module.str_test m.trim='yes' /]</li>      
+      </ul>
+    </li>
+    
+     <li>
+      <h3>modifier <strong>ltrim</strong>  m.ltrim </h3> 
+      <ul>
+        <li> [module.str_a m.ltrim='yes' /] </li>
+        <li> [module.str_test m.ltrim='yes' /]</li>      
+      </ul>
+    </li>
+    
+    <li>
+      <h3>modifier <strong>rtrim</strong>  m.rtrim </h3> 
+      <ul>
+        <li> [module.str_a m.rtrim='yes' /] </li>
+        <li> [module.str_test m.rtrim='yes' /]</li>      
+      </ul>
+    </li>
+    
+    <li>
+      <h3>modifier <strong>left</strong>  m.left </h3> 
+      <ul>
+        <li> [module.str_a m.left='n:3' /] </li>
+        <li> [module.str_test m.left='n:3' /]</li>      
+      </ul>
+    </li>
+    
+    <li>
+      <h3>modifier <strong>right</strong>  m.right </h3> 
+      <ul>
+        <li> [module.str_a m.right='n:10' /] </li>
+        <li> [module.str_test m.right='n:10' /]</li>      
+      </ul>
+    </li>
+    
+    <li>
+      <h3>modifier <strong>substring</strong>   m.substr='yes' m.start='n:10' m.chars='n:5'</h3> 
+      <ul>
+        <li> [module.str_a m.substr='yes' m.start='n:10' m.chars='n:5' /] </li>
+        <li> [module.str_test m.substr='yes' m.start='n:4' m.chars='n:5' /]</li>      
+      </ul>
+    </li>
+    
+     <li>
+      <h3>modifier <strong>length</strong>   m.length</h3> 
+      <ul>
+        <li>  [module.str_a m.length='yes' /] </li>
+        <li> [module.arrset m.length='yes' /]</li>      
+      </ul>
+    </li>
+    <li>
+      <h3>modifier <strong>create array</strong>   m.json_encode</h3> 
+      <ul>
+        <li>  [module.arrset m.json_encode='yes' /] </li>           
+      </ul>
+    </li>
+    <li>
+      <h3>modifier <strong>make json</strong>   m.json_decode</h3> 
+      <ul>
+        <li>  [module.arrset m.json_encode='yes'  m2.json_decode="yes" o.set=module.modified_arr/] </li>           
+      </ul>
+       [module.modified_arr.dump /]
+    </li>
+    <li>
+      <h3>modifier <strong>Remove slashes</strong>   m.stripslashes_deep</h3> 
+      <ul>
+        <li> [module.slashes m.stripslashes_deep='yes' /] </li>           
+      </ul>
+    </li>
+    <li>
+      <h3>modifier <strong>remove tags</strong>   m.strip_tags</h3> 
+      <ul>
+        <li>  [module.tags m.strip_tags='yes' /] </li>           
+      </ul>
+    </li>
+    <li>
+      <h3>modifier <strong>encode/decode</strong>   m.encrypt='yes'  m.decrypt='yes'</h3> 
+      <ul>
+        <li>  [module.str_test m.encrypt='yes' o.set='module.enc' /]
+        	[module.enc m.decrypt='yes' /]
+        </li>           
+      </ul>
+    </li>
+    
+  </ol>
+  
+  ====================================================================================
+<pre>
+  [[module.x m.explode_on='yes']] -> on comma
+  [[module.x m.explode_on='s:comma']] -> on comma
+  [[module.x m.explode_on='s:space']] -> on space
+  [[module.x m.explode_on='s:dot']] -> on dot
+  [[module.x m.explode_on='s:.']] -> on character
+  
+  [[module.str_test m.explode_on='s:space' o.set="module.explode" /]] - [module.str_test m.explode_on='s:space' o.set="module.explode" /] [module.dump explode/]
+</pre>
+====================================================================================
+<pre>
+  [[module.x m.implode_on='yes']] -> on comma
+  [[module.x m.implode_on='s:comma']] -> on comma
+  [[module.x m.explode_on='s:quote_comma']] -> on quote_comma
+  [[module.x m.implode_on='s:space']] -> on space
+  [[module.x m.implode_on='s:dot']] -> on dot
+  [[module.x m.implode_on='s:.']] -> on character
+  
+  [[module.explode m.implode_on='s:quote_comma' /]] - [module.explode m.implode_on='s:quote_comma'/]
+</pre>
+====================================================================================
+<pre>  
+  [[module.number m.to_num m2.number_format='yes' m2.decimals='n:2' /]] - [module.number m.to_num m2.number_format='yes' m2.decimals='n:2'/]
+</pre>
+====================================================================================
+<pre>  
+  [[module.date m.date_format='yes' /]] - Default format is 'M d, Y' - [module.date m.date_format='yes'/] 
+  [[module.date m.date_format='M y' /]] - [module.date m.date_format='M y'/]
+</pre>
+====================================================================================
+<pre>  
+  [[module.str_test m.words='yes' /]] - Default returns all words - [module.str_test m.words='yes'/] 
+  [[module.str_test m.words='n:3' /]] - [module.str_test m.words='n:3'/]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_test m.url_encode='yes' o.set="module.url_encode" /]] - [module.str_test m.url_encode='yes' o.set="module.url_encode"/]  [module.url_encode /]
+</pre>
+====================================================================================
+<pre>
+  [[module.url_encode m.url_decode='yes' /]] - [module.url_encode m.url_decode='yes'/]
+</pre>
+====================================================================================
+<pre>
+  [[module.arrset /]] - [module.dump arrset /]
+  [[module.arrset m.arr_item='s:first' /]] - [module.arrset m.arr_item='s:first' /]
+  [[module.arrset m.arr_item='s:c' /]] - [module.arrset m.arr_item='s:c' /]
+  [[module.arrset m.arr_item='s:last' /]] - [module.arrset m.arr_item='s:last' /]
+  [[module.arrset m.arr_item='n:1' /]] - [module.arrset m.arr_item='n:1' /]
+</pre>
+====================================================================================
+<pre>
+  [[module.arrset m.shuffle='yes' o.set="module.shuffled" /]] - [module.arrset m.shuffle='yes' o.set="module.shuffled" /] [module.dump shuffled /]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_test m.entities_encode='yes' /]] - [module.str_test m.entities_encode='yes' /]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_test m.entities_decode='yes' /]] - [module.str_test m.entities_decode='yes' /]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_test m.esc_sql='yes' /]] - [module.str_test m.esc_sql='yes' /]
+</pre>
+====================================================================================
+<pre>
+  [[module.math_test m.solve='yes' /]] - [module.math_test m.solve='yes' /]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_test m.to_str='yes' /]] - [module.str_test m.to_str='yes' /]
+</pre>
+====================================================================================
+<pre>
+  [[module.number m.to_num='yes' /]] - [module.number m.to_num='yes' /]
+</pre>
+====================================================================================
+<pre>
+  [[module.number m.to_int='yes' /]] - [module.number m.to_int='yes' /]
+</pre>
+====================================================================================
+<pre>
+  [[module.number m.to_bool='yes' /]] - [module.number m.to_bool='yes' /]
+</pre>
+====================================================================================
+<ol>
+
+
+<li>
+    	<h3>modifier <strong>run</strong>  m.run </h3>
+      <ul>
+        <li> [module.str_a m.run='yes' /] </li>
+        <li> [module.str_test m.run='yes' /]</li>      
+      </ul>
+     </li>
+      
+    <li> Additional
+      <h3>modifier <strong>the_content</strong>  m.the_content  the content filter </h3> 
+      <ul>
+        <li> [module.str_a m.the_content='yes' /] </li>
+        <li> [module.str_test m.the_content='yes' /]</li>      
+      </ul>
+    </li>
+    <li>
+      <h3>modifier <strong>do_shortcode</strong>  m.do_shortcode </h3> 
+      <ul>
+        <li> [module.str_a m.do_shortcode='yes' /] </li>
+        <li> [module.str_test m.do_shortcode='yes' /]</li>      
+      </ul>
+    </li>
+  
+</ol>
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231222</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:41:35]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:41:35]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:41:35]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:41:35]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[modifier-samples]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[variable-scope-samples]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231224</link>
+		<pubDate>Sun, 16 May 2021 12:42:00 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231224</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+	
+  //** Template Level variable	**//
+  [template.set t1="Template Level variable" /]
+	  
+	//** module level variable **//
+  [module.set m1="module Level variable" /]
+	
+	//** environment level variable **//
+	[env.set e1="env Level variable" /] 
+  
+	//** user defined/custom scope	**//
+  [do.@sample]
+  	
+    [env.set @sample.s1="user defined scope" /]
+    [env.@sample.s1/]
+  [/do.@sample]
+	
+	
+	<br/>Template Level variable : [template.t1/]	
+	
+	<br/>user defined/custom scope?????? : [env.@sample.s1/]
+	
+  [templates.new_template /]
+  
+[/templates.add]
+
+[templates.add new_template]
+	
+  <br/>module level variable : [module.m1 /]
+  
+  <br/>Template Level variable (This will not generate any output) ???? : [template.t1 /]
+  
+  <br/>environment level variables :[env.e1 /]
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231224</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:42:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:42:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:42:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:42:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[variable-scope-samples]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[output-checks]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231226</link>
+		<pubDate>Sun, 16 May 2021 12:51:01 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231226</guid>
+		<description></description>
+		<content:encoded><![CDATA[<pre>
+  [[module.set  str_a='   I Passed the test    '/]]
+  [module.set  str_a='   I Passed the test    '/]
+
+  [[arr.set module.arrset a="hi" b="there" c="hello"/]]
+  [arr.set module.arrset a="hi" b="there" c="hello"/]
+  [[arr.set module.newarr d="Hope" e="is there"/]]
+  [arr.set module.newarr d="Hope" e="is there"/]
+  [[module.arrset /]] - [module.dump arrset /]
+</pre>
+====================================================================================
+<pre>
+  [[module.arrset m.shuffle='yes' o.exit="yes" /]] - Dump the value and exit
+</pre>
+====================================================================================
+<pre>
+  [[module.arrset m.shuffle='yes' o.die="yes" /]] - Dump the value and die
+</pre>
+====================================================================================
+<pre>
+  [[module.str_a o.echo="yes" /]] - Echo the value [module.str_a o.echo="yes" /]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_a o.dump="yes" /]] - [module.str_a o.dump="yes" /]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_a o.console="yes" /]] - [module.str_a o.console="yes" /]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_a o.log="yes" /]] - [module.str_a o.log="yes" /]
+  [[module.str_a o.log="temp-log.html" /]] - [module.str_a o.log="temp-log.html" /]
+</pre>
+====================================================================================
+<pre>
+  [[module.str_a o.destroy="yes" /]] - [module.str_a o.destroy="yes" /]
+</pre>
+====================================================================================
+<pre>
+  [[module.arrset m.shuffle='yes' o.console="yes" o2.set="module.shuffled" /]] - [module.arrset m.shuffle='yes' o.console="yes" o2.set="module.shuffled" /] [module.dump shuffled /]
+</pre>
+====================================================================================
+<pre>
+  [[module.newarr o.merge_with='module.arrset' /]] - [module.newarr o.merge_with='module.arrset' /] [module.dump arrset /]
+</pre>
+====================================================================================]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231226</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:51:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:51:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:51:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:51:02]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[output-checks]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[do-checks]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231228</link>
+		<pubDate>Sun, 16 May 2021 12:51:43 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231228</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add another_search]
+  [do.@search]
+    <pre>
+    do within do
+    [env.dump handlers /]
+    </pre>
+    [@search.dump /] 
+  [/do.@search]
+  <pre>
+  search should still be there
+    [env.dump handlers /]
+ </pre>	
+[/templates.add]
+
+
+[do.@search]
+
+  <pre>
+  checking for registered service
+  [env.dump handlers /]
+  </pre>
+  hello dolly 
+  [@search.set x=hero /]
+  
+  [@search.set_array a x=1 y=2 z=3 /]
+  
+  [@search.x /]
+  
+  [@search.dump /]      
+  [templates.another_search /]
+  
+[/do.@search]
+
+now search does not exist
+[aw2.get @search.dump /] 
+
+now search service does not exist
+  [env.dump handlers /]
+
+
+
+[do.ss]
+ [php.mt_rand p1=1000 p2=999999 set=ss.otp /]
+  //** expiry time **//
+  [date.create "+30 minutes" date_format='Y-m-d H:i:s' set=ss.expiry /]
+
+
+       hello:[aw2.get ss.otp /]
+ [aw2.get ss.dump /]
+[/do.ss] 
+    ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231228</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:51:43]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:51:43]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:51:43]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:51:43]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[do-checks]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[content-checks]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231230</link>
+		<pubDate>Sun, 16 May 2021 12:52:06 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231230</guid>
+		<description></description>
+		<content:encoded><![CDATA[[content.get]
+hello [request.get x /]
+[/content.get]
+
+[content.run]
+hello [request.get x /]
+[/content.run]
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231230</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:52:06]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:52:06]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:52:06]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:52:06]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[content-checks]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[condition-checks]]></title>
+		<link>https://core.aw2.dev/?post_type=m_samples&#038;p=1231232</link>
+		<pubDate>Sun, 16 May 2021 12:53:06 +0000</pubDate>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<guid isPermaLink="false">https://core.aw2.dev/?post_type=m_samples&#038;p=1231232</guid>
+		<description></description>
+		<content:encoded><![CDATA[[templates.add main]
+[env.dump /]
+<h4>Chains</h4>
+<pre>
+  [[module.set lapp_id=5000 /]]
+
+  c.param=module.lapp_id  will return '5000'
+  c.param=s:{module.lapp_id}  will return '5000'
+  c.param=n:{module.lapp_id}  will return 5000.00
+  c.param=i:{module.lapp_id}  will return 5000
+  c.param=b:{module.lapp_id}  will return true
+
+  c.param=s:5	will return '5'
+  c.param=s:	will return ''
+
+  c.param=n:5	will return 5.00
+  c.param=n:	will return 0
+
+  c.param=i:5	will return 5.00
+  c.param=i:hello	will return 0
+
+  c.param=b:5	will return true
+  c.param=b:true	will return true
+
+  c.param=b:0	will return false
+  c.param=b:false	will return false
+  c.param=b:	will return false
+</pre>
+
+[str.create 5000 o.set=module.lapp_id /]
+
+[str.create hello o.set=module.x_str /]
+[str.create main='    ' o.set=module.whitespaces /]
+
+[int.create 6250 o.set=module.int_even /]
+[num.create 123.00 o.set=module.num_odd /]
+[bool.create true o.set=module.y_bool /]
+
+[module.dump /]
+
+[module.set str1=5 str2=hello str3=7.01 str4=true /]
+
+[module.str1 m.to_int=yes o.set=module.new_int /]
+[module.str2 m.to_str=yes o.set=module.new_str /]
+[module.str3 m.to_num=yes o.set=module.new_num /]
+[module.str4 m.to_bool=yes o.set=module.new_bool /]
+
+[module.set success='I suceeded' failed='I failed' /]
+[module.dump /]
+
+
+<pre>
+  [[arr.set module.arrset a={module.x_str} b={module.y_bool} c="hello"/]]
+  [arr.set module.arrset a={module.x_str} b={module.y_bool} c="hello"/]
+  [[module.arrset /]] - [module.dump arrset /]
+</pre>
+<pre>
+  [[env.echo c.ignore='yes' /]]
+  [env.echo c.ignore='yes' /]
+</pre>
+
+[module.dump /]
+
+<h4>Odd/Even Tests(Int Check - Casted to Int)</h4>
+ 
+<p> 
+  [[module.success c.even=module.int_even/]]<br />
+  Result:[module.success c.even=module.int_even/]
+  Result:[module.success c.even=i:{module.int_even}/]
+  Result:[module.success c.even=i:50 /]
+  
+  
+  
+</p>
+<p>
+  [[module.success c.odd=module.int_even /]]<br />
+  Result:[module.success c.odd=module.int_even/]
+</p>
+
+<h4>Comparison Tests(Strict Check - Value and Datatype check)</h4>
+
+<p>
+  [[module.success c.cond="module.num_odd" c.eq="n:123"/]]<br />
+  Result:[module.success c.cond="module.num_odd" c.eq="n:123" /]
+</p>
+<p>
+  [[module.success c.cond="module.num_odd" c.neq="n:1123"/]]<br />
+  Result:[module.success c.cond="module.num_odd" c.neq="n:1123"/]
+</p>
+<p>
+  [[module.success c.cond="module.int_even" c.gt="n:112"/]]<br />
+  Result:[module.success c.cond="module.int_even" c.gt="n:112"/]
+</p>
+<p>
+  [[module.success c.cond="module.lapp_id" c.lt="s:{module.int_even}"/]]<br />
+  Result(String Comparison):[module.success c.cond="module.lapp_id" c.lt="s:{module.int_even}"/]
+</p>
+<p>
+  [[module.success c.cond="module.int_even" c.gte="i:88123"/]]<br />
+  Result:[module.success c.cond="module.int_even" c.gte="i:88123"/]
+</p>
+<p>
+  [[module.success c.cond="module.lapp_id" c.lte="n:5000"/]]<br />
+  Result:(Invalid Comparison)[module.success c.cond="module.lapp_id" c.lte="n:5000"/]
+</p>
+  
+<h4>True/False Tests(Bool Check - Casted to Bool)</h4>
+<p>
+  [[module.success c.true="module.y_bool"/]]<br />
+  Result:[module.success c.true="module.y_bool"/]<br />
+  [[module.success c.true="n:5"/]]<br />
+  Result:[module.success c.true="n:5"/]<br />
+  [[module.success c.true="b:5"/]]<br />
+  Result:[module.success c.true="b:5"/]<br />
+</p>
+<p>
+  [[module.success c.false="n:5"/]]<br />
+  Result:[module.success c.false="n:5"/]<br />
+  [[module.success c.false="b:5"/]]<br />
+  Result:[module.success c.false="b:5"/]<br />
+  [[module.success c.false="module.lapp_id"/]]<br />
+  Result:[module.success c.false="module.lapp_id"/]<br />
+</p>
+  
+<h4>Yes/No Tests(String Check - Casted to String)</h4>
+<p>
+  [[module.success c.yes='module.lapp_id'/]]<br />
+  Result:[module.success c.yes='module.lapp_id'/]<br />
+  [[module.success c.yes='s:yes'/]]<br />
+  Result:[module.success c.yes='s:yes'/]<br />
+  [[module.success c.yes='yes'/]]<br />
+  Result:[module.success c.yes='yes'/]
+</p>
+<p>
+  [[module.success c.no='module.lapp_id'/]]<br />
+  Result:[module.success c.no='module.lapp_id'/]<br />
+  [[module.success c.no='s:no'/]]<br />
+  Result:[module.success c.no='s:no'/]<br />
+  [[module.success c.no='no'/]]<br />
+  Result:[module.success c.no='no'/]
+</p>
+
+<h4>Datatype Tests</h4>
+<p>
+  [[module.success c.arr='module.arrset'/]]<br />
+  Result:[module.success c.arr='module.arrset'/]
+</p>
+<p>
+  [[module.success c.not_arr='module.arrset'/]]<br />
+  Result:[module.success c.not_arr='module.arrset'/]
+</p>
+<p>
+  [[module.success c.str='module.x_str'/]]<br />
+  Result:[module.success c.str='module.x_str'/]
+</p>
+<p>
+  [[module.success c.not_str='module.arrset'/]]<br />
+  Result:[module.success c.not_str='module.arrset'/]
+</p>
+<p>
+  [[module.success c.bool='module.y_bool'/]]<br />
+  Result:[module.success c.bool='module.y_bool'/]
+</p>
+<p>
+  [[module.success c.not_bool='module.x_str'/]]<br />
+  Result:[module.success c.not_bool='module.x_str'/]
+</p>
+<p>
+  [[module.success c.int='module.int_even'/]]<br />
+  Result:[module.success c.int='module.int_even'/]
+</p>
+<p>
+  [[module.success c.not_int='module.num_odd'/]]<br />
+  Result:[module.success c.not_int='module.num_odd'/]
+</p>
+<p>
+  [[module.success c.num='module.num_odd'/]]<br />
+  Result:[module.success c.num='module.num_odd'/]
+</p>
+<p>
+  [[module.success c.not_num='module.num_odd'/]]<br />
+  Result:[module.success c.not_num='module.num_odd'/]
+</p>
+<p>
+  [[module.success c.obj='module.num_odd'/]]<br />
+  Result:[module.success c.obj='module.num_odd'/]
+</p>
+<p>
+  [[module.success c.not_obj='module.arrset'/]]<br />
+  Result:[module.success c.not_obj='module.arrset'/]
+</p>
+
+<h4>Number Checks(Casted to float)</h4>
+<p>
+  [[module.success c.zero='n:0'/]]<br />
+  Result:[module.success c.zero='n:0'/]
+</p>
+<p>
+  [[module.success c.positive='module.lapp_id'/]]<br />
+  Result:[module.success c.positive='module.lapp_id'/]
+</p>
+<p>
+  [[module.success c.negative='module.lapp_id'/]]<br />
+  Result:[module.success c.negative='module.lapp_id'/]
+</p>
+
+<h4>Whitespace/Not Whitespace Checks(String Check - Casted to String)</h4>
+<p>
+  [[module.success c.ws='module.whitespaces'/]]<br />
+  Result:[module.success c.ws='module.whitespaces'/]
+</p>
+<p>
+  [[module.success c.not_ws='module.failed'/]]<br />
+  Result:[module.success c.not_ws='module.failed'/]
+</p>
+
+<h4>Empty/Not Empty Checks(Empty and Not Empty as defined by PHP)</h4>
+<p>
+  [[module.success c.empty='module.x_str'/]]<br />
+  Result:[module.success c.empty='module.x_str'/]
+</p>
+<p>
+  [[module.success c.not_empty='module.arrset'/]]<br />
+  Result:[module.success c.not_empty='module.arrset'/]
+</p>
+
+<h4>Null/Not Null Checks(Strict Check)</h4>
+<p>
+  [[module.success c.null='module.x_str'/]]<br />
+  Result:[module.success c.null='module.x_str'/]<br />
+  [[module.success c.null='null'/]]<br />
+  Result:[module.success c.null='null'/]
+</p>
+<p>
+  [[module.success c.not_null='module.arrset'/]]<br />
+  Result:[module.success c.not_null='module.arrset'/]
+</p>
+
+<h4>Request Exists/Request Not Exists Checks</h4>
+<p>
+  [[module.success c.request_exists='request.req'/]]<br />
+  Result:[module.success c.request_exists='request.req'/]<br />
+  [[module.success c.request_exists='request.s'/]]<br />
+  Result:[module.success c.request_exists='request.s'/]
+</p>
+<p>
+  [[module.success c.request_not_exists='request.req'/]]<br />
+  Result:[module.success c.request_not_exists='request.req'/]
+</p>
+
+<h4>Contains/Not Contains Checks(Not strict check, Will not check datatypes)</h4>
+<p>
+  [[module.success c.contains='s:hello' c.haystack='s:hello,hi,hope' /]]<br />
+  Result:[module.success c.contains='s:hello' c.haystack='s:hello,hi,hope' /]<br />
+  [[module.success c.contains='s:hell' c.haystack='module.arrset' /]]<br />
+  Result:[module.success c.contains='s:hell' c.haystack='module.arrset' /]
+</p>
+<p>
+  [[module.success c.not_contains='s:hello' c.haystack='s:hello,hi,hope' /]]<br />
+  Result:[module.success c.not_contains='s:hello' c.haystack='s:hello,hi,hope' /]<br />
+  [[module.success c.not_contains='s:hell' c.haystack='module.arrset' /]]<br />
+  Result:[module.success c.not_contains='s:hell' c.haystack='module.arrset' /]
+</p>
+
+<h4>Exists/Not Exists Checks(Check against env)</h4>
+<p>
+  [[module.success c.exists='module.x_str' /]]<br />
+  Result:[module.success c.exists='module.x_str' /]<br />
+  [[module.success c.exists='module.x'/]]<br />
+  Result:[module.success c.exists='module.x' /]
+</p>
+<p>
+  [[module.success c.not_exists='module.x'/]]<br />
+  Result:[module.success c.not_exists='module.x' /]<br />
+  [[module.success c.not_exists='module.x_str'/]]<br />
+  Result:[module.success c.not_exists='module.x_str' /]
+</p>
+
+<h4>User Can/User Cannot Checks(Assumed a string. Use curly braces for Env)</h4>
+<p>
+  [[module.success c.user_can='administrator' /]]<br />
+  Result:[module.success c.user_can='administrator' /]
+</p>
+<p>  
+  [[module.success c.user_cannot='subscriber'/]]<br />
+  Result:[module.success c.user_cannot='subscriber' /]
+</p>
+
+<h4>Logged In/Not Logged In Checks(Right hand side is irrelevant but must exist)</h4>
+<p>
+  [[module.success c.logged_in='yes' /]]<br />
+  Result:[module.success c.logged_in='yes' /]
+</p>
+<p>  
+  [[module.success c.not_logged_in='yes'/]]<br />
+  Result:[module.success c.not_logged_in='yes' /]
+</p>
+
+<h4>Device Checks(comma separated string)</h4>
+<p>
+  [[module.success c.device='s:desktop' /]]<br />
+  Result:[module.success c.device='s:desktop' /]
+</p>
+<p>  
+  [[module.success c.device='s:tablet,mobile'/]]<br />
+  Result:[module.success c.device='s:tablet,mobile' /]
+</p>
+
+<h4>And Checks</h4>
+<p>
+  [[module.success c.device='s:desktop' and.logged_in='yes' /]]<br />
+  Result:[module.success c.device='s:desktop' and.logged_in='yes' /]
+</p>
+
+<h4>Or Checks</h4>
+<p>
+  [[module.success c.device='s:desktop' or.exists='module.x_str' /]]<br />
+  Result:[module.success c.device='s:desktop' or.exists='module.x_str' /]
+</p>
+[/templates.add]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1231232</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-16 12:53:06]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-16 12:53:06]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-16 12:53:06]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-16 12:53:06]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[condition-checks]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[m_samples]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>		
 </channel>
 </rss>
 	
