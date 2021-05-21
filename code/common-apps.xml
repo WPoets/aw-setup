@@ -9078,35 +9078,43 @@ border-color: #5897fb; }
 		</wp:postmeta>
 							</item>
 				
-					<item>
-		<title>moodboard</title>
-		<link>https://www.wpoets.com/?post_type=m_samples&#038;p=574672</link>
+						
+			<item>
+			<title><![CDATA[moodboard]]></title>
+			<link>https://www.wpoets.com/?post_type=m_samples&#038;p=574672</link>
 		<pubDate>Tue, 17 Sep 2019 12:28:19 +0000</pubDate>
-		<dc:creator><![CDATA[sapna]]></dc:creator>
+		<dc:creator><![CDATA[dhiraj]]></dc:creator>
 		<guid isPermaLink="false">http://nxt.wpoets.com/?post_type=m_samples&#038;p=574672</guid>
 		<description></description>
 		<content:encoded><![CDATA[[aw2.set module.post_class='{{aw2.get module.slug}}_post' module.post_unique_class='{token}' /] 
 [css.style] 
 .[aw2.get module.post_unique_class/]{ 
     .height-master { 
-    		display:table; 
-        height:100px; 
+    		display:flex; 
+        padding-top: 0.5em;
+        padding-left: 10px;
+        padding-right: 10px;
         width:100%; 
         border:1px solid #eee; 
-        h4 { 
-              display:table-cell; 
-              vertical-align:middle; 
-        } 
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p{
+          padding: 0 10px;
+          background: #fff;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+        }
     }
     .height-master-text { 
-    		display:table; 
-        height:50px; 
+    		display:flex; 
+        padding-top: 0.5em;
+        padding-left: 10px;
+        padding-right: 10px;
         width:100%; 
         border:1px solid #eee; 
-        h4 { 
-        			display:table-cell;
-    					vertical-align: middle; 
-        } 
+        align-items: center;
+        flex-direction: column;
     }
     h5 { 
     		margin-top:18px; 
@@ -9132,7 +9140,7 @@ border-color: #5897fb; }
             <hr/>
             <div class="gap-5"></div>
         </section>
-        <section class="row text-center">
+        <section class="row text-center bg-colors">
             <section class="col-md-2 col-sm-3 col-xs-12 col-centered" data-matchheight="makesame-height">
                 <div class="text-center brand-primary-bg  height-master">
                     <h4 class="brand-white">brand-primary-bg</h4>
@@ -9584,7 +9592,7 @@ border-color: #5897fb; }
                 <button class="btn btn-primary disabled"> button</button>
             </div>
             <div class="col-sm-3">
-                <button class="btn btn-primary outline" disabled> button</button>
+                <button class="btn btn-primary outline disabled"> button</button>
             </div>
 
         </section>
@@ -9600,15 +9608,26 @@ border-color: #5897fb; }
                 <button class="btn btn-secondary disabled"> button</button>
             </div>
             <div class="col-sm-3">
-                <button class="btn btn-secondary outline" disabled> button</button>
+                <button class="btn btn-secondary outline disabled"> button</button>
             </div>
 
         </section>
         <div class="gap-5"></div>
     </section>
 </article>
-
 <script type="spa/axn" axn="core.run_script">
+    function hex(x) {
+      	return ("0" + parseInt(x).toString(16)).slice(-2);
+    }
+    function rgb2hex(rgb) {
+     	rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(,\s*\d+\.*\d+)?\)$/);
+     	return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+    }
+  
+   	$('.bg-colors .height-master').each(function (index) {
+        $(this).append('<p>'+rgb2hex($(this).css('background-color'))+'</p class="no-margin"><p>'+$(this).css('background-color')+'</p>');
+    })
+    
     $('.headings .h').each(function (index) {
         $(this).append('[fontsize - ' + $(this).css('font-size') + ', line-height - ' + (parseFloat($(this).css('line-height'))/parseInt($(this).css('font-size'))) + ']');
     });
@@ -9634,6 +9653,8 @@ border-color: #5897fb; }
 		<wp:post_id>574672</wp:post_id>
 		<wp:post_date><![CDATA[2019-09-17 12:28:19]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-09-17 12:28:19]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-14 09:05:16]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-14 09:05:16]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[moodboard]]></wp:post_name>
@@ -9645,10 +9666,11 @@ border-color: #5897fb; }
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		<wp:meta_value><![CDATA[6]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-					
+	
+			
 					
 					<item>
 		<title>echarts</title>
