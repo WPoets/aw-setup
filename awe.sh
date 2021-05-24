@@ -61,6 +61,7 @@ composer require wpoets/pdf-handler --no-interaction --quiet
 composer require wpoets/woocommerce-handler --no-interaction --quiet
 
 wp package install git@github.com:wp-cli/profile-command.git  --allow-root
+wp package install git@github.com:10up/wpcli-vulnerability-scanner.git  --allow-root
 
 printf "${ORANGE} Downloading Backup Script ${NC}\n";
 wget -qO /usr/local/sbin/backup.sh "https://raw.githubusercontent.com/WPoets/aw-setup/master/wo-backup.sh" && chmod u+x /usr/local/sbin/backup.sh
