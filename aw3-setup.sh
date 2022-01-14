@@ -59,23 +59,24 @@ function installAw2(){
 	
 	printf "${GREEN}Info:${YELLOW} Importing Basic Apps & Core Services ${NC}\n";
 
+    baseImport $1
     
-    wget -O /tmp/core.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/core.xml /tmp
-	wget -O /tmp/basic-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/basic-apps.xml /tmp
+    #wget -O /tmp/core.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/core.xml /tmp
+	#wget -O /tmp/basic-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/basic-apps.xml /tmp
 	
-	wp import /tmp/basic-apps.xml --authors=skip --allow-root --quiet
-    wp import /tmp/core.xml --authors=skip --allow-root --quiet
-	wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
+	#wp import /tmp/basic-apps.xml --authors=skip --allow-root --quiet
+    #wp import /tmp/core.xml --authors=skip --allow-root --quiet
+	#wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
 	
-	wp post-type list --fields=name --allow-root
+	#wp post-type list --fields=name --allow-root
 	
-    wget -O /tmp/common-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-apps.xml /tmp
-    wget -O /tmp/common-services.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-services.xml /tmp
+    #wget -O /tmp/common-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-apps.xml /tmp
+    #wget -O /tmp/common-services.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-services.xml /tmp
     
-	wp import /tmp/common-apps.xml --authors=skip --allow-root --quiet
-    wp import /tmp/common-services.xml --authors=skip --allow-root --quiet
+	#wp import /tmp/common-apps.xml --authors=skip --allow-root --quiet
+    #wp import /tmp/common-services.xml --authors=skip --allow-root --quiet
    
-	wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
+	#wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
 	
   
     #import all data again to import the posts whose post type is registered by the above command
@@ -132,14 +133,31 @@ function baseImport(){
 		exit
 	else
 		cd /var/www/$1/htdocs
-		echo 'DONE'
+        wget -O /tmp/core.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/core.xml /tmp
+	    wget -O /tmp/basic-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/basic-apps.xml /tmp
+	
+	    wp import /tmp/basic-apps.xml --authors=skip --allow-root --quiet
+        wp import /tmp/core.xml --authors=skip --allow-root --quiet
+	    wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
+	
+	    wp post-type list --fields=name --allow-root
+	
+        wget -O /tmp/common-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-apps.xml /tmp
+        wget -O /tmp/common-services.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-services.xml /tmp
+    
+	    wp import /tmp/common-apps.xml --authors=skip --allow-root --quiet
+        wp import /tmp/common-services.xml --authors=skip --allow-root --quiet
+   
+	    wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
+		
+        printf "${YELLOW} ...DONE... \n${NC}"
 	fi
 	printf "${ORANGE} ...[✌]... \n${NC}"	
 }
 
 function createUser(){
 	if [ -z "$1" ]; then
-		echo 'Usage: ./aw3.sh --base-import <example.com>'
+		echo 'Usage: ./aw3.sh --create-user <example.com>'
 		exit
 	fi	
 	 echo 'Checking site...'
@@ -155,7 +173,7 @@ function createUser(){
 
 function setup(){
 	if [ -z "$1" ]; then
-		echo 'Usage: ./aw3.sh --base-import <example.com>'
+		echo 'Usage: ./aw3.sh --setup <example.com>'
 		exit
 	fi	
 	
