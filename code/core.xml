@@ -49,18 +49,22 @@
 		<dc:creator><![CDATA[bhagyashree]]></dc:creator>
 		<guid isPermaLink="false">http://dc.wordpoets.com/?post_type=awesome_core&#038;p=18</guid>
 		<description></description>
-		<content:encoded><![CDATA[[services.add db service_label='DB Services' post_type='db_service' desc='database services' /]
+		<content:encoded><![CDATA[[services.add db connection="cdn_code" service_label='DB Services' post_type='db_service' desc='database services' /]
 [services.add common service_label='Common Service' post_type='common_service' desc='Common services'/]
-[services.add form_control service_label='Form Control Service' post_type='form_control' desc='Form Control Service' /]
-[services.add form_control2 service_label='Form Control 2 Service' post_type='form_control2' desc='Form Control 2 Service' /]
-[services.add ui service_label='UI Services' post_type='ui_service' desc='UI Services' /]
-[services.add notification_service service_label='Notification Services' post_type='notification_service' desc='Notification Services' /]
+[services.add form_control connection="cdn_code"  service_label='Form Control Service' post_type='form_control' desc='Form Control Service' /]
+[services.add form_control2 connection="cdn_code" service_label='Form Control 2 Service' post_type='form_control2' desc='Form Control 2 Service' /]
+[services.add ui connection="cdn_code" service_label='UI Services' post_type='ui_service' desc='UI Services' /]
+[services.add notification_service connection="cdn_code" service_label='Notification Services' post_type='notification_service' desc='Notification Services' /]
 [services.add form service_label='Forms Service' post_type='forms' desc='Common Forms' /]
-[services.add aw_form service_label='AW Form Service' post_type='aw_form' desc='AW Form Service' /]
-[services.add search_service service_label='Search Service' post_type='search_service' desc='search services' /]
-[services.add single_service service_label='Single Service' post_type='single_service' desc='Single services' /]
-[services.add backend_design service_label='Backend Design Service' post_type='backend_service' desc='Backend Design Service' /]
+[services.add aw_form connection="cdn_code" service_label='AW Form Service' post_type='aw_form' desc='AW Form Service' /]
+[services.add search_service connection="cdn_code" service_label='Search Service' post_type='search_service' desc='search services' /]
+[services.add single_service connection="cdn_code" service_label='Single Service' post_type='single_service' desc='Single services' /]
+[services.add backend_design connection="cdn_code" service_label='Backend Design Service' post_type='backend_service' desc='Backend Design Service' /]
 [services.add sample_service service_label='Sample App Service' post_type='sample_service' desc='Sample App Service' /]
+[services.add db2 connection="cdn_code" service_label='DB2 Services' post_type='db_2' desc='database services' /]
+[services.add search2 connection="cdn_code" service_label='Search2' post_type='search_2' desc='Search 2' /]
+[services.add uiblocks connection="cdn_code"  service_label='UI Blocks' post_type='ui_blocks' desc='UI Blocks' /] 
+
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[				
 								]]></excerpt:encoded>
@@ -120,8 +124,8 @@
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[5]]></wp:meta_value>
 		</wp:postmeta>
-							</item>
-					<item>
+		</item>
+		<item>
 		<title>settings</title>
 		<link>https://www.wpoets.com/?awesome_core=settings</link>
 		<pubDate>Wed, 10 Apr 2019 08:54:20 +0000</pubDate>
@@ -2028,7 +2032,46 @@ nav.navbar.desktop_menu .primary_menu ul#menu-menu-1>li.contact-us-nav>a:after{
 		<wp:meta_value><![CDATA[2]]></wp:meta_value>
 		</wp:postmeta>
 					</item>
-						
+				<item>
+		<title><![CDATA[apps]]></title>
+		<link>https://www.wpoets.com/?awesome_core==apps</link>
+		<pubDate>Thu, 18 Nov 2021 05:29:00 +0000</pubDate>
+		<dc:creator><![CDATA[amit]]></dc:creator>
+		<guid isPermaLink="false">https://www.wpoets.com/?post_type=awesome_core&#038;p=1237797</guid>
+		<description></description>
+		<content:encoded><![CDATA[[app.register error-log title="Error Log"]
+	[collection]
+    [config  connection=cdn_code post_type=c-errlog-app /]
+    [modules connection=cdn_code post_type=m-errlog-app /]
+  [/collection]  
+[/app.register]
+[app.register plot title="Plot"]
+	[collection]
+    [config  connection=cdn_code post_type=c_plot /]
+    [modules connection=cdn_code post_type=m_plot /]
+  [/collection]  
+[/app.register]
+	]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1237797</wp:post_id>
+		<wp:post_date><![CDATA[2021-11-18 05:29:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-11-18 05:29:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-11-23 02:12:04]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-11-23 02:12:04]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[apps]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[awesome_core]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							</item>		
 				</channel>
 </rss>
 	

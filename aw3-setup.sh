@@ -36,6 +36,8 @@ function installAw2(){
     wp config set HOME_URL "x" --add=true --type=constant --allow-root
 	
 	wp config set WP_POST_REVISIONS 100 --allow-root
+
+    
 	
 	printf "${GREEN}Info:${YELLOW} Installing Monomyth Enterprise latest version\n${NC}";
     #aw2_theme_version=$(getReleaseVersion 'WPoets/awesome-enterprise');
@@ -84,9 +86,12 @@ function installAw2(){
     #to change the file permission of all new installed plugins to www-data user
     chown -R www-data:www-data wp-content/uploads/*
     
+    wp config set CONNECTIONS "array('cdn_code'=> array('connection_service'=>'url_conn', 'url'=>'https://cdn.getawesomestudio.com/code', 'redis_db'=>1, 'cache_expiry'=>300))" --raw --add --type=constant --allow-root
+
 	wp config set SITE_URL "(\$_SERVER['HTTPS'] ? 'https://' : 'http://') . \$_SERVER['HTTP_HOST']" --raw --add=true --type=constant --allow-root
     wp config set HOME_URL "(\$_SERVER['HTTPS'] ? 'https://' : 'http://') . \$_SERVER['HTTP_HOST']" --raw --add=true --type=constant --allow-root
-  
+    
+
 	
     printf "\n\n\n\n\n"
 }
@@ -143,10 +148,10 @@ function baseImport(){
 	    wp post-type list --fields=name --allow-root
 	
         wget -O /tmp/common-apps.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-apps.xml /tmp
-        wget -O /tmp/common-services.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-services.xml /tmp
+        #wget -O /tmp/common-services.xml https://raw.githubusercontent.com/WPoets/aw-setup/master/code/common-services.xml /tmp
     
 	    wp import /tmp/common-apps.xml --authors=skip --allow-root --quiet
-        wp import /tmp/common-services.xml --authors=skip --allow-root --quiet
+        #wp import /tmp/common-services.xml --authors=skip --allow-root --quiet
    
 	    wp eval '\aw2\global_cache\flush(null,null,null);\aw2\session_cache\flush(null,null,"");' --allow-root --quiet
 		
