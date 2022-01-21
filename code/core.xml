@@ -64,6 +64,7 @@
 [services.add db2 connection="cdn_code" service_label='DB2 Services' post_type='db_2' desc='database services' /]
 [services.add search2 connection="cdn_code" service_label='Search2' post_type='search_2' desc='Search 2' /]
 [services.add uiblocks connection="cdn_code"  service_label='UI Blocks' post_type='ui_blocks' desc='UI Blocks' /] 
+[services.add plot connection="cdn_code" service_label='Plot Service' post_type='plot_service' desc='Plot Service' /]
 
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[				
@@ -2051,6 +2052,12 @@ nav.navbar.desktop_menu .primary_menu ul#menu-menu-1>li.contact-us-nav>a:after{
     [modules connection=cdn_code post_type=m_plot /]
   [/collection]  
 [/app.register]
+[app.register acf-json title="ACF JSON"]
+	[collection]
+    [config  connection=cdn_code post_type=c_acf-json /]
+    [modules connection=cdn_code post_type=m_acf-json /]
+  [/collection]  
+[/app.register]	
 	]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1237797</wp:post_id>
