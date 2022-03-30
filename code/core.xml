@@ -370,7 +370,7 @@ text-decoration: none;
 							
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[opt-ga-code]]></wp:meta_key>
-		<wp:meta_value><![CDATA[UA-26180123-1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[UA-xxxx-x]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[opt-ta-code]]></wp:meta_key>
