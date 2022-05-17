@@ -44,10 +44,10 @@ function installAw2(){
     #wp theme install https://github.com/WPoets/monomyth-enterprise/archive/$aw2_theme_version.zip --activate --allow-root
     wp theme install https://github.com/WPoets/monomyth-enterprise/archive/master.zip --activate --allow-root --quiet
 
-    aw2_plugin_version=$(getReleaseVersion2 'WPoets/awesome-enterprise-wp');
+    aw2_plugin_version=$(getReleaseVersion 'WPoets/awesome-enterprise-wp');
     printf "${GREEN}Info:${YELLOW} Installing Awesome Enterprise WP version $aw2_plugin_version${NC}\n";
 
-    wp plugin install https://github.com/WPoets/awesome-enterprise-wp/archive/$(getReleaseVersion2 'WPoets/awesome-enterprise-wp').zip --activate --allow-root --quiet
+    wp plugin install https://github.com/WPoets/awesome-enterprise-wp/archive/$(getReleaseVersion 'WPoets/awesome-enterprise-wp').zip --activate --allow-root --quiet
    
    
     wp plugin install advanced-custom-fields --activate --allow-root --quiet
