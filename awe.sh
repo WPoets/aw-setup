@@ -31,7 +31,9 @@ apt-get install redis-server php-redis -y
 service redis-server start
 systemctl enable redis-server --quiet
 
+wo stack install --php74
 
+update-alternatives --config php
 
 printf "${ORANGE} Updating conf files ${NC}\n";
 git clone https://github.com/WPoets/conf.git $HOME/wpoets-conf
