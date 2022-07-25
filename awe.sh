@@ -25,7 +25,7 @@ wo stack install
 
 printf "${ORANGE}Setting up Redis Server ${NC}\n";
 add-apt-repository ppa:redislabs/redis -y
-apt-get -qq update
+apt-get update
 apt-get install redis-server php-redis -y
 
 service redis-server start
