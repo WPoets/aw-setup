@@ -25,7 +25,7 @@ wo stack install
 
 printf "${ORANGE}Setting up Redis Server ${NC}\n";
 add-apt-repository ppa:redislabs/redis -y
-apt-get update
+apt-get -qq update
 apt-get install redis-server php-redis -y
 
 service redis-server start
@@ -33,7 +33,8 @@ systemctl enable redis-server --quiet
 
 wo stack install --php74
 
-update-alternatives --config php /usr/bin/php7.4
+update-alternatives --set php /usr/bin/php7.4
+service nginx restart
 
 printf "${ORANGE} Updating conf files ${NC}\n";
 git clone https://github.com/WPoets/conf.git $HOME/wpoets-conf
