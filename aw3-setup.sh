@@ -54,7 +54,8 @@ function installAw2(){
     wp plugin install custom-post-type-ui --activate --allow-root --quiet
     wp plugin install wordpress-importer --activate --allow-root --quiet
     wp plugin install classic-editor --activate --allow-root --quiet
-    wp plugin install wp-google-authenticator --allow-root --quiet
+    #wp plugin install wp-google-authenticator --allow-root --quiet
+    wp plugin install https://github.com/julien731/AuthPress/archive/$(getReleaseVersion 'julien731/AuthPress').zip --activate --allow-root --quiet
     wp plugin install google-apps-login --allow-root --quiet
     
     wp rewrite structure '/%postname%/' --allow-root --quiet
