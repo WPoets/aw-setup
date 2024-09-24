@@ -21,7 +21,7 @@ wget -qO wo wops.cc && bash wo
 
 printf "${ORANGE} ---Installing WordOps Stack--- ${NC}\n";
 
-wo stack install
+wo stack install --web
 
 printf "${ORANGE}Setting up Redis Server ${NC}\n";
 add-apt-repository ppa:redislabs/redis -y
@@ -31,10 +31,11 @@ apt-get install redis-server php-redis -y
 service redis-server start
 systemctl enable redis-server --quiet
 
-wo stack install --php74
+#wo stack install --php74
 
-update-alternatives --set php /usr/bin/php7.4
+#update-alternatives --set php /usr/bin/php7.4
 service nginx restart
+wo stack install --admin
 
 printf "${ORANGE} Updating conf files ${NC}\n";
 git clone https://github.com/WPoets/conf.git $HOME/wpoets-conf
@@ -57,11 +58,11 @@ printf "${ORANGE}Installing Extra Handlers for Awesome Enterprise ${NC}\n";
 composer require wpoets/communication-handler --no-interaction --quiet
 composer require wpoets/docx-handler --no-interaction --quiet
 composer require wpoets/google-handler --no-interaction --quiet
-composer require wpoets/facebook-handler --no-interaction --quiet
 composer require wpoets/linkedin-handler --no-interaction --quiet
 composer require wpoets/payments-handler --no-interaction --quiet
 composer require wpoets/pdf-handler --no-interaction --quiet
-composer require wpoets/woocommerce-handler --no-interaction --quiet
+composer require wpoets/curl-handler --no-interaction --quiet
+composer require wpoets/debug-handler --no-interaction --quiet
 
 wp package install git@github.com:wp-cli/profile-command.git  --allow-root
 wp package install git@github.com:10up/wpcli-vulnerability-scanner.git  --allow-root
